@@ -1,0 +1,8 @@
+lab_result_id,patient_id,encounter_id,test_code,test_name,result_value,result_unit,result_date,ingestion_timestamp
+L3001,P1001,E2001,GLU,Blood Glucose,145,mg/dL,2026-01-02,2026-06-11 10:20:00
+L3002,P1001,E2002,GLU,Blood Glucose,160,mg/dL,2026-01-21,2026-06-11 10:21:00
+L3003,P1002,E2003,A1C,Hemoglobin A1C,7.8,%,2026-02-05,2026-06-11 10:22:00
+L3004,P1003,E2004,GLU,Blood Glucose,9999,mg/dL,2026-03-10,2026-06-11 10:23:00
+L3005,P1004,E2005,CRE,Creatinine,1.9,mg/dL,2026-04-03,2026-06-11 10:24:00
+L3006,P1005,E2006,HGB,Hemoglobin,12.4,g/dL,2026-05-15,2026-06-11 10:25:00
+L3007,P1006,E2007,GLU,Blood Glucose,,mg/dL,2026-01-16,2026-06-11 10:26:00

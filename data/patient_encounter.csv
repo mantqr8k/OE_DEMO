@@ -1,0 +1,9 @@
+encounter_id,patient_id,admission_date,discharge_date,encounter_type,attending_physician,hospital_id,diagnosis_code,ingestion_timestamp
+E2001,P1001,2026-01-01,2026-01-05,Inpatient,Dr Adams,H001,I50.9,2026-06-11 10:10:00
+E2002,P1001,2026-01-20,2026-01-25,Inpatient,Dr Adams,H001,I50.9,2026-06-11 10:11:00
+E2003,P1002,2026-02-04,2026-02-07,Emergency,Dr Baker,H002,E11.9,2026-06-11 10:12:00
+E2004,P1003,2026-03-10,2026-03-11,Outpatient,Dr Clark,H003,J18.9,2026-06-11 10:13:00
+E2005,P1004,2026-04-02,2026-04-12,Inpatient,Dr Davis,H001,N18.9,2026-06-11 10:14:00
+E2006,P1005,2026-05-15,2026-05-16,Observation,Dr Evans,H002,O80,2026-06-11 10:15:00
+E2007,P1006,2026-01-15,2026-01-10,Inpatient,Dr Foster,H003,I10,2026-06-11 10:16:00
+E2008,P1003,2026-04-01,2026-04-03,Emergency,Dr Clark,H003,J18.9,2026-06-11 10:17:00

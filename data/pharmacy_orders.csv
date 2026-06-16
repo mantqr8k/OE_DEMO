@@ -1,0 +1,7 @@
+prescription_id,patient_id,medication_name,dosage,prescription_date,prescribing_physician,ingestion_timestamp
+RX4001,P1001,Lisinopril,10 mg daily,2026-01-05,Dr Adams,2026-06-11 10:30:00
+RX4002,P1001,Furosemide,20 mg daily,2026-01-25,Dr Adams,2026-06-11 10:31:00
+RX4003,P1002,Metformin,500 mg twice daily,2026-02-07,Dr Baker,2026-06-11 10:32:00
+RX4004,P1003,Azithromycin,250 mg daily,2026-03-11,Dr Clark,2026-06-11 10:33:00
+RX4005,P1004,Amlodipine,5 mg daily,2026-04-12,Dr Davis,2026-06-11 10:34:00
+RX4006,P1005,Ibuprofen,400 mg as needed,2026-05-16,Dr Evans,2026-06-11 10:35:00

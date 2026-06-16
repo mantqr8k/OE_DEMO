@@ -1,0 +1,1001 @@
+prescription_id,patient_id,medication_name,dosage,prescription_date,prescribing_physician,ingestion_timestamp
+RX5001,P2001,Lisinopril,5 mg daily,2026-01-01,Dr Adams,2026-06-11 13:00:01
+RX5002,P2002,Metformin,500 mg twice daily,2026-01-02,Dr Baker,2026-06-11 13:00:02
+RX5003,P2003,Atorvastatin,10 mg daily,2026-01-03,Dr Clark,2026-06-11 13:00:03
+RX5004,P2004,Albuterol,5 mg daily,2026-01-04,Dr Davis,2026-06-11 13:00:04
+RX5005,P2005,Levothyroxine,500 mg twice daily,2026-01-05,Dr Evans,2026-06-11 13:00:05
+RX5006,P2006,Amlodipine,10 mg daily,2026-01-06,Dr Foster,2026-06-11 13:00:06
+RX5007,P2007,Omeprazole,5 mg daily,2026-01-07,Dr Grant,2026-06-11 13:00:07
+RX5008,P2008,Gabapentin,500 mg twice daily,2026-01-08,Dr Hill,2026-06-11 13:00:08
+RX5009,P2009,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Adams,2026-06-11 13:00:09
+RX5010,P2010,Sertraline,5 mg daily,2026-01-10,Dr Baker,2026-06-11 13:00:10
+RX5011,P2011,Lisinopril,500 mg twice daily,2026-01-11,Dr Clark,2026-06-11 13:00:11
+RX5012,P2012,Metformin,10 mg daily,2026-01-12,Dr Davis,2026-06-11 13:00:12
+RX5013,P2013,Atorvastatin,5 mg daily,2026-01-13,Dr Evans,2026-06-11 13:00:13
+RX5014,P2014,Albuterol,500 mg twice daily,2026-01-14,Dr Foster,2026-06-11 13:00:14
+RX5015,P2015,Levothyroxine,10 mg daily,2026-01-15,Dr Grant,2026-06-11 13:00:15
+RX5016,P2016,Amlodipine,5 mg daily,2026-01-16,Dr Hill,2026-06-11 13:00:16
+RX5017,P2017,Omeprazole,500 mg twice daily,2026-01-17,Dr Adams,2026-06-11 13:00:17
+RX5018,P2018,Gabapentin,10 mg daily,2026-01-18,Dr Baker,2026-06-11 13:00:18
+RX5019,P2019,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Clark,2026-06-11 13:00:19
+RX5020,P2020,Sertraline,500 mg twice daily,2026-01-20,Dr Davis,2026-06-11 13:00:20
+RX5021,P2021,Lisinopril,10 mg daily,2026-01-21,Dr Evans,2026-06-11 13:00:21
+RX5022,P2022,Metformin,5 mg daily,2026-01-22,Dr Foster,2026-06-11 13:00:22
+RX5023,P2023,Atorvastatin,500 mg twice daily,2026-01-23,Dr Grant,2026-06-11 13:00:23
+RX5024,P2024,Albuterol,10 mg daily,2026-01-24,Dr Hill,2026-06-11 13:00:24
+RX5025,P2025,Levothyroxine,5 mg daily,2026-01-25,Dr Adams,2026-06-11 13:00:25
+RX5026,P2026,Amlodipine,500 mg twice daily,2026-01-26,Dr Baker,2026-06-11 13:00:26
+RX5027,P2027,Omeprazole,10 mg daily,2026-01-27,Dr Clark,2026-06-11 13:00:27
+RX5028,P2028,Gabapentin,5 mg daily,2026-01-28,Dr Davis,2026-06-11 13:00:28
+RX5029,P2029,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Evans,2026-06-11 13:00:29
+RX5030,P2030,Sertraline,10 mg daily,2026-01-30,Dr Foster,2026-06-11 13:00:30
+RX5031,P2031,Lisinopril,5 mg daily,2026-01-31,Dr Grant,2026-06-11 13:00:31
+RX5032,P2032,Metformin,500 mg twice daily,2026-02-01,Dr Hill,2026-06-11 13:00:32
+RX5033,P2033,Atorvastatin,10 mg daily,2026-02-02,Dr Adams,2026-06-11 13:00:33
+RX5034,P2034,Albuterol,5 mg daily,2026-02-03,Dr Baker,2026-06-11 13:00:34
+RX5035,P2035,Levothyroxine,500 mg twice daily,2026-02-04,Dr Clark,2026-06-11 13:00:35
+RX5036,P2036,Amlodipine,10 mg daily,2026-02-05,Dr Davis,2026-06-11 13:00:36
+RX5037,P2037,Omeprazole,5 mg daily,2026-02-06,Dr Evans,2026-06-11 13:00:37
+RX5038,P2038,Gabapentin,500 mg twice daily,2026-02-07,Dr Foster,2026-06-11 13:00:38
+RX5039,P2039,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Grant,2026-06-11 13:00:39
+RX5040,P2040,Sertraline,5 mg daily,2026-02-09,Dr Hill,2026-06-11 13:00:40
+RX5041,P2041,Lisinopril,500 mg twice daily,2026-02-10,Dr Adams,2026-06-11 13:00:41
+RX5042,P2042,Metformin,10 mg daily,2026-02-11,Dr Baker,2026-06-11 13:00:42
+RX5043,P2043,Atorvastatin,5 mg daily,2026-02-12,Dr Clark,2026-06-11 13:00:43
+RX5044,P2044,Albuterol,500 mg twice daily,2026-02-13,Dr Davis,2026-06-11 13:00:44
+RX5045,P2045,Levothyroxine,10 mg daily,2026-02-14,Dr Evans,2026-06-11 13:00:45
+RX5046,P2046,Amlodipine,5 mg daily,2026-02-15,Dr Foster,2026-06-11 13:00:46
+RX5047,P2047,Omeprazole,500 mg twice daily,2026-02-16,Dr Grant,2026-06-11 13:00:47
+RX5048,P2048,Gabapentin,10 mg daily,2026-02-17,Dr Hill,2026-06-11 13:00:48
+RX5049,P2049,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Adams,2026-06-11 13:00:49
+RX5050,P2050,Sertraline,500 mg twice daily,2026-02-19,Dr Baker,2026-06-11 13:00:50
+RX5051,P2051,Lisinopril,10 mg daily,2026-02-20,Dr Clark,2026-06-11 13:00:51
+RX5052,P2052,Metformin,5 mg daily,2026-02-21,Dr Davis,2026-06-11 13:00:52
+RX5053,P2053,Atorvastatin,500 mg twice daily,2026-02-22,Dr Evans,2026-06-11 13:00:53
+RX5054,P2054,Albuterol,10 mg daily,2026-02-23,Dr Foster,2026-06-11 13:00:54
+RX5055,P2055,Levothyroxine,5 mg daily,2026-02-24,Dr Grant,2026-06-11 13:00:55
+RX5056,P2056,Amlodipine,500 mg twice daily,2026-02-25,Dr Hill,2026-06-11 13:00:56
+RX5057,P2057,Omeprazole,10 mg daily,2026-02-26,Dr Adams,2026-06-11 13:00:57
+RX5058,P2058,Gabapentin,5 mg daily,2026-02-27,Dr Baker,2026-06-11 13:00:58
+RX5059,P2059,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Clark,2026-06-11 13:00:59
+RX5060,P2060,Sertraline,10 mg daily,2026-03-01,Dr Davis,2026-06-11 13:01:00
+RX5061,P2061,Lisinopril,5 mg daily,2026-03-02,Dr Evans,2026-06-11 13:01:01
+RX5062,P2062,Metformin,500 mg twice daily,2026-03-03,Dr Foster,2026-06-11 13:01:02
+RX5063,P2063,Atorvastatin,10 mg daily,2026-03-04,Dr Grant,2026-06-11 13:01:03
+RX5064,P2064,Albuterol,5 mg daily,2026-03-05,Dr Hill,2026-06-11 13:01:04
+RX5065,P2065,Levothyroxine,500 mg twice daily,2026-03-06,Dr Adams,2026-06-11 13:01:05
+RX5066,P2066,Amlodipine,10 mg daily,2026-03-07,Dr Baker,2026-06-11 13:01:06
+RX5067,P2067,Omeprazole,5 mg daily,2026-03-08,Dr Clark,2026-06-11 13:01:07
+RX5068,P2068,Gabapentin,500 mg twice daily,2026-03-09,Dr Davis,2026-06-11 13:01:08
+RX5069,P2069,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Evans,2026-06-11 13:01:09
+RX5070,P2070,Sertraline,5 mg daily,2026-03-11,Dr Foster,2026-06-11 13:01:10
+RX5071,P2071,Lisinopril,500 mg twice daily,2026-03-12,Dr Grant,2026-06-11 13:01:11
+RX5072,P2072,Metformin,10 mg daily,2026-03-13,Dr Hill,2026-06-11 13:01:12
+RX5073,P2073,Atorvastatin,5 mg daily,2026-03-14,Dr Adams,2026-06-11 13:01:13
+RX5074,P2074,Albuterol,500 mg twice daily,2026-03-15,Dr Baker,2026-06-11 13:01:14
+RX5075,P2075,Levothyroxine,10 mg daily,2026-03-16,Dr Clark,2026-06-11 13:01:15
+RX5076,P2076,Amlodipine,5 mg daily,2026-03-17,Dr Davis,2026-06-11 13:01:16
+RX5077,P2077,Omeprazole,500 mg twice daily,2026-03-18,Dr Evans,2026-06-11 13:01:17
+RX5078,P2078,Gabapentin,10 mg daily,2026-03-19,Dr Foster,2026-06-11 13:01:18
+RX5079,P2079,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Grant,2026-06-11 13:01:19
+RX5080,P2080,Sertraline,500 mg twice daily,2026-03-21,Dr Hill,2026-06-11 13:01:20
+RX5081,P2081,Lisinopril,10 mg daily,2026-03-22,Dr Adams,2026-06-11 13:01:21
+RX5082,P2082,Metformin,5 mg daily,2026-03-23,Dr Baker,2026-06-11 13:01:22
+RX5083,P2083,Atorvastatin,500 mg twice daily,2026-03-24,Dr Clark,2026-06-11 13:01:23
+RX5084,P2084,Albuterol,10 mg daily,2026-03-25,Dr Davis,2026-06-11 13:01:24
+RX5085,P2085,Levothyroxine,5 mg daily,2026-03-26,Dr Evans,2026-06-11 13:01:25
+RX5086,P2086,Amlodipine,500 mg twice daily,2026-03-27,Dr Foster,2026-06-11 13:01:26
+RX5087,P2087,Omeprazole,10 mg daily,2026-03-28,Dr Grant,2026-06-11 13:01:27
+RX5088,P2088,Gabapentin,5 mg daily,2026-03-29,Dr Hill,2026-06-11 13:01:28
+RX5089,P2089,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Adams,2026-06-11 13:01:29
+RX5090,P2090,Sertraline,10 mg daily,2026-03-31,Dr Baker,2026-06-11 13:01:30
+RX5091,P2091,Lisinopril,5 mg daily,2026-04-01,Dr Clark,2026-06-11 13:01:31
+RX5092,P2092,Metformin,500 mg twice daily,2026-04-02,Dr Davis,2026-06-11 13:01:32
+RX5093,P2093,Atorvastatin,10 mg daily,2026-04-03,Dr Evans,2026-06-11 13:01:33
+RX5094,P2094,Albuterol,5 mg daily,2026-04-04,Dr Foster,2026-06-11 13:01:34
+RX5095,P2095,Levothyroxine,500 mg twice daily,2026-04-05,Dr Grant,2026-06-11 13:01:35
+RX5096,P2096,Amlodipine,10 mg daily,2026-04-06,Dr Hill,2026-06-11 13:01:36
+RX5097,P2097,Omeprazole,5 mg daily,2026-04-07,Dr Adams,2026-06-11 13:01:37
+RX5098,P2098,Gabapentin,500 mg twice daily,2026-04-08,Dr Baker,2026-06-11 13:01:38
+RX5099,P2099,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Clark,2026-06-11 13:01:39
+RX5100,P2100,Sertraline,5 mg daily,2026-04-10,Dr Davis,2026-06-11 13:01:40
+RX5101,P2101,Lisinopril,500 mg twice daily,2026-04-11,Dr Evans,2026-06-11 13:01:41
+RX5102,P2102,Metformin,10 mg daily,2026-04-12,Dr Foster,2026-06-11 13:01:42
+RX5103,P2103,Atorvastatin,5 mg daily,2026-04-13,Dr Grant,2026-06-11 13:01:43
+RX5104,P2104,Albuterol,500 mg twice daily,2026-04-14,Dr Hill,2026-06-11 13:01:44
+RX5105,P2105,Levothyroxine,10 mg daily,2026-04-15,Dr Adams,2026-06-11 13:01:45
+RX5106,P2106,Amlodipine,5 mg daily,2026-04-16,Dr Baker,2026-06-11 13:01:46
+RX5107,P2107,Omeprazole,500 mg twice daily,2026-04-17,Dr Clark,2026-06-11 13:01:47
+RX5108,P2108,Gabapentin,10 mg daily,2026-04-18,Dr Davis,2026-06-11 13:01:48
+RX5109,P2109,Hydrochlorothiazide,5 mg daily,2026-04-19,Dr Evans,2026-06-11 13:01:49
+RX5110,P2110,Sertraline,500 mg twice daily,2026-04-20,Dr Foster,2026-06-11 13:01:50
+RX5111,P2111,Lisinopril,10 mg daily,2026-04-21,Dr Grant,2026-06-11 13:01:51
+RX5112,P2112,Metformin,5 mg daily,2026-04-22,Dr Hill,2026-06-11 13:01:52
+RX5113,P2113,Atorvastatin,500 mg twice daily,2026-04-23,Dr Adams,2026-06-11 13:01:53
+RX5114,P2114,Albuterol,10 mg daily,2026-04-24,Dr Baker,2026-06-11 13:01:54
+RX5115,P2115,Levothyroxine,5 mg daily,2026-04-25,Dr Clark,2026-06-11 13:01:55
+RX5116,P2116,Amlodipine,500 mg twice daily,2026-04-26,Dr Davis,2026-06-11 13:01:56
+RX5117,P2117,Omeprazole,10 mg daily,2026-04-27,Dr Evans,2026-06-11 13:01:57
+RX5118,P2118,Gabapentin,5 mg daily,2026-04-28,Dr Foster,2026-06-11 13:01:58
+RX5119,P2119,Hydrochlorothiazide,500 mg twice daily,2026-04-29,Dr Grant,2026-06-11 13:01:59
+RX5120,P2120,Sertraline,10 mg daily,2026-04-30,Dr Hill,2026-06-11 13:02:00
+RX5121,P2121,Lisinopril,5 mg daily,2026-05-01,Dr Adams,2026-06-11 13:02:01
+RX5122,P2122,Metformin,500 mg twice daily,2026-05-02,Dr Baker,2026-06-11 13:02:02
+RX5123,P2123,Atorvastatin,10 mg daily,2026-05-03,Dr Clark,2026-06-11 13:02:03
+RX5124,P2124,Albuterol,5 mg daily,2026-05-04,Dr Davis,2026-06-11 13:02:04
+RX5125,P2125,Levothyroxine,500 mg twice daily,2026-05-05,Dr Evans,2026-06-11 13:02:05
+RX5126,P2126,Amlodipine,10 mg daily,2026-05-06,Dr Foster,2026-06-11 13:02:06
+RX5127,P2127,Omeprazole,5 mg daily,2026-05-07,Dr Grant,2026-06-11 13:02:07
+RX5128,P2128,Gabapentin,500 mg twice daily,2026-05-08,Dr Hill,2026-06-11 13:02:08
+RX5129,P2129,Hydrochlorothiazide,10 mg daily,2026-05-09,Dr Adams,2026-06-11 13:02:09
+RX5130,P2130,Sertraline,5 mg daily,2026-05-10,Dr Baker,2026-06-11 13:02:10
+RX5131,P2131,Lisinopril,500 mg twice daily,2026-05-11,Dr Clark,2026-06-11 13:02:11
+RX5132,P2132,Metformin,10 mg daily,2026-05-12,Dr Davis,2026-06-11 13:02:12
+RX5133,P2133,Atorvastatin,5 mg daily,2026-05-13,Dr Evans,2026-06-11 13:02:13
+RX5134,P2134,Albuterol,500 mg twice daily,2026-05-14,Dr Foster,2026-06-11 13:02:14
+RX5135,P2135,Levothyroxine,10 mg daily,2026-05-15,Dr Grant,2026-06-11 13:02:15
+RX5136,P2136,Amlodipine,5 mg daily,2026-05-16,Dr Hill,2026-06-11 13:02:16
+RX5137,P2137,Omeprazole,500 mg twice daily,2026-05-17,Dr Adams,2026-06-11 13:02:17
+RX5138,P2138,Gabapentin,10 mg daily,2026-05-18,Dr Baker,2026-06-11 13:02:18
+RX5139,P2139,Hydrochlorothiazide,5 mg daily,2026-05-19,Dr Clark,2026-06-11 13:02:19
+RX5140,P2140,Sertraline,500 mg twice daily,2026-05-20,Dr Davis,2026-06-11 13:02:20
+RX5141,P2141,Lisinopril,10 mg daily,2026-05-21,Dr Evans,2026-06-11 13:02:21
+RX5142,P2142,Metformin,5 mg daily,2026-05-22,Dr Foster,2026-06-11 13:02:22
+RX5143,P2143,Atorvastatin,500 mg twice daily,2026-05-23,Dr Grant,2026-06-11 13:02:23
+RX5144,P2144,Albuterol,10 mg daily,2026-05-24,Dr Hill,2026-06-11 13:02:24
+RX5145,P2145,Levothyroxine,5 mg daily,2026-05-25,Dr Adams,2026-06-11 13:02:25
+RX5146,P2146,Amlodipine,500 mg twice daily,2026-05-26,Dr Baker,2026-06-11 13:02:26
+RX5147,P2147,Omeprazole,10 mg daily,2026-05-27,Dr Clark,2026-06-11 13:02:27
+RX5148,P2148,Gabapentin,5 mg daily,2026-05-28,Dr Davis,2026-06-11 13:02:28
+RX5149,P2149,Hydrochlorothiazide,500 mg twice daily,2026-05-29,Dr Evans,2026-06-11 13:02:29
+RX5150,P2150,Sertraline,10 mg daily,2026-05-30,Dr Foster,2026-06-11 13:02:30
+RX5151,P2151,Lisinopril,5 mg daily,2026-05-31,Dr Grant,2026-06-11 13:02:31
+RX5152,P2152,Metformin,500 mg twice daily,2026-06-01,Dr Hill,2026-06-11 13:02:32
+RX5153,P2153,Atorvastatin,10 mg daily,2026-06-02,Dr Adams,2026-06-11 13:02:33
+RX5154,P2154,Albuterol,5 mg daily,2026-06-03,Dr Baker,2026-06-11 13:02:34
+RX5155,P2155,Levothyroxine,500 mg twice daily,2026-06-04,Dr Clark,2026-06-11 13:02:35
+RX5156,P2156,Amlodipine,10 mg daily,2026-06-05,Dr Davis,2026-06-11 13:02:36
+RX5157,P2157,Omeprazole,5 mg daily,2026-06-06,Dr Evans,2026-06-11 13:02:37
+RX5158,P2158,Gabapentin,500 mg twice daily,2026-06-07,Dr Foster,2026-06-11 13:02:38
+RX5159,P2159,Hydrochlorothiazide,10 mg daily,2026-06-08,Dr Grant,2026-06-11 13:02:39
+RX5160,P2160,Sertraline,5 mg daily,2026-06-09,Dr Hill,2026-06-11 13:02:40
+RX5161,P2161,Lisinopril,500 mg twice daily,2026-06-10,Dr Adams,2026-06-11 13:02:41
+RX5162,P2162,Metformin,10 mg daily,2026-06-11,Dr Baker,2026-06-11 13:02:42
+RX5163,P2163,Atorvastatin,5 mg daily,2026-06-12,Dr Clark,2026-06-11 13:02:43
+RX5164,P2164,Albuterol,500 mg twice daily,2026-06-13,Dr Davis,2026-06-11 13:02:44
+RX5165,P2165,Levothyroxine,10 mg daily,2026-06-14,Dr Evans,2026-06-11 13:02:45
+RX5166,P2166,Amlodipine,5 mg daily,2026-06-15,Dr Foster,2026-06-11 13:02:46
+RX5167,P2167,Omeprazole,500 mg twice daily,2026-06-16,Dr Grant,2026-06-11 13:02:47
+RX5168,P2168,Gabapentin,10 mg daily,2026-06-17,Dr Hill,2026-06-11 13:02:48
+RX5169,P2169,Hydrochlorothiazide,5 mg daily,2026-06-18,Dr Adams,2026-06-11 13:02:49
+RX5170,P2170,Sertraline,500 mg twice daily,2026-06-19,Dr Baker,2026-06-11 13:02:50
+RX5171,P2171,Lisinopril,10 mg daily,2026-06-20,Dr Clark,2026-06-11 13:02:51
+RX5172,P2172,Metformin,5 mg daily,2026-06-21,Dr Davis,2026-06-11 13:02:52
+RX5173,P2173,Atorvastatin,500 mg twice daily,2026-06-22,Dr Evans,2026-06-11 13:02:53
+RX5174,P2174,Albuterol,10 mg daily,2026-06-23,Dr Foster,2026-06-11 13:02:54
+RX5175,P2175,Levothyroxine,5 mg daily,2026-06-24,Dr Grant,2026-06-11 13:02:55
+RX5176,P2176,Amlodipine,500 mg twice daily,2026-06-25,Dr Hill,2026-06-11 13:02:56
+RX5177,P2177,Omeprazole,10 mg daily,2026-06-26,Dr Adams,2026-06-11 13:02:57
+RX5178,P2178,Gabapentin,5 mg daily,2026-06-27,Dr Baker,2026-06-11 13:02:58
+RX5179,P2179,Hydrochlorothiazide,500 mg twice daily,2026-06-28,Dr Clark,2026-06-11 13:02:59
+RX5180,P2180,Sertraline,10 mg daily,2026-06-29,Dr Davis,2026-06-11 13:03:00
+RX5181,P2181,Lisinopril,5 mg daily,2026-01-01,Dr Evans,2026-06-11 13:03:01
+RX5182,P2182,Metformin,500 mg twice daily,2026-01-02,Dr Foster,2026-06-11 13:03:02
+RX5183,P2183,Atorvastatin,10 mg daily,2026-01-03,Dr Grant,2026-06-11 13:03:03
+RX5184,P2184,Albuterol,5 mg daily,2026-01-04,Dr Hill,2026-06-11 13:03:04
+RX5185,P2185,Levothyroxine,500 mg twice daily,2026-01-05,Dr Adams,2026-06-11 13:03:05
+RX5186,P2186,Amlodipine,10 mg daily,2026-01-06,Dr Baker,2026-06-11 13:03:06
+RX5187,P2187,Omeprazole,5 mg daily,2026-01-07,Dr Clark,2026-06-11 13:03:07
+RX5188,P2188,Gabapentin,500 mg twice daily,2026-01-08,Dr Davis,2026-06-11 13:03:08
+RX5189,P2189,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Evans,2026-06-11 13:03:09
+RX5190,P2190,Sertraline,5 mg daily,2026-01-10,Dr Foster,2026-06-11 13:03:10
+RX5191,P2191,Lisinopril,500 mg twice daily,2026-01-11,Dr Grant,2026-06-11 13:03:11
+RX5192,P2192,Metformin,10 mg daily,2026-01-12,Dr Hill,2026-06-11 13:03:12
+RX5193,P2193,Atorvastatin,5 mg daily,2026-01-13,Dr Adams,2026-06-11 13:03:13
+RX5194,P2194,Albuterol,500 mg twice daily,2026-01-14,Dr Baker,2026-06-11 13:03:14
+RX5195,P2195,Levothyroxine,10 mg daily,2026-01-15,Dr Clark,2026-06-11 13:03:15
+RX5196,P2196,Amlodipine,5 mg daily,2026-01-16,Dr Davis,2026-06-11 13:03:16
+RX5197,P2197,Omeprazole,500 mg twice daily,2026-01-17,Dr Evans,2026-06-11 13:03:17
+RX5198,P2198,Gabapentin,10 mg daily,2026-01-18,Dr Foster,2026-06-11 13:03:18
+RX5199,P2199,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Grant,2026-06-11 13:03:19
+RX5200,P2200,Sertraline,500 mg twice daily,2026-01-20,Dr Hill,2026-06-11 13:03:20
+RX5201,P2201,Lisinopril,10 mg daily,2026-01-21,Dr Adams,2026-06-11 13:03:21
+RX5202,P2202,Metformin,5 mg daily,2026-01-22,Dr Baker,2026-06-11 13:03:22
+RX5203,P2203,Atorvastatin,500 mg twice daily,2026-01-23,Dr Clark,2026-06-11 13:03:23
+RX5204,P2204,Albuterol,10 mg daily,2026-01-24,Dr Davis,2026-06-11 13:03:24
+RX5205,P2205,Levothyroxine,5 mg daily,2026-01-25,Dr Evans,2026-06-11 13:03:25
+RX5206,P2206,Amlodipine,500 mg twice daily,2026-01-26,Dr Foster,2026-06-11 13:03:26
+RX5207,P2207,Omeprazole,10 mg daily,2026-01-27,Dr Grant,2026-06-11 13:03:27
+RX5208,P2208,Gabapentin,5 mg daily,2026-01-28,Dr Hill,2026-06-11 13:03:28
+RX5209,P2209,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Adams,2026-06-11 13:03:29
+RX5210,P2210,Sertraline,10 mg daily,2026-01-30,Dr Baker,2026-06-11 13:03:30
+RX5211,P2211,Lisinopril,5 mg daily,2026-01-31,Dr Clark,2026-06-11 13:03:31
+RX5212,P2212,Metformin,500 mg twice daily,2026-02-01,Dr Davis,2026-06-11 13:03:32
+RX5213,P2213,Atorvastatin,10 mg daily,2026-02-02,Dr Evans,2026-06-11 13:03:33
+RX5214,P2214,Albuterol,5 mg daily,2026-02-03,Dr Foster,2026-06-11 13:03:34
+RX5215,P2215,Levothyroxine,500 mg twice daily,2026-02-04,Dr Grant,2026-06-11 13:03:35
+RX5216,P2216,Amlodipine,10 mg daily,2026-02-05,Dr Hill,2026-06-11 13:03:36
+RX5217,P2217,Omeprazole,5 mg daily,2026-02-06,Dr Adams,2026-06-11 13:03:37
+RX5218,P2218,Gabapentin,500 mg twice daily,2026-02-07,Dr Baker,2026-06-11 13:03:38
+RX5219,P2219,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Clark,2026-06-11 13:03:39
+RX5220,P2220,Sertraline,5 mg daily,2026-02-09,Dr Davis,2026-06-11 13:03:40
+RX5221,P2221,Lisinopril,500 mg twice daily,2026-02-10,Dr Evans,2026-06-11 13:03:41
+RX5222,P2222,Metformin,10 mg daily,2026-02-11,Dr Foster,2026-06-11 13:03:42
+RX5223,P2223,Atorvastatin,5 mg daily,2026-02-12,Dr Grant,2026-06-11 13:03:43
+RX5224,P2224,Albuterol,500 mg twice daily,2026-02-13,Dr Hill,2026-06-11 13:03:44
+RX5225,P2225,Levothyroxine,10 mg daily,2026-02-14,Dr Adams,2026-06-11 13:03:45
+RX5226,P2226,Amlodipine,5 mg daily,2026-02-15,Dr Baker,2026-06-11 13:03:46
+RX5227,P2227,Omeprazole,500 mg twice daily,2026-02-16,Dr Clark,2026-06-11 13:03:47
+RX5228,P2228,Gabapentin,10 mg daily,2026-02-17,Dr Davis,2026-06-11 13:03:48
+RX5229,P2229,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Evans,2026-06-11 13:03:49
+RX5230,P2230,Sertraline,500 mg twice daily,2026-02-19,Dr Foster,2026-06-11 13:03:50
+RX5231,P2231,Lisinopril,10 mg daily,2026-02-20,Dr Grant,2026-06-11 13:03:51
+RX5232,P2232,Metformin,5 mg daily,2026-02-21,Dr Hill,2026-06-11 13:03:52
+RX5233,P2233,Atorvastatin,500 mg twice daily,2026-02-22,Dr Adams,2026-06-11 13:03:53
+RX5234,P2234,Albuterol,10 mg daily,2026-02-23,Dr Baker,2026-06-11 13:03:54
+RX5235,P2235,Levothyroxine,5 mg daily,2026-02-24,Dr Clark,2026-06-11 13:03:55
+RX5236,P2236,Amlodipine,500 mg twice daily,2026-02-25,Dr Davis,2026-06-11 13:03:56
+RX5237,P2237,Omeprazole,10 mg daily,2026-02-26,Dr Evans,2026-06-11 13:03:57
+RX5238,P2238,Gabapentin,5 mg daily,2026-02-27,Dr Foster,2026-06-11 13:03:58
+RX5239,P2239,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Grant,2026-06-11 13:03:59
+RX5240,P2240,Sertraline,10 mg daily,2026-03-01,Dr Hill,2026-06-11 13:04:00
+RX5241,P2241,Lisinopril,5 mg daily,2026-03-02,Dr Adams,2026-06-11 13:04:01
+RX5242,P2242,Metformin,500 mg twice daily,2026-03-03,Dr Baker,2026-06-11 13:04:02
+RX5243,P2243,Atorvastatin,10 mg daily,2026-03-04,Dr Clark,2026-06-11 13:04:03
+RX5244,P2244,Albuterol,5 mg daily,2026-03-05,Dr Davis,2026-06-11 13:04:04
+RX5245,P2245,Levothyroxine,500 mg twice daily,2026-03-06,Dr Evans,2026-06-11 13:04:05
+RX5246,P2246,Amlodipine,10 mg daily,2026-03-07,Dr Foster,2026-06-11 13:04:06
+RX5247,P2247,Omeprazole,5 mg daily,2026-03-08,Dr Grant,2026-06-11 13:04:07
+RX5248,P2248,Gabapentin,500 mg twice daily,2026-03-09,Dr Hill,2026-06-11 13:04:08
+RX5249,P2249,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Adams,2026-06-11 13:04:09
+RX5250,P2250,Sertraline,5 mg daily,2026-03-11,Dr Baker,2026-06-11 13:04:10
+RX5251,P2251,Lisinopril,500 mg twice daily,2026-03-12,Dr Clark,2026-06-11 13:04:11
+RX5252,P2252,Metformin,10 mg daily,2026-03-13,Dr Davis,2026-06-11 13:04:12
+RX5253,P2253,Atorvastatin,5 mg daily,2026-03-14,Dr Evans,2026-06-11 13:04:13
+RX5254,P2254,Albuterol,500 mg twice daily,2026-03-15,Dr Foster,2026-06-11 13:04:14
+RX5255,P2255,Levothyroxine,10 mg daily,2026-03-16,Dr Grant,2026-06-11 13:04:15
+RX5256,P2256,Amlodipine,5 mg daily,2026-03-17,Dr Hill,2026-06-11 13:04:16
+RX5257,P2257,Omeprazole,500 mg twice daily,2026-03-18,Dr Adams,2026-06-11 13:04:17
+RX5258,P2258,Gabapentin,10 mg daily,2026-03-19,Dr Baker,2026-06-11 13:04:18
+RX5259,P2259,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Clark,2026-06-11 13:04:19
+RX5260,P2260,Sertraline,500 mg twice daily,2026-03-21,Dr Davis,2026-06-11 13:04:20
+RX5261,P2261,Lisinopril,10 mg daily,2026-03-22,Dr Evans,2026-06-11 13:04:21
+RX5262,P2262,Metformin,5 mg daily,2026-03-23,Dr Foster,2026-06-11 13:04:22
+RX5263,P2263,Atorvastatin,500 mg twice daily,2026-03-24,Dr Grant,2026-06-11 13:04:23
+RX5264,P2264,Albuterol,10 mg daily,2026-03-25,Dr Hill,2026-06-11 13:04:24
+RX5265,P2265,Levothyroxine,5 mg daily,2026-03-26,Dr Adams,2026-06-11 13:04:25
+RX5266,P2266,Amlodipine,500 mg twice daily,2026-03-27,Dr Baker,2026-06-11 13:04:26
+RX5267,P2267,Omeprazole,10 mg daily,2026-03-28,Dr Clark,2026-06-11 13:04:27
+RX5268,P2268,Gabapentin,5 mg daily,2026-03-29,Dr Davis,2026-06-11 13:04:28
+RX5269,P2269,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Evans,2026-06-11 13:04:29
+RX5270,P2270,Sertraline,10 mg daily,2026-03-31,Dr Foster,2026-06-11 13:04:30
+RX5271,P2271,Lisinopril,5 mg daily,2026-04-01,Dr Grant,2026-06-11 13:04:31
+RX5272,P2272,Metformin,500 mg twice daily,2026-04-02,Dr Hill,2026-06-11 13:04:32
+RX5273,P2273,Atorvastatin,10 mg daily,2026-04-03,Dr Adams,2026-06-11 13:04:33
+RX5274,P2274,Albuterol,5 mg daily,2026-04-04,Dr Baker,2026-06-11 13:04:34
+RX5275,P2275,Levothyroxine,500 mg twice daily,2026-04-05,Dr Clark,2026-06-11 13:04:35
+RX5276,P2276,Amlodipine,10 mg daily,2026-04-06,Dr Davis,2026-06-11 13:04:36
+RX5277,P2277,Omeprazole,5 mg daily,2026-04-07,Dr Evans,2026-06-11 13:04:37
+RX5278,P2278,Gabapentin,500 mg twice daily,2026-04-08,Dr Foster,2026-06-11 13:04:38
+RX5279,P2279,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Grant,2026-06-11 13:04:39
+RX5280,P2280,Sertraline,5 mg daily,2026-04-10,Dr Hill,2026-06-11 13:04:40
+RX5281,P2281,Lisinopril,500 mg twice daily,2026-04-11,Dr Adams,2026-06-11 13:04:41
+RX5282,P2282,Metformin,10 mg daily,2026-04-12,Dr Baker,2026-06-11 13:04:42
+RX5283,P2283,Atorvastatin,5 mg daily,2026-04-13,Dr Clark,2026-06-11 13:04:43
+RX5284,P2284,Albuterol,500 mg twice daily,2026-04-14,Dr Davis,2026-06-11 13:04:44
+RX5285,P2285,Levothyroxine,10 mg daily,2026-04-15,Dr Evans,2026-06-11 13:04:45
+RX5286,P2286,Amlodipine,5 mg daily,2026-04-16,Dr Foster,2026-06-11 13:04:46
+RX5287,P2287,Omeprazole,500 mg twice daily,2026-04-17,Dr Grant,2026-06-11 13:04:47
+RX5288,P2288,Gabapentin,10 mg daily,2026-04-18,Dr Hill,2026-06-11 13:04:48
+RX5289,P2289,Hydrochlorothiazide,5 mg daily,2026-04-19,Dr Adams,2026-06-11 13:04:49
+RX5290,P2290,Sertraline,500 mg twice daily,2026-04-20,Dr Baker,2026-06-11 13:04:50
+RX5291,P2291,Lisinopril,10 mg daily,2026-04-21,Dr Clark,2026-06-11 13:04:51
+RX5292,P2292,Metformin,5 mg daily,2026-04-22,Dr Davis,2026-06-11 13:04:52
+RX5293,P2293,Atorvastatin,500 mg twice daily,2026-04-23,Dr Evans,2026-06-11 13:04:53
+RX5294,P2294,Albuterol,10 mg daily,2026-04-24,Dr Foster,2026-06-11 13:04:54
+RX5295,P2295,Levothyroxine,5 mg daily,2026-04-25,Dr Grant,2026-06-11 13:04:55
+RX5296,P2296,Amlodipine,500 mg twice daily,2026-04-26,Dr Hill,2026-06-11 13:04:56
+RX5297,P2297,Omeprazole,10 mg daily,2026-04-27,Dr Adams,2026-06-11 13:04:57
+RX5298,P2298,Gabapentin,5 mg daily,2026-04-28,Dr Baker,2026-06-11 13:04:58
+RX5299,P2299,Hydrochlorothiazide,500 mg twice daily,2026-04-29,Dr Clark,2026-06-11 13:04:59
+RX5300,P2300,Sertraline,10 mg daily,2026-04-30,Dr Davis,2026-06-11 13:05:00
+RX5301,P2301,Lisinopril,5 mg daily,2026-05-01,Dr Evans,2026-06-11 13:05:01
+RX5302,P2302,Metformin,500 mg twice daily,2026-05-02,Dr Foster,2026-06-11 13:05:02
+RX5303,P2303,Atorvastatin,10 mg daily,2026-05-03,Dr Grant,2026-06-11 13:05:03
+RX5304,P2304,Albuterol,5 mg daily,2026-05-04,Dr Hill,2026-06-11 13:05:04
+RX5305,P2305,Levothyroxine,500 mg twice daily,2026-05-05,Dr Adams,2026-06-11 13:05:05
+RX5306,P2306,Amlodipine,10 mg daily,2026-05-06,Dr Baker,2026-06-11 13:05:06
+RX5307,P2307,Omeprazole,5 mg daily,2026-05-07,Dr Clark,2026-06-11 13:05:07
+RX5308,P2308,Gabapentin,500 mg twice daily,2026-05-08,Dr Davis,2026-06-11 13:05:08
+RX5309,P2309,Hydrochlorothiazide,10 mg daily,2026-05-09,Dr Evans,2026-06-11 13:05:09
+RX5310,P2310,Sertraline,5 mg daily,2026-05-10,Dr Foster,2026-06-11 13:05:10
+RX5311,P2311,Lisinopril,500 mg twice daily,2026-05-11,Dr Grant,2026-06-11 13:05:11
+RX5312,P2312,Metformin,10 mg daily,2026-05-12,Dr Hill,2026-06-11 13:05:12
+RX5313,P2313,Atorvastatin,5 mg daily,2026-05-13,Dr Adams,2026-06-11 13:05:13
+RX5314,P2314,Albuterol,500 mg twice daily,2026-05-14,Dr Baker,2026-06-11 13:05:14
+RX5315,P2315,Levothyroxine,10 mg daily,2026-05-15,Dr Clark,2026-06-11 13:05:15
+RX5316,P2316,Amlodipine,5 mg daily,2026-05-16,Dr Davis,2026-06-11 13:05:16
+RX5317,P2317,Omeprazole,500 mg twice daily,2026-05-17,Dr Evans,2026-06-11 13:05:17
+RX5318,P2318,Gabapentin,10 mg daily,2026-05-18,Dr Foster,2026-06-11 13:05:18
+RX5319,P2319,Hydrochlorothiazide,5 mg daily,2026-05-19,Dr Grant,2026-06-11 13:05:19
+RX5320,P2320,Sertraline,500 mg twice daily,2026-05-20,Dr Hill,2026-06-11 13:05:20
+RX5321,P2321,Lisinopril,10 mg daily,2026-05-21,Dr Adams,2026-06-11 13:05:21
+RX5322,P2322,Metformin,5 mg daily,2026-05-22,Dr Baker,2026-06-11 13:05:22
+RX5323,P2323,Atorvastatin,500 mg twice daily,2026-05-23,Dr Clark,2026-06-11 13:05:23
+RX5324,P2324,Albuterol,10 mg daily,2026-05-24,Dr Davis,2026-06-11 13:05:24
+RX5325,P2325,Levothyroxine,5 mg daily,2026-05-25,Dr Evans,2026-06-11 13:05:25
+RX5326,P2326,Amlodipine,500 mg twice daily,2026-05-26,Dr Foster,2026-06-11 13:05:26
+RX5327,P2327,Omeprazole,10 mg daily,2026-05-27,Dr Grant,2026-06-11 13:05:27
+RX5328,P2328,Gabapentin,5 mg daily,2026-05-28,Dr Hill,2026-06-11 13:05:28
+RX5329,P2329,Hydrochlorothiazide,500 mg twice daily,2026-05-29,Dr Adams,2026-06-11 13:05:29
+RX5330,P2330,Sertraline,10 mg daily,2026-05-30,Dr Baker,2026-06-11 13:05:30
+RX5331,P2331,Lisinopril,5 mg daily,2026-05-31,Dr Clark,2026-06-11 13:05:31
+RX5332,P2332,Metformin,500 mg twice daily,2026-06-01,Dr Davis,2026-06-11 13:05:32
+RX5333,P2333,Atorvastatin,10 mg daily,2026-06-02,Dr Evans,2026-06-11 13:05:33
+RX5334,P2334,Albuterol,5 mg daily,2026-06-03,Dr Foster,2026-06-11 13:05:34
+RX5335,P2335,Levothyroxine,500 mg twice daily,2026-06-04,Dr Grant,2026-06-11 13:05:35
+RX5336,P2336,Amlodipine,10 mg daily,2026-06-05,Dr Hill,2026-06-11 13:05:36
+RX5337,P2337,Omeprazole,5 mg daily,2026-06-06,Dr Adams,2026-06-11 13:05:37
+RX5338,P2338,Gabapentin,500 mg twice daily,2026-06-07,Dr Baker,2026-06-11 13:05:38
+RX5339,P2339,Hydrochlorothiazide,10 mg daily,2026-06-08,Dr Clark,2026-06-11 13:05:39
+RX5340,P2340,Sertraline,5 mg daily,2026-06-09,Dr Davis,2026-06-11 13:05:40
+RX5341,P2341,Lisinopril,500 mg twice daily,2026-06-10,Dr Evans,2026-06-11 13:05:41
+RX5342,P2342,Metformin,10 mg daily,2026-06-11,Dr Foster,2026-06-11 13:05:42
+RX5343,P2343,Atorvastatin,5 mg daily,2026-06-12,Dr Grant,2026-06-11 13:05:43
+RX5344,P2344,Albuterol,500 mg twice daily,2026-06-13,Dr Hill,2026-06-11 13:05:44
+RX5345,P2345,Levothyroxine,10 mg daily,2026-06-14,Dr Adams,2026-06-11 13:05:45
+RX5346,P2346,Amlodipine,5 mg daily,2026-06-15,Dr Baker,2026-06-11 13:05:46
+RX5347,P2347,Omeprazole,500 mg twice daily,2026-06-16,Dr Clark,2026-06-11 13:05:47
+RX5348,P2348,Gabapentin,10 mg daily,2026-06-17,Dr Davis,2026-06-11 13:05:48
+RX5349,P2349,Hydrochlorothiazide,5 mg daily,2026-06-18,Dr Evans,2026-06-11 13:05:49
+RX5350,P2350,Sertraline,500 mg twice daily,2026-06-19,Dr Foster,2026-06-11 13:05:50
+RX5351,P2351,Lisinopril,10 mg daily,2026-06-20,Dr Grant,2026-06-11 13:05:51
+RX5352,P2352,Metformin,5 mg daily,2026-06-21,Dr Hill,2026-06-11 13:05:52
+RX5353,P2353,Atorvastatin,500 mg twice daily,2026-06-22,Dr Adams,2026-06-11 13:05:53
+RX5354,P2354,Albuterol,10 mg daily,2026-06-23,Dr Baker,2026-06-11 13:05:54
+RX5355,P2355,Levothyroxine,5 mg daily,2026-06-24,Dr Clark,2026-06-11 13:05:55
+RX5356,P2356,Amlodipine,500 mg twice daily,2026-06-25,Dr Davis,2026-06-11 13:05:56
+RX5357,P2357,Omeprazole,10 mg daily,2026-06-26,Dr Evans,2026-06-11 13:05:57
+RX5358,P2358,Gabapentin,5 mg daily,2026-06-27,Dr Foster,2026-06-11 13:05:58
+RX5359,P2359,Hydrochlorothiazide,500 mg twice daily,2026-06-28,Dr Grant,2026-06-11 13:05:59
+RX5360,P2360,Sertraline,10 mg daily,2026-06-29,Dr Hill,2026-06-11 13:06:00
+RX5361,P2361,Lisinopril,5 mg daily,2026-01-01,Dr Adams,2026-06-11 13:06:01
+RX5362,P2362,Metformin,500 mg twice daily,2026-01-02,Dr Baker,2026-06-11 13:06:02
+RX5363,P2363,Atorvastatin,10 mg daily,2026-01-03,Dr Clark,2026-06-11 13:06:03
+RX5364,P2364,Albuterol,5 mg daily,2026-01-04,Dr Davis,2026-06-11 13:06:04
+RX5365,P2365,Levothyroxine,500 mg twice daily,2026-01-05,Dr Evans,2026-06-11 13:06:05
+RX5366,P2366,Amlodipine,10 mg daily,2026-01-06,Dr Foster,2026-06-11 13:06:06
+RX5367,P2367,Omeprazole,5 mg daily,2026-01-07,Dr Grant,2026-06-11 13:06:07
+RX5368,P2368,Gabapentin,500 mg twice daily,2026-01-08,Dr Hill,2026-06-11 13:06:08
+RX5369,P2369,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Adams,2026-06-11 13:06:09
+RX5370,P2370,Sertraline,5 mg daily,2026-01-10,Dr Baker,2026-06-11 13:06:10
+RX5371,P2371,Lisinopril,500 mg twice daily,2026-01-11,Dr Clark,2026-06-11 13:06:11
+RX5372,P2372,Metformin,10 mg daily,2026-01-12,Dr Davis,2026-06-11 13:06:12
+RX5373,P2373,Atorvastatin,5 mg daily,2026-01-13,Dr Evans,2026-06-11 13:06:13
+RX5374,P2374,Albuterol,500 mg twice daily,2026-01-14,Dr Foster,2026-06-11 13:06:14
+RX5375,P2375,Levothyroxine,10 mg daily,2026-01-15,Dr Grant,2026-06-11 13:06:15
+RX5376,P2376,Amlodipine,5 mg daily,2026-01-16,Dr Hill,2026-06-11 13:06:16
+RX5377,P2377,Omeprazole,500 mg twice daily,2026-01-17,Dr Adams,2026-06-11 13:06:17
+RX5378,P2378,Gabapentin,10 mg daily,2026-01-18,Dr Baker,2026-06-11 13:06:18
+RX5379,P2379,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Clark,2026-06-11 13:06:19
+RX5380,P2380,Sertraline,500 mg twice daily,2026-01-20,Dr Davis,2026-06-11 13:06:20
+RX5381,P2381,Lisinopril,10 mg daily,2026-01-21,Dr Evans,2026-06-11 13:06:21
+RX5382,P2382,Metformin,5 mg daily,2026-01-22,Dr Foster,2026-06-11 13:06:22
+RX5383,P2383,Atorvastatin,500 mg twice daily,2026-01-23,Dr Grant,2026-06-11 13:06:23
+RX5384,P2384,Albuterol,10 mg daily,2026-01-24,Dr Hill,2026-06-11 13:06:24
+RX5385,P2385,Levothyroxine,5 mg daily,2026-01-25,Dr Adams,2026-06-11 13:06:25
+RX5386,P2386,Amlodipine,500 mg twice daily,2026-01-26,Dr Baker,2026-06-11 13:06:26
+RX5387,P2387,Omeprazole,10 mg daily,2026-01-27,Dr Clark,2026-06-11 13:06:27
+RX5388,P2388,Gabapentin,5 mg daily,2026-01-28,Dr Davis,2026-06-11 13:06:28
+RX5389,P2389,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Evans,2026-06-11 13:06:29
+RX5390,P2390,Sertraline,10 mg daily,2026-01-30,Dr Foster,2026-06-11 13:06:30
+RX5391,P2391,Lisinopril,5 mg daily,2026-01-31,Dr Grant,2026-06-11 13:06:31
+RX5392,P2392,Metformin,500 mg twice daily,2026-02-01,Dr Hill,2026-06-11 13:06:32
+RX5393,P2393,Atorvastatin,10 mg daily,2026-02-02,Dr Adams,2026-06-11 13:06:33
+RX5394,P2394,Albuterol,5 mg daily,2026-02-03,Dr Baker,2026-06-11 13:06:34
+RX5395,P2395,Levothyroxine,500 mg twice daily,2026-02-04,Dr Clark,2026-06-11 13:06:35
+RX5396,P2396,Amlodipine,10 mg daily,2026-02-05,Dr Davis,2026-06-11 13:06:36
+RX5397,P2397,Omeprazole,5 mg daily,2026-02-06,Dr Evans,2026-06-11 13:06:37
+RX5398,P2398,Gabapentin,500 mg twice daily,2026-02-07,Dr Foster,2026-06-11 13:06:38
+RX5399,P2399,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Grant,2026-06-11 13:06:39
+RX5400,P2400,Sertraline,5 mg daily,2026-02-09,Dr Hill,2026-06-11 13:06:40
+RX5401,P2401,Lisinopril,500 mg twice daily,2026-02-10,Dr Adams,2026-06-11 13:06:41
+RX5402,P2402,Metformin,10 mg daily,2026-02-11,Dr Baker,2026-06-11 13:06:42
+RX5403,P2403,Atorvastatin,5 mg daily,2026-02-12,Dr Clark,2026-06-11 13:06:43
+RX5404,P2404,Albuterol,500 mg twice daily,2026-02-13,Dr Davis,2026-06-11 13:06:44
+RX5405,P2405,Levothyroxine,10 mg daily,2026-02-14,Dr Evans,2026-06-11 13:06:45
+RX5406,P2406,Amlodipine,5 mg daily,2026-02-15,Dr Foster,2026-06-11 13:06:46
+RX5407,P2407,Omeprazole,500 mg twice daily,2026-02-16,Dr Grant,2026-06-11 13:06:47
+RX5408,P2408,Gabapentin,10 mg daily,2026-02-17,Dr Hill,2026-06-11 13:06:48
+RX5409,P2409,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Adams,2026-06-11 13:06:49
+RX5410,P2410,Sertraline,500 mg twice daily,2026-02-19,Dr Baker,2026-06-11 13:06:50
+RX5411,P2411,Lisinopril,10 mg daily,2026-02-20,Dr Clark,2026-06-11 13:06:51
+RX5412,P2412,Metformin,5 mg daily,2026-02-21,Dr Davis,2026-06-11 13:06:52
+RX5413,P2413,Atorvastatin,500 mg twice daily,2026-02-22,Dr Evans,2026-06-11 13:06:53
+RX5414,P2414,Albuterol,10 mg daily,2026-02-23,Dr Foster,2026-06-11 13:06:54
+RX5415,P2415,Levothyroxine,5 mg daily,2026-02-24,Dr Grant,2026-06-11 13:06:55
+RX5416,P2416,Amlodipine,500 mg twice daily,2026-02-25,Dr Hill,2026-06-11 13:06:56
+RX5417,P2417,Omeprazole,10 mg daily,2026-02-26,Dr Adams,2026-06-11 13:06:57
+RX5418,P2418,Gabapentin,5 mg daily,2026-02-27,Dr Baker,2026-06-11 13:06:58
+RX5419,P2419,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Clark,2026-06-11 13:06:59
+RX5420,P2420,Sertraline,10 mg daily,2026-03-01,Dr Davis,2026-06-11 13:07:00
+RX5421,P2421,Lisinopril,5 mg daily,2026-03-02,Dr Evans,2026-06-11 13:07:01
+RX5422,P2422,Metformin,500 mg twice daily,2026-03-03,Dr Foster,2026-06-11 13:07:02
+RX5423,P2423,Atorvastatin,10 mg daily,2026-03-04,Dr Grant,2026-06-11 13:07:03
+RX5424,P2424,Albuterol,5 mg daily,2026-03-05,Dr Hill,2026-06-11 13:07:04
+RX5425,P2425,Levothyroxine,500 mg twice daily,2026-03-06,Dr Adams,2026-06-11 13:07:05
+RX5426,P2426,Amlodipine,10 mg daily,2026-03-07,Dr Baker,2026-06-11 13:07:06
+RX5427,P2427,Omeprazole,5 mg daily,2026-03-08,Dr Clark,2026-06-11 13:07:07
+RX5428,P2428,Gabapentin,500 mg twice daily,2026-03-09,Dr Davis,2026-06-11 13:07:08
+RX5429,P2429,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Evans,2026-06-11 13:07:09
+RX5430,P2430,Sertraline,5 mg daily,2026-03-11,Dr Foster,2026-06-11 13:07:10
+RX5431,P2431,Lisinopril,500 mg twice daily,2026-03-12,Dr Grant,2026-06-11 13:07:11
+RX5432,P2432,Metformin,10 mg daily,2026-03-13,Dr Hill,2026-06-11 13:07:12
+RX5433,P2433,Atorvastatin,5 mg daily,2026-03-14,Dr Adams,2026-06-11 13:07:13
+RX5434,P2434,Albuterol,500 mg twice daily,2026-03-15,Dr Baker,2026-06-11 13:07:14
+RX5435,P2435,Levothyroxine,10 mg daily,2026-03-16,Dr Clark,2026-06-11 13:07:15
+RX5436,P2436,Amlodipine,5 mg daily,2026-03-17,Dr Davis,2026-06-11 13:07:16
+RX5437,P2437,Omeprazole,500 mg twice daily,2026-03-18,Dr Evans,2026-06-11 13:07:17
+RX5438,P2438,Gabapentin,10 mg daily,2026-03-19,Dr Foster,2026-06-11 13:07:18
+RX5439,P2439,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Grant,2026-06-11 13:07:19
+RX5440,P2440,Sertraline,500 mg twice daily,2026-03-21,Dr Hill,2026-06-11 13:07:20
+RX5441,P2441,Lisinopril,10 mg daily,2026-03-22,Dr Adams,2026-06-11 13:07:21
+RX5442,P2442,Metformin,5 mg daily,2026-03-23,Dr Baker,2026-06-11 13:07:22
+RX5443,P2443,Atorvastatin,500 mg twice daily,2026-03-24,Dr Clark,2026-06-11 13:07:23
+RX5444,P2444,Albuterol,10 mg daily,2026-03-25,Dr Davis,2026-06-11 13:07:24
+RX5445,P2445,Levothyroxine,5 mg daily,2026-03-26,Dr Evans,2026-06-11 13:07:25
+RX5446,P2446,Amlodipine,500 mg twice daily,2026-03-27,Dr Foster,2026-06-11 13:07:26
+RX5447,P2447,Omeprazole,10 mg daily,2026-03-28,Dr Grant,2026-06-11 13:07:27
+RX5448,P2448,Gabapentin,5 mg daily,2026-03-29,Dr Hill,2026-06-11 13:07:28
+RX5449,P2449,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Adams,2026-06-11 13:07:29
+RX5450,P2450,Sertraline,10 mg daily,2026-03-31,Dr Baker,2026-06-11 13:07:30
+RX5451,P2451,Lisinopril,5 mg daily,2026-04-01,Dr Clark,2026-06-11 13:07:31
+RX5452,P2452,Metformin,500 mg twice daily,2026-04-02,Dr Davis,2026-06-11 13:07:32
+RX5453,P2453,Atorvastatin,10 mg daily,2026-04-03,Dr Evans,2026-06-11 13:07:33
+RX5454,P2454,Albuterol,5 mg daily,2026-04-04,Dr Foster,2026-06-11 13:07:34
+RX5455,P2455,Levothyroxine,500 mg twice daily,2026-04-05,Dr Grant,2026-06-11 13:07:35
+RX5456,P2456,Amlodipine,10 mg daily,2026-04-06,Dr Hill,2026-06-11 13:07:36
+RX5457,P2457,Omeprazole,5 mg daily,2026-04-07,Dr Adams,2026-06-11 13:07:37
+RX5458,P2458,Gabapentin,500 mg twice daily,2026-04-08,Dr Baker,2026-06-11 13:07:38
+RX5459,P2459,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Clark,2026-06-11 13:07:39
+RX5460,P2460,Sertraline,5 mg daily,2026-04-10,Dr Davis,2026-06-11 13:07:40
+RX5461,P2461,Lisinopril,500 mg twice daily,2026-04-11,Dr Evans,2026-06-11 13:07:41
+RX5462,P2462,Metformin,10 mg daily,2026-04-12,Dr Foster,2026-06-11 13:07:42
+RX5463,P2463,Atorvastatin,5 mg daily,2026-04-13,Dr Grant,2026-06-11 13:07:43
+RX5464,P2464,Albuterol,500 mg twice daily,2026-04-14,Dr Hill,2026-06-11 13:07:44
+RX5465,P2465,Levothyroxine,10 mg daily,2026-04-15,Dr Adams,2026-06-11 13:07:45
+RX5466,P2466,Amlodipine,5 mg daily,2026-04-16,Dr Baker,2026-06-11 13:07:46
+RX5467,P2467,Omeprazole,500 mg twice daily,2026-04-17,Dr Clark,2026-06-11 13:07:47
+RX5468,P2468,Gabapentin,10 mg daily,2026-04-18,Dr Davis,2026-06-11 13:07:48
+RX5469,P2469,Hydrochlorothiazide,5 mg daily,2026-04-19,Dr Evans,2026-06-11 13:07:49
+RX5470,P2470,Sertraline,500 mg twice daily,2026-04-20,Dr Foster,2026-06-11 13:07:50
+RX5471,P2471,Lisinopril,10 mg daily,2026-04-21,Dr Grant,2026-06-11 13:07:51
+RX5472,P2472,Metformin,5 mg daily,2026-04-22,Dr Hill,2026-06-11 13:07:52
+RX5473,P2473,Atorvastatin,500 mg twice daily,2026-04-23,Dr Adams,2026-06-11 13:07:53
+RX5474,P2474,Albuterol,10 mg daily,2026-04-24,Dr Baker,2026-06-11 13:07:54
+RX5475,P2475,Levothyroxine,5 mg daily,2026-04-25,Dr Clark,2026-06-11 13:07:55
+RX5476,P2476,Amlodipine,500 mg twice daily,2026-04-26,Dr Davis,2026-06-11 13:07:56
+RX5477,P2477,Omeprazole,10 mg daily,2026-04-27,Dr Evans,2026-06-11 13:07:57
+RX5478,P2478,Gabapentin,5 mg daily,2026-04-28,Dr Foster,2026-06-11 13:07:58
+RX5479,P2479,Hydrochlorothiazide,500 mg twice daily,2026-04-29,Dr Grant,2026-06-11 13:07:59
+RX5480,P2480,Sertraline,10 mg daily,2026-04-30,Dr Hill,2026-06-11 13:08:00
+RX5481,P2481,Lisinopril,5 mg daily,2026-05-01,Dr Adams,2026-06-11 13:08:01
+RX5482,P2482,Metformin,500 mg twice daily,2026-05-02,Dr Baker,2026-06-11 13:08:02
+RX5483,P2483,Atorvastatin,10 mg daily,2026-05-03,Dr Clark,2026-06-11 13:08:03
+RX5484,P2484,Albuterol,5 mg daily,2026-05-04,Dr Davis,2026-06-11 13:08:04
+RX5485,P2485,Levothyroxine,500 mg twice daily,2026-05-05,Dr Evans,2026-06-11 13:08:05
+RX5486,P2486,Amlodipine,10 mg daily,2026-05-06,Dr Foster,2026-06-11 13:08:06
+RX5487,P2487,Omeprazole,5 mg daily,2026-05-07,Dr Grant,2026-06-11 13:08:07
+RX5488,P2488,Gabapentin,500 mg twice daily,2026-05-08,Dr Hill,2026-06-11 13:08:08
+RX5489,P2489,Hydrochlorothiazide,10 mg daily,2026-05-09,Dr Adams,2026-06-11 13:08:09
+RX5490,P2490,Sertraline,5 mg daily,2026-05-10,Dr Baker,2026-06-11 13:08:10
+RX5491,P2491,Lisinopril,500 mg twice daily,2026-05-11,Dr Clark,2026-06-11 13:08:11
+RX5492,P2492,Metformin,10 mg daily,2026-05-12,Dr Davis,2026-06-11 13:08:12
+RX5493,P2493,Atorvastatin,5 mg daily,2026-05-13,Dr Evans,2026-06-11 13:08:13
+RX5494,P2494,Albuterol,500 mg twice daily,2026-05-14,Dr Foster,2026-06-11 13:08:14
+RX5495,P2495,Levothyroxine,10 mg daily,2026-05-15,Dr Grant,2026-06-11 13:08:15
+RX5496,P2496,Amlodipine,5 mg daily,2026-05-16,Dr Hill,2026-06-11 13:08:16
+RX5497,P2497,Omeprazole,500 mg twice daily,2026-05-17,Dr Adams,2026-06-11 13:08:17
+RX5498,P2498,Gabapentin,10 mg daily,2026-05-18,Dr Baker,2026-06-11 13:08:18
+RX5499,P2499,Hydrochlorothiazide,5 mg daily,2026-05-19,Dr Clark,2026-06-11 13:08:19
+RX5500,P2500,Sertraline,500 mg twice daily,2026-05-20,Dr Davis,2026-06-11 13:08:20
+RX5501,P2501,Lisinopril,10 mg daily,2026-05-21,Dr Evans,2026-06-11 13:08:21
+RX5502,P2502,Metformin,5 mg daily,2026-05-22,Dr Foster,2026-06-11 13:08:22
+RX5503,P2503,Atorvastatin,500 mg twice daily,2026-05-23,Dr Grant,2026-06-11 13:08:23
+RX5504,P2504,Albuterol,10 mg daily,2026-05-24,Dr Hill,2026-06-11 13:08:24
+RX5505,P2505,Levothyroxine,5 mg daily,2026-05-25,Dr Adams,2026-06-11 13:08:25
+RX5506,P2506,Amlodipine,500 mg twice daily,2026-05-26,Dr Baker,2026-06-11 13:08:26
+RX5507,P2507,Omeprazole,10 mg daily,2026-05-27,Dr Clark,2026-06-11 13:08:27
+RX5508,P2508,Gabapentin,5 mg daily,2026-05-28,Dr Davis,2026-06-11 13:08:28
+RX5509,P2509,Hydrochlorothiazide,500 mg twice daily,2026-05-29,Dr Evans,2026-06-11 13:08:29
+RX5510,P2510,Sertraline,10 mg daily,2026-05-30,Dr Foster,2026-06-11 13:08:30
+RX5511,P2511,Lisinopril,5 mg daily,2026-05-31,Dr Grant,2026-06-11 13:08:31
+RX5512,P2512,Metformin,500 mg twice daily,2026-06-01,Dr Hill,2026-06-11 13:08:32
+RX5513,P2513,Atorvastatin,10 mg daily,2026-06-02,Dr Adams,2026-06-11 13:08:33
+RX5514,P2514,Albuterol,5 mg daily,2026-06-03,Dr Baker,2026-06-11 13:08:34
+RX5515,P2515,Levothyroxine,500 mg twice daily,2026-06-04,Dr Clark,2026-06-11 13:08:35
+RX5516,P2516,Amlodipine,10 mg daily,2026-06-05,Dr Davis,2026-06-11 13:08:36
+RX5517,P2517,Omeprazole,5 mg daily,2026-06-06,Dr Evans,2026-06-11 13:08:37
+RX5518,P2518,Gabapentin,500 mg twice daily,2026-06-07,Dr Foster,2026-06-11 13:08:38
+RX5519,P2519,Hydrochlorothiazide,10 mg daily,2026-06-08,Dr Grant,2026-06-11 13:08:39
+RX5520,P2520,Sertraline,5 mg daily,2026-06-09,Dr Hill,2026-06-11 13:08:40
+RX5521,P2521,Lisinopril,500 mg twice daily,2026-06-10,Dr Adams,2026-06-11 13:08:41
+RX5522,P2522,Metformin,10 mg daily,2026-06-11,Dr Baker,2026-06-11 13:08:42
+RX5523,P2523,Atorvastatin,5 mg daily,2026-06-12,Dr Clark,2026-06-11 13:08:43
+RX5524,P2524,Albuterol,500 mg twice daily,2026-06-13,Dr Davis,2026-06-11 13:08:44
+RX5525,P2525,Levothyroxine,10 mg daily,2026-06-14,Dr Evans,2026-06-11 13:08:45
+RX5526,P2526,Amlodipine,5 mg daily,2026-06-15,Dr Foster,2026-06-11 13:08:46
+RX5527,P2527,Omeprazole,500 mg twice daily,2026-06-16,Dr Grant,2026-06-11 13:08:47
+RX5528,P2528,Gabapentin,10 mg daily,2026-06-17,Dr Hill,2026-06-11 13:08:48
+RX5529,P2529,Hydrochlorothiazide,5 mg daily,2026-06-18,Dr Adams,2026-06-11 13:08:49
+RX5530,P2530,Sertraline,500 mg twice daily,2026-06-19,Dr Baker,2026-06-11 13:08:50
+RX5531,P2531,Lisinopril,10 mg daily,2026-06-20,Dr Clark,2026-06-11 13:08:51
+RX5532,P2532,Metformin,5 mg daily,2026-06-21,Dr Davis,2026-06-11 13:08:52
+RX5533,P2533,Atorvastatin,500 mg twice daily,2026-06-22,Dr Evans,2026-06-11 13:08:53
+RX5534,P2534,Albuterol,10 mg daily,2026-06-23,Dr Foster,2026-06-11 13:08:54
+RX5535,P2535,Levothyroxine,5 mg daily,2026-06-24,Dr Grant,2026-06-11 13:08:55
+RX5536,P2536,Amlodipine,500 mg twice daily,2026-06-25,Dr Hill,2026-06-11 13:08:56
+RX5537,P2537,Omeprazole,10 mg daily,2026-06-26,Dr Adams,2026-06-11 13:08:57
+RX5538,P2538,Gabapentin,5 mg daily,2026-06-27,Dr Baker,2026-06-11 13:08:58
+RX5539,P2539,Hydrochlorothiazide,500 mg twice daily,2026-06-28,Dr Clark,2026-06-11 13:08:59
+RX5540,P2540,Sertraline,10 mg daily,2026-06-29,Dr Davis,2026-06-11 13:09:00
+RX5541,P2541,Lisinopril,5 mg daily,2026-01-01,Dr Evans,2026-06-11 13:09:01
+RX5542,P2542,Metformin,500 mg twice daily,2026-01-02,Dr Foster,2026-06-11 13:09:02
+RX5543,P2543,Atorvastatin,10 mg daily,2026-01-03,Dr Grant,2026-06-11 13:09:03
+RX5544,P2544,Albuterol,5 mg daily,2026-01-04,Dr Hill,2026-06-11 13:09:04
+RX5545,P2545,Levothyroxine,500 mg twice daily,2026-01-05,Dr Adams,2026-06-11 13:09:05
+RX5546,P2546,Amlodipine,10 mg daily,2026-01-06,Dr Baker,2026-06-11 13:09:06
+RX5547,P2547,Omeprazole,5 mg daily,2026-01-07,Dr Clark,2026-06-11 13:09:07
+RX5548,P2548,Gabapentin,500 mg twice daily,2026-01-08,Dr Davis,2026-06-11 13:09:08
+RX5549,P2549,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Evans,2026-06-11 13:09:09
+RX5550,P2550,Sertraline,5 mg daily,2026-01-10,Dr Foster,2026-06-11 13:09:10
+RX5551,P2551,Lisinopril,500 mg twice daily,2026-01-11,Dr Grant,2026-06-11 13:09:11
+RX5552,P2552,Metformin,10 mg daily,2026-01-12,Dr Hill,2026-06-11 13:09:12
+RX5553,P2553,Atorvastatin,5 mg daily,2026-01-13,Dr Adams,2026-06-11 13:09:13
+RX5554,P2554,Albuterol,500 mg twice daily,2026-01-14,Dr Baker,2026-06-11 13:09:14
+RX5555,P2555,Levothyroxine,10 mg daily,2026-01-15,Dr Clark,2026-06-11 13:09:15
+RX5556,P2556,Amlodipine,5 mg daily,2026-01-16,Dr Davis,2026-06-11 13:09:16
+RX5557,P2557,Omeprazole,500 mg twice daily,2026-01-17,Dr Evans,2026-06-11 13:09:17
+RX5558,P2558,Gabapentin,10 mg daily,2026-01-18,Dr Foster,2026-06-11 13:09:18
+RX5559,P2559,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Grant,2026-06-11 13:09:19
+RX5560,P2560,Sertraline,500 mg twice daily,2026-01-20,Dr Hill,2026-06-11 13:09:20
+RX5561,P2561,Lisinopril,10 mg daily,2026-01-21,Dr Adams,2026-06-11 13:09:21
+RX5562,P2562,Metformin,5 mg daily,2026-01-22,Dr Baker,2026-06-11 13:09:22
+RX5563,P2563,Atorvastatin,500 mg twice daily,2026-01-23,Dr Clark,2026-06-11 13:09:23
+RX5564,P2564,Albuterol,10 mg daily,2026-01-24,Dr Davis,2026-06-11 13:09:24
+RX5565,P2565,Levothyroxine,5 mg daily,2026-01-25,Dr Evans,2026-06-11 13:09:25
+RX5566,P2566,Amlodipine,500 mg twice daily,2026-01-26,Dr Foster,2026-06-11 13:09:26
+RX5567,P2567,Omeprazole,10 mg daily,2026-01-27,Dr Grant,2026-06-11 13:09:27
+RX5568,P2568,Gabapentin,5 mg daily,2026-01-28,Dr Hill,2026-06-11 13:09:28
+RX5569,P2569,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Adams,2026-06-11 13:09:29
+RX5570,P2570,Sertraline,10 mg daily,2026-01-30,Dr Baker,2026-06-11 13:09:30
+RX5571,P2571,Lisinopril,5 mg daily,2026-01-31,Dr Clark,2026-06-11 13:09:31
+RX5572,P2572,Metformin,500 mg twice daily,2026-02-01,Dr Davis,2026-06-11 13:09:32
+RX5573,P2573,Atorvastatin,10 mg daily,2026-02-02,Dr Evans,2026-06-11 13:09:33
+RX5574,P2574,Albuterol,5 mg daily,2026-02-03,Dr Foster,2026-06-11 13:09:34
+RX5575,P2575,Levothyroxine,500 mg twice daily,2026-02-04,Dr Grant,2026-06-11 13:09:35
+RX5576,P2576,Amlodipine,10 mg daily,2026-02-05,Dr Hill,2026-06-11 13:09:36
+RX5577,P2577,Omeprazole,5 mg daily,2026-02-06,Dr Adams,2026-06-11 13:09:37
+RX5578,P2578,Gabapentin,500 mg twice daily,2026-02-07,Dr Baker,2026-06-11 13:09:38
+RX5579,P2579,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Clark,2026-06-11 13:09:39
+RX5580,P2580,Sertraline,5 mg daily,2026-02-09,Dr Davis,2026-06-11 13:09:40
+RX5581,P2581,Lisinopril,500 mg twice daily,2026-02-10,Dr Evans,2026-06-11 13:09:41
+RX5582,P2582,Metformin,10 mg daily,2026-02-11,Dr Foster,2026-06-11 13:09:42
+RX5583,P2583,Atorvastatin,5 mg daily,2026-02-12,Dr Grant,2026-06-11 13:09:43
+RX5584,P2584,Albuterol,500 mg twice daily,2026-02-13,Dr Hill,2026-06-11 13:09:44
+RX5585,P2585,Levothyroxine,10 mg daily,2026-02-14,Dr Adams,2026-06-11 13:09:45
+RX5586,P2586,Amlodipine,5 mg daily,2026-02-15,Dr Baker,2026-06-11 13:09:46
+RX5587,P2587,Omeprazole,500 mg twice daily,2026-02-16,Dr Clark,2026-06-11 13:09:47
+RX5588,P2588,Gabapentin,10 mg daily,2026-02-17,Dr Davis,2026-06-11 13:09:48
+RX5589,P2589,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Evans,2026-06-11 13:09:49
+RX5590,P2590,Sertraline,500 mg twice daily,2026-02-19,Dr Foster,2026-06-11 13:09:50
+RX5591,P2591,Lisinopril,10 mg daily,2026-02-20,Dr Grant,2026-06-11 13:09:51
+RX5592,P2592,Metformin,5 mg daily,2026-02-21,Dr Hill,2026-06-11 13:09:52
+RX5593,P2593,Atorvastatin,500 mg twice daily,2026-02-22,Dr Adams,2026-06-11 13:09:53
+RX5594,P2594,Albuterol,10 mg daily,2026-02-23,Dr Baker,2026-06-11 13:09:54
+RX5595,P2595,Levothyroxine,5 mg daily,2026-02-24,Dr Clark,2026-06-11 13:09:55
+RX5596,P2596,Amlodipine,500 mg twice daily,2026-02-25,Dr Davis,2026-06-11 13:09:56
+RX5597,P2597,Omeprazole,10 mg daily,2026-02-26,Dr Evans,2026-06-11 13:09:57
+RX5598,P2598,Gabapentin,5 mg daily,2026-02-27,Dr Foster,2026-06-11 13:09:58
+RX5599,P2599,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Grant,2026-06-11 13:09:59
+RX5600,P2600,Sertraline,10 mg daily,2026-03-01,Dr Hill,2026-06-11 13:10:00
+RX5601,P2601,Lisinopril,5 mg daily,2026-03-02,Dr Adams,2026-06-11 13:10:01
+RX5602,P2602,Metformin,500 mg twice daily,2026-03-03,Dr Baker,2026-06-11 13:10:02
+RX5603,P2603,Atorvastatin,10 mg daily,2026-03-04,Dr Clark,2026-06-11 13:10:03
+RX5604,P2604,Albuterol,5 mg daily,2026-03-05,Dr Davis,2026-06-11 13:10:04
+RX5605,P2605,Levothyroxine,500 mg twice daily,2026-03-06,Dr Evans,2026-06-11 13:10:05
+RX5606,P2606,Amlodipine,10 mg daily,2026-03-07,Dr Foster,2026-06-11 13:10:06
+RX5607,P2607,Omeprazole,5 mg daily,2026-03-08,Dr Grant,2026-06-11 13:10:07
+RX5608,P2608,Gabapentin,500 mg twice daily,2026-03-09,Dr Hill,2026-06-11 13:10:08
+RX5609,P2609,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Adams,2026-06-11 13:10:09
+RX5610,P2610,Sertraline,5 mg daily,2026-03-11,Dr Baker,2026-06-11 13:10:10
+RX5611,P2611,Lisinopril,500 mg twice daily,2026-03-12,Dr Clark,2026-06-11 13:10:11
+RX5612,P2612,Metformin,10 mg daily,2026-03-13,Dr Davis,2026-06-11 13:10:12
+RX5613,P2613,Atorvastatin,5 mg daily,2026-03-14,Dr Evans,2026-06-11 13:10:13
+RX5614,P2614,Albuterol,500 mg twice daily,2026-03-15,Dr Foster,2026-06-11 13:10:14
+RX5615,P2615,Levothyroxine,10 mg daily,2026-03-16,Dr Grant,2026-06-11 13:10:15
+RX5616,P2616,Amlodipine,5 mg daily,2026-03-17,Dr Hill,2026-06-11 13:10:16
+RX5617,P2617,Omeprazole,500 mg twice daily,2026-03-18,Dr Adams,2026-06-11 13:10:17
+RX5618,P2618,Gabapentin,10 mg daily,2026-03-19,Dr Baker,2026-06-11 13:10:18
+RX5619,P2619,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Clark,2026-06-11 13:10:19
+RX5620,P2620,Sertraline,500 mg twice daily,2026-03-21,Dr Davis,2026-06-11 13:10:20
+RX5621,P2621,Lisinopril,10 mg daily,2026-03-22,Dr Evans,2026-06-11 13:10:21
+RX5622,P2622,Metformin,5 mg daily,2026-03-23,Dr Foster,2026-06-11 13:10:22
+RX5623,P2623,Atorvastatin,500 mg twice daily,2026-03-24,Dr Grant,2026-06-11 13:10:23
+RX5624,P2624,Albuterol,10 mg daily,2026-03-25,Dr Hill,2026-06-11 13:10:24
+RX5625,P2625,Levothyroxine,5 mg daily,2026-03-26,Dr Adams,2026-06-11 13:10:25
+RX5626,P2626,Amlodipine,500 mg twice daily,2026-03-27,Dr Baker,2026-06-11 13:10:26
+RX5627,P2627,Omeprazole,10 mg daily,2026-03-28,Dr Clark,2026-06-11 13:10:27
+RX5628,P2628,Gabapentin,5 mg daily,2026-03-29,Dr Davis,2026-06-11 13:10:28
+RX5629,P2629,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Evans,2026-06-11 13:10:29
+RX5630,P2630,Sertraline,10 mg daily,2026-03-31,Dr Foster,2026-06-11 13:10:30
+RX5631,P2631,Lisinopril,5 mg daily,2026-04-01,Dr Grant,2026-06-11 13:10:31
+RX5632,P2632,Metformin,500 mg twice daily,2026-04-02,Dr Hill,2026-06-11 13:10:32
+RX5633,P2633,Atorvastatin,10 mg daily,2026-04-03,Dr Adams,2026-06-11 13:10:33
+RX5634,P2634,Albuterol,5 mg daily,2026-04-04,Dr Baker,2026-06-11 13:10:34
+RX5635,P2635,Levothyroxine,500 mg twice daily,2026-04-05,Dr Clark,2026-06-11 13:10:35
+RX5636,P2636,Amlodipine,10 mg daily,2026-04-06,Dr Davis,2026-06-11 13:10:36
+RX5637,P2637,Omeprazole,5 mg daily,2026-04-07,Dr Evans,2026-06-11 13:10:37
+RX5638,P2638,Gabapentin,500 mg twice daily,2026-04-08,Dr Foster,2026-06-11 13:10:38
+RX5639,P2639,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Grant,2026-06-11 13:10:39
+RX5640,P2640,Sertraline,5 mg daily,2026-04-10,Dr Hill,2026-06-11 13:10:40
+RX5641,P2641,Lisinopril,500 mg twice daily,2026-04-11,Dr Adams,2026-06-11 13:10:41
+RX5642,P2642,Metformin,10 mg daily,2026-04-12,Dr Baker,2026-06-11 13:10:42
+RX5643,P2643,Atorvastatin,5 mg daily,2026-04-13,Dr Clark,2026-06-11 13:10:43
+RX5644,P2644,Albuterol,500 mg twice daily,2026-04-14,Dr Davis,2026-06-11 13:10:44
+RX5645,P2645,Levothyroxine,10 mg daily,2026-04-15,Dr Evans,2026-06-11 13:10:45
+RX5646,P2646,Amlodipine,5 mg daily,2026-04-16,Dr Foster,2026-06-11 13:10:46
+RX5647,P2647,Omeprazole,500 mg twice daily,2026-04-17,Dr Grant,2026-06-11 13:10:47
+RX5648,P2648,Gabapentin,10 mg daily,2026-04-18,Dr Hill,2026-06-11 13:10:48
+RX5649,P2649,Hydrochlorothiazide,5 mg daily,2026-04-19,Dr Adams,2026-06-11 13:10:49
+RX5650,P2650,Sertraline,500 mg twice daily,2026-04-20,Dr Baker,2026-06-11 13:10:50
+RX5651,P2651,Lisinopril,10 mg daily,2026-04-21,Dr Clark,2026-06-11 13:10:51
+RX5652,P2652,Metformin,5 mg daily,2026-04-22,Dr Davis,2026-06-11 13:10:52
+RX5653,P2653,Atorvastatin,500 mg twice daily,2026-04-23,Dr Evans,2026-06-11 13:10:53
+RX5654,P2654,Albuterol,10 mg daily,2026-04-24,Dr Foster,2026-06-11 13:10:54
+RX5655,P2655,Levothyroxine,5 mg daily,2026-04-25,Dr Grant,2026-06-11 13:10:55
+RX5656,P2656,Amlodipine,500 mg twice daily,2026-04-26,Dr Hill,2026-06-11 13:10:56
+RX5657,P2657,Omeprazole,10 mg daily,2026-04-27,Dr Adams,2026-06-11 13:10:57
+RX5658,P2658,Gabapentin,5 mg daily,2026-04-28,Dr Baker,2026-06-11 13:10:58
+RX5659,P2659,Hydrochlorothiazide,500 mg twice daily,2026-04-29,Dr Clark,2026-06-11 13:10:59
+RX5660,P2660,Sertraline,10 mg daily,2026-04-30,Dr Davis,2026-06-11 13:11:00
+RX5661,P2661,Lisinopril,5 mg daily,2026-05-01,Dr Evans,2026-06-11 13:11:01
+RX5662,P2662,Metformin,500 mg twice daily,2026-05-02,Dr Foster,2026-06-11 13:11:02
+RX5663,P2663,Atorvastatin,10 mg daily,2026-05-03,Dr Grant,2026-06-11 13:11:03
+RX5664,P2664,Albuterol,5 mg daily,2026-05-04,Dr Hill,2026-06-11 13:11:04
+RX5665,P2665,Levothyroxine,500 mg twice daily,2026-05-05,Dr Adams,2026-06-11 13:11:05
+RX5666,P2666,Amlodipine,10 mg daily,2026-05-06,Dr Baker,2026-06-11 13:11:06
+RX5667,P2667,Omeprazole,5 mg daily,2026-05-07,Dr Clark,2026-06-11 13:11:07
+RX5668,P2668,Gabapentin,500 mg twice daily,2026-05-08,Dr Davis,2026-06-11 13:11:08
+RX5669,P2669,Hydrochlorothiazide,10 mg daily,2026-05-09,Dr Evans,2026-06-11 13:11:09
+RX5670,P2670,Sertraline,5 mg daily,2026-05-10,Dr Foster,2026-06-11 13:11:10
+RX5671,P2671,Lisinopril,500 mg twice daily,2026-05-11,Dr Grant,2026-06-11 13:11:11
+RX5672,P2672,Metformin,10 mg daily,2026-05-12,Dr Hill,2026-06-11 13:11:12
+RX5673,P2673,Atorvastatin,5 mg daily,2026-05-13,Dr Adams,2026-06-11 13:11:13
+RX5674,P2674,Albuterol,500 mg twice daily,2026-05-14,Dr Baker,2026-06-11 13:11:14
+RX5675,P2675,Levothyroxine,10 mg daily,2026-05-15,Dr Clark,2026-06-11 13:11:15
+RX5676,P2676,Amlodipine,5 mg daily,2026-05-16,Dr Davis,2026-06-11 13:11:16
+RX5677,P2677,Omeprazole,500 mg twice daily,2026-05-17,Dr Evans,2026-06-11 13:11:17
+RX5678,P2678,Gabapentin,10 mg daily,2026-05-18,Dr Foster,2026-06-11 13:11:18
+RX5679,P2679,Hydrochlorothiazide,5 mg daily,2026-05-19,Dr Grant,2026-06-11 13:11:19
+RX5680,P2680,Sertraline,500 mg twice daily,2026-05-20,Dr Hill,2026-06-11 13:11:20
+RX5681,P2681,Lisinopril,10 mg daily,2026-05-21,Dr Adams,2026-06-11 13:11:21
+RX5682,P2682,Metformin,5 mg daily,2026-05-22,Dr Baker,2026-06-11 13:11:22
+RX5683,P2683,Atorvastatin,500 mg twice daily,2026-05-23,Dr Clark,2026-06-11 13:11:23
+RX5684,P2684,Albuterol,10 mg daily,2026-05-24,Dr Davis,2026-06-11 13:11:24
+RX5685,P2685,Levothyroxine,5 mg daily,2026-05-25,Dr Evans,2026-06-11 13:11:25
+RX5686,P2686,Amlodipine,500 mg twice daily,2026-05-26,Dr Foster,2026-06-11 13:11:26
+RX5687,P2687,Omeprazole,10 mg daily,2026-05-27,Dr Grant,2026-06-11 13:11:27
+RX5688,P2688,Gabapentin,5 mg daily,2026-05-28,Dr Hill,2026-06-11 13:11:28
+RX5689,P2689,Hydrochlorothiazide,500 mg twice daily,2026-05-29,Dr Adams,2026-06-11 13:11:29
+RX5690,P2690,Sertraline,10 mg daily,2026-05-30,Dr Baker,2026-06-11 13:11:30
+RX5691,P2691,Lisinopril,5 mg daily,2026-05-31,Dr Clark,2026-06-11 13:11:31
+RX5692,P2692,Metformin,500 mg twice daily,2026-06-01,Dr Davis,2026-06-11 13:11:32
+RX5693,P2693,Atorvastatin,10 mg daily,2026-06-02,Dr Evans,2026-06-11 13:11:33
+RX5694,P2694,Albuterol,5 mg daily,2026-06-03,Dr Foster,2026-06-11 13:11:34
+RX5695,P2695,Levothyroxine,500 mg twice daily,2026-06-04,Dr Grant,2026-06-11 13:11:35
+RX5696,P2696,Amlodipine,10 mg daily,2026-06-05,Dr Hill,2026-06-11 13:11:36
+RX5697,P2697,Omeprazole,5 mg daily,2026-06-06,Dr Adams,2026-06-11 13:11:37
+RX5698,P2698,Gabapentin,500 mg twice daily,2026-06-07,Dr Baker,2026-06-11 13:11:38
+RX5699,P2699,Hydrochlorothiazide,10 mg daily,2026-06-08,Dr Clark,2026-06-11 13:11:39
+RX5700,P2700,Sertraline,5 mg daily,2026-06-09,Dr Davis,2026-06-11 13:11:40
+RX5701,P2701,Lisinopril,500 mg twice daily,2026-06-10,Dr Evans,2026-06-11 13:11:41
+RX5702,P2702,Metformin,10 mg daily,2026-06-11,Dr Foster,2026-06-11 13:11:42
+RX5703,P2703,Atorvastatin,5 mg daily,2026-06-12,Dr Grant,2026-06-11 13:11:43
+RX5704,P2704,Albuterol,500 mg twice daily,2026-06-13,Dr Hill,2026-06-11 13:11:44
+RX5705,P2705,Levothyroxine,10 mg daily,2026-06-14,Dr Adams,2026-06-11 13:11:45
+RX5706,P2706,Amlodipine,5 mg daily,2026-06-15,Dr Baker,2026-06-11 13:11:46
+RX5707,P2707,Omeprazole,500 mg twice daily,2026-06-16,Dr Clark,2026-06-11 13:11:47
+RX5708,P2708,Gabapentin,10 mg daily,2026-06-17,Dr Davis,2026-06-11 13:11:48
+RX5709,P2709,Hydrochlorothiazide,5 mg daily,2026-06-18,Dr Evans,2026-06-11 13:11:49
+RX5710,P2710,Sertraline,500 mg twice daily,2026-06-19,Dr Foster,2026-06-11 13:11:50
+RX5711,P2711,Lisinopril,10 mg daily,2026-06-20,Dr Grant,2026-06-11 13:11:51
+RX5712,P2712,Metformin,5 mg daily,2026-06-21,Dr Hill,2026-06-11 13:11:52
+RX5713,P2713,Atorvastatin,500 mg twice daily,2026-06-22,Dr Adams,2026-06-11 13:11:53
+RX5714,P2714,Albuterol,10 mg daily,2026-06-23,Dr Baker,2026-06-11 13:11:54
+RX5715,P2715,Levothyroxine,5 mg daily,2026-06-24,Dr Clark,2026-06-11 13:11:55
+RX5716,P2716,Amlodipine,500 mg twice daily,2026-06-25,Dr Davis,2026-06-11 13:11:56
+RX5717,P2717,Omeprazole,10 mg daily,2026-06-26,Dr Evans,2026-06-11 13:11:57
+RX5718,P2718,Gabapentin,5 mg daily,2026-06-27,Dr Foster,2026-06-11 13:11:58
+RX5719,P2719,Hydrochlorothiazide,500 mg twice daily,2026-06-28,Dr Grant,2026-06-11 13:11:59
+RX5720,P2720,Sertraline,10 mg daily,2026-06-29,Dr Hill,2026-06-11 13:12:00
+RX5721,P2721,Lisinopril,5 mg daily,2026-01-01,Dr Adams,2026-06-11 13:12:01
+RX5722,P2722,Metformin,500 mg twice daily,2026-01-02,Dr Baker,2026-06-11 13:12:02
+RX5723,P2723,Atorvastatin,10 mg daily,2026-01-03,Dr Clark,2026-06-11 13:12:03
+RX5724,P2724,Albuterol,5 mg daily,2026-01-04,Dr Davis,2026-06-11 13:12:04
+RX5725,P2725,Levothyroxine,500 mg twice daily,2026-01-05,Dr Evans,2026-06-11 13:12:05
+RX5726,P2726,Amlodipine,10 mg daily,2026-01-06,Dr Foster,2026-06-11 13:12:06
+RX5727,P2727,Omeprazole,5 mg daily,2026-01-07,Dr Grant,2026-06-11 13:12:07
+RX5728,P2728,Gabapentin,500 mg twice daily,2026-01-08,Dr Hill,2026-06-11 13:12:08
+RX5729,P2729,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Adams,2026-06-11 13:12:09
+RX5730,P2730,Sertraline,5 mg daily,2026-01-10,Dr Baker,2026-06-11 13:12:10
+RX5731,P2731,Lisinopril,500 mg twice daily,2026-01-11,Dr Clark,2026-06-11 13:12:11
+RX5732,P2732,Metformin,10 mg daily,2026-01-12,Dr Davis,2026-06-11 13:12:12
+RX5733,P2733,Atorvastatin,5 mg daily,2026-01-13,Dr Evans,2026-06-11 13:12:13
+RX5734,P2734,Albuterol,500 mg twice daily,2026-01-14,Dr Foster,2026-06-11 13:12:14
+RX5735,P2735,Levothyroxine,10 mg daily,2026-01-15,Dr Grant,2026-06-11 13:12:15
+RX5736,P2736,Amlodipine,5 mg daily,2026-01-16,Dr Hill,2026-06-11 13:12:16
+RX5737,P2737,Omeprazole,500 mg twice daily,2026-01-17,Dr Adams,2026-06-11 13:12:17
+RX5738,P2738,Gabapentin,10 mg daily,2026-01-18,Dr Baker,2026-06-11 13:12:18
+RX5739,P2739,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Clark,2026-06-11 13:12:19
+RX5740,P2740,Sertraline,500 mg twice daily,2026-01-20,Dr Davis,2026-06-11 13:12:20
+RX5741,P2741,Lisinopril,10 mg daily,2026-01-21,Dr Evans,2026-06-11 13:12:21
+RX5742,P2742,Metformin,5 mg daily,2026-01-22,Dr Foster,2026-06-11 13:12:22
+RX5743,P2743,Atorvastatin,500 mg twice daily,2026-01-23,Dr Grant,2026-06-11 13:12:23
+RX5744,P2744,Albuterol,10 mg daily,2026-01-24,Dr Hill,2026-06-11 13:12:24
+RX5745,P2745,Levothyroxine,5 mg daily,2026-01-25,Dr Adams,2026-06-11 13:12:25
+RX5746,P2746,Amlodipine,500 mg twice daily,2026-01-26,Dr Baker,2026-06-11 13:12:26
+RX5747,P2747,Omeprazole,10 mg daily,2026-01-27,Dr Clark,2026-06-11 13:12:27
+RX5748,P2748,Gabapentin,5 mg daily,2026-01-28,Dr Davis,2026-06-11 13:12:28
+RX5749,P2749,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Evans,2026-06-11 13:12:29
+RX5750,P2750,Sertraline,10 mg daily,2026-01-30,Dr Foster,2026-06-11 13:12:30
+RX5751,P2751,Lisinopril,5 mg daily,2026-01-31,Dr Grant,2026-06-11 13:12:31
+RX5752,P2752,Metformin,500 mg twice daily,2026-02-01,Dr Hill,2026-06-11 13:12:32
+RX5753,P2753,Atorvastatin,10 mg daily,2026-02-02,Dr Adams,2026-06-11 13:12:33
+RX5754,P2754,Albuterol,5 mg daily,2026-02-03,Dr Baker,2026-06-11 13:12:34
+RX5755,P2755,Levothyroxine,500 mg twice daily,2026-02-04,Dr Clark,2026-06-11 13:12:35
+RX5756,P2756,Amlodipine,10 mg daily,2026-02-05,Dr Davis,2026-06-11 13:12:36
+RX5757,P2757,Omeprazole,5 mg daily,2026-02-06,Dr Evans,2026-06-11 13:12:37
+RX5758,P2758,Gabapentin,500 mg twice daily,2026-02-07,Dr Foster,2026-06-11 13:12:38
+RX5759,P2759,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Grant,2026-06-11 13:12:39
+RX5760,P2760,Sertraline,5 mg daily,2026-02-09,Dr Hill,2026-06-11 13:12:40
+RX5761,P2761,Lisinopril,500 mg twice daily,2026-02-10,Dr Adams,2026-06-11 13:12:41
+RX5762,P2762,Metformin,10 mg daily,2026-02-11,Dr Baker,2026-06-11 13:12:42
+RX5763,P2763,Atorvastatin,5 mg daily,2026-02-12,Dr Clark,2026-06-11 13:12:43
+RX5764,P2764,Albuterol,500 mg twice daily,2026-02-13,Dr Davis,2026-06-11 13:12:44
+RX5765,P2765,Levothyroxine,10 mg daily,2026-02-14,Dr Evans,2026-06-11 13:12:45
+RX5766,P2766,Amlodipine,5 mg daily,2026-02-15,Dr Foster,2026-06-11 13:12:46
+RX5767,P2767,Omeprazole,500 mg twice daily,2026-02-16,Dr Grant,2026-06-11 13:12:47
+RX5768,P2768,Gabapentin,10 mg daily,2026-02-17,Dr Hill,2026-06-11 13:12:48
+RX5769,P2769,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Adams,2026-06-11 13:12:49
+RX5770,P2770,Sertraline,500 mg twice daily,2026-02-19,Dr Baker,2026-06-11 13:12:50
+RX5771,P2771,Lisinopril,10 mg daily,2026-02-20,Dr Clark,2026-06-11 13:12:51
+RX5772,P2772,Metformin,5 mg daily,2026-02-21,Dr Davis,2026-06-11 13:12:52
+RX5773,P2773,Atorvastatin,500 mg twice daily,2026-02-22,Dr Evans,2026-06-11 13:12:53
+RX5774,P2774,Albuterol,10 mg daily,2026-02-23,Dr Foster,2026-06-11 13:12:54
+RX5775,P2775,Levothyroxine,5 mg daily,2026-02-24,Dr Grant,2026-06-11 13:12:55
+RX5776,P2776,Amlodipine,500 mg twice daily,2026-02-25,Dr Hill,2026-06-11 13:12:56
+RX5777,P2777,Omeprazole,10 mg daily,2026-02-26,Dr Adams,2026-06-11 13:12:57
+RX5778,P2778,Gabapentin,5 mg daily,2026-02-27,Dr Baker,2026-06-11 13:12:58
+RX5779,P2779,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Clark,2026-06-11 13:12:59
+RX5780,P2780,Sertraline,10 mg daily,2026-03-01,Dr Davis,2026-06-11 13:13:00
+RX5781,P2781,Lisinopril,5 mg daily,2026-03-02,Dr Evans,2026-06-11 13:13:01
+RX5782,P2782,Metformin,500 mg twice daily,2026-03-03,Dr Foster,2026-06-11 13:13:02
+RX5783,P2783,Atorvastatin,10 mg daily,2026-03-04,Dr Grant,2026-06-11 13:13:03
+RX5784,P2784,Albuterol,5 mg daily,2026-03-05,Dr Hill,2026-06-11 13:13:04
+RX5785,P2785,Levothyroxine,500 mg twice daily,2026-03-06,Dr Adams,2026-06-11 13:13:05
+RX5786,P2786,Amlodipine,10 mg daily,2026-03-07,Dr Baker,2026-06-11 13:13:06
+RX5787,P2787,Omeprazole,5 mg daily,2026-03-08,Dr Clark,2026-06-11 13:13:07
+RX5788,P2788,Gabapentin,500 mg twice daily,2026-03-09,Dr Davis,2026-06-11 13:13:08
+RX5789,P2789,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Evans,2026-06-11 13:13:09
+RX5790,P2790,Sertraline,5 mg daily,2026-03-11,Dr Foster,2026-06-11 13:13:10
+RX5791,P2791,Lisinopril,500 mg twice daily,2026-03-12,Dr Grant,2026-06-11 13:13:11
+RX5792,P2792,Metformin,10 mg daily,2026-03-13,Dr Hill,2026-06-11 13:13:12
+RX5793,P2793,Atorvastatin,5 mg daily,2026-03-14,Dr Adams,2026-06-11 13:13:13
+RX5794,P2794,Albuterol,500 mg twice daily,2026-03-15,Dr Baker,2026-06-11 13:13:14
+RX5795,P2795,Levothyroxine,10 mg daily,2026-03-16,Dr Clark,2026-06-11 13:13:15
+RX5796,P2796,Amlodipine,5 mg daily,2026-03-17,Dr Davis,2026-06-11 13:13:16
+RX5797,P2797,Omeprazole,500 mg twice daily,2026-03-18,Dr Evans,2026-06-11 13:13:17
+RX5798,P2798,Gabapentin,10 mg daily,2026-03-19,Dr Foster,2026-06-11 13:13:18
+RX5799,P2799,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Grant,2026-06-11 13:13:19
+RX5800,P2800,Sertraline,500 mg twice daily,2026-03-21,Dr Hill,2026-06-11 13:13:20
+RX5801,P2801,Lisinopril,10 mg daily,2026-03-22,Dr Adams,2026-06-11 13:13:21
+RX5802,P2802,Metformin,5 mg daily,2026-03-23,Dr Baker,2026-06-11 13:13:22
+RX5803,P2803,Atorvastatin,500 mg twice daily,2026-03-24,Dr Clark,2026-06-11 13:13:23
+RX5804,P2804,Albuterol,10 mg daily,2026-03-25,Dr Davis,2026-06-11 13:13:24
+RX5805,P2805,Levothyroxine,5 mg daily,2026-03-26,Dr Evans,2026-06-11 13:13:25
+RX5806,P2806,Amlodipine,500 mg twice daily,2026-03-27,Dr Foster,2026-06-11 13:13:26
+RX5807,P2807,Omeprazole,10 mg daily,2026-03-28,Dr Grant,2026-06-11 13:13:27
+RX5808,P2808,Gabapentin,5 mg daily,2026-03-29,Dr Hill,2026-06-11 13:13:28
+RX5809,P2809,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Adams,2026-06-11 13:13:29
+RX5810,P2810,Sertraline,10 mg daily,2026-03-31,Dr Baker,2026-06-11 13:13:30
+RX5811,P2811,Lisinopril,5 mg daily,2026-04-01,Dr Clark,2026-06-11 13:13:31
+RX5812,P2812,Metformin,500 mg twice daily,2026-04-02,Dr Davis,2026-06-11 13:13:32
+RX5813,P2813,Atorvastatin,10 mg daily,2026-04-03,Dr Evans,2026-06-11 13:13:33
+RX5814,P2814,Albuterol,5 mg daily,2026-04-04,Dr Foster,2026-06-11 13:13:34
+RX5815,P2815,Levothyroxine,500 mg twice daily,2026-04-05,Dr Grant,2026-06-11 13:13:35
+RX5816,P2816,Amlodipine,10 mg daily,2026-04-06,Dr Hill,2026-06-11 13:13:36
+RX5817,P2817,Omeprazole,5 mg daily,2026-04-07,Dr Adams,2026-06-11 13:13:37
+RX5818,P2818,Gabapentin,500 mg twice daily,2026-04-08,Dr Baker,2026-06-11 13:13:38
+RX5819,P2819,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Clark,2026-06-11 13:13:39
+RX5820,P2820,Sertraline,5 mg daily,2026-04-10,Dr Davis,2026-06-11 13:13:40
+RX5821,P2821,Lisinopril,500 mg twice daily,2026-04-11,Dr Evans,2026-06-11 13:13:41
+RX5822,P2822,Metformin,10 mg daily,2026-04-12,Dr Foster,2026-06-11 13:13:42
+RX5823,P2823,Atorvastatin,5 mg daily,2026-04-13,Dr Grant,2026-06-11 13:13:43
+RX5824,P2824,Albuterol,500 mg twice daily,2026-04-14,Dr Hill,2026-06-11 13:13:44
+RX5825,P2825,Levothyroxine,10 mg daily,2026-04-15,Dr Adams,2026-06-11 13:13:45
+RX5826,P2826,Amlodipine,5 mg daily,2026-04-16,Dr Baker,2026-06-11 13:13:46
+RX5827,P2827,Omeprazole,500 mg twice daily,2026-04-17,Dr Clark,2026-06-11 13:13:47
+RX5828,P2828,Gabapentin,10 mg daily,2026-04-18,Dr Davis,2026-06-11 13:13:48
+RX5829,P2829,Hydrochlorothiazide,5 mg daily,2026-04-19,Dr Evans,2026-06-11 13:13:49
+RX5830,P2830,Sertraline,500 mg twice daily,2026-04-20,Dr Foster,2026-06-11 13:13:50
+RX5831,P2831,Lisinopril,10 mg daily,2026-04-21,Dr Grant,2026-06-11 13:13:51
+RX5832,P2832,Metformin,5 mg daily,2026-04-22,Dr Hill,2026-06-11 13:13:52
+RX5833,P2833,Atorvastatin,500 mg twice daily,2026-04-23,Dr Adams,2026-06-11 13:13:53
+RX5834,P2834,Albuterol,10 mg daily,2026-04-24,Dr Baker,2026-06-11 13:13:54
+RX5835,P2835,Levothyroxine,5 mg daily,2026-04-25,Dr Clark,2026-06-11 13:13:55
+RX5836,P2836,Amlodipine,500 mg twice daily,2026-04-26,Dr Davis,2026-06-11 13:13:56
+RX5837,P2837,Omeprazole,10 mg daily,2026-04-27,Dr Evans,2026-06-11 13:13:57
+RX5838,P2838,Gabapentin,5 mg daily,2026-04-28,Dr Foster,2026-06-11 13:13:58
+RX5839,P2839,Hydrochlorothiazide,500 mg twice daily,2026-04-29,Dr Grant,2026-06-11 13:13:59
+RX5840,P2840,Sertraline,10 mg daily,2026-04-30,Dr Hill,2026-06-11 13:14:00
+RX5841,P2841,Lisinopril,5 mg daily,2026-05-01,Dr Adams,2026-06-11 13:14:01
+RX5842,P2842,Metformin,500 mg twice daily,2026-05-02,Dr Baker,2026-06-11 13:14:02
+RX5843,P2843,Atorvastatin,10 mg daily,2026-05-03,Dr Clark,2026-06-11 13:14:03
+RX5844,P2844,Albuterol,5 mg daily,2026-05-04,Dr Davis,2026-06-11 13:14:04
+RX5845,P2845,Levothyroxine,500 mg twice daily,2026-05-05,Dr Evans,2026-06-11 13:14:05
+RX5846,P2846,Amlodipine,10 mg daily,2026-05-06,Dr Foster,2026-06-11 13:14:06
+RX5847,P2847,Omeprazole,5 mg daily,2026-05-07,Dr Grant,2026-06-11 13:14:07
+RX5848,P2848,Gabapentin,500 mg twice daily,2026-05-08,Dr Hill,2026-06-11 13:14:08
+RX5849,P2849,Hydrochlorothiazide,10 mg daily,2026-05-09,Dr Adams,2026-06-11 13:14:09
+RX5850,P2850,Sertraline,5 mg daily,2026-05-10,Dr Baker,2026-06-11 13:14:10
+RX5851,P2851,Lisinopril,500 mg twice daily,2026-05-11,Dr Clark,2026-06-11 13:14:11
+RX5852,P2852,Metformin,10 mg daily,2026-05-12,Dr Davis,2026-06-11 13:14:12
+RX5853,P2853,Atorvastatin,5 mg daily,2026-05-13,Dr Evans,2026-06-11 13:14:13
+RX5854,P2854,Albuterol,500 mg twice daily,2026-05-14,Dr Foster,2026-06-11 13:14:14
+RX5855,P2855,Levothyroxine,10 mg daily,2026-05-15,Dr Grant,2026-06-11 13:14:15
+RX5856,P2856,Amlodipine,5 mg daily,2026-05-16,Dr Hill,2026-06-11 13:14:16
+RX5857,P2857,Omeprazole,500 mg twice daily,2026-05-17,Dr Adams,2026-06-11 13:14:17
+RX5858,P2858,Gabapentin,10 mg daily,2026-05-18,Dr Baker,2026-06-11 13:14:18
+RX5859,P2859,Hydrochlorothiazide,5 mg daily,2026-05-19,Dr Clark,2026-06-11 13:14:19
+RX5860,P2860,Sertraline,500 mg twice daily,2026-05-20,Dr Davis,2026-06-11 13:14:20
+RX5861,P2861,Lisinopril,10 mg daily,2026-05-21,Dr Evans,2026-06-11 13:14:21
+RX5862,P2862,Metformin,5 mg daily,2026-05-22,Dr Foster,2026-06-11 13:14:22
+RX5863,P2863,Atorvastatin,500 mg twice daily,2026-05-23,Dr Grant,2026-06-11 13:14:23
+RX5864,P2864,Albuterol,10 mg daily,2026-05-24,Dr Hill,2026-06-11 13:14:24
+RX5865,P2865,Levothyroxine,5 mg daily,2026-05-25,Dr Adams,2026-06-11 13:14:25
+RX5866,P2866,Amlodipine,500 mg twice daily,2026-05-26,Dr Baker,2026-06-11 13:14:26
+RX5867,P2867,Omeprazole,10 mg daily,2026-05-27,Dr Clark,2026-06-11 13:14:27
+RX5868,P2868,Gabapentin,5 mg daily,2026-05-28,Dr Davis,2026-06-11 13:14:28
+RX5869,P2869,Hydrochlorothiazide,500 mg twice daily,2026-05-29,Dr Evans,2026-06-11 13:14:29
+RX5870,P2870,Sertraline,10 mg daily,2026-05-30,Dr Foster,2026-06-11 13:14:30
+RX5871,P2871,Lisinopril,5 mg daily,2026-05-31,Dr Grant,2026-06-11 13:14:31
+RX5872,P2872,Metformin,500 mg twice daily,2026-06-01,Dr Hill,2026-06-11 13:14:32
+RX5873,P2873,Atorvastatin,10 mg daily,2026-06-02,Dr Adams,2026-06-11 13:14:33
+RX5874,P2874,Albuterol,5 mg daily,2026-06-03,Dr Baker,2026-06-11 13:14:34
+RX5875,P2875,Levothyroxine,500 mg twice daily,2026-06-04,Dr Clark,2026-06-11 13:14:35
+RX5876,P2876,Amlodipine,10 mg daily,2026-06-05,Dr Davis,2026-06-11 13:14:36
+RX5877,P2877,Omeprazole,5 mg daily,2026-06-06,Dr Evans,2026-06-11 13:14:37
+RX5878,P2878,Gabapentin,500 mg twice daily,2026-06-07,Dr Foster,2026-06-11 13:14:38
+RX5879,P2879,Hydrochlorothiazide,10 mg daily,2026-06-08,Dr Grant,2026-06-11 13:14:39
+RX5880,P2880,Sertraline,5 mg daily,2026-06-09,Dr Hill,2026-06-11 13:14:40
+RX5881,P2881,Lisinopril,500 mg twice daily,2026-06-10,Dr Adams,2026-06-11 13:14:41
+RX5882,P2882,Metformin,10 mg daily,2026-06-11,Dr Baker,2026-06-11 13:14:42
+RX5883,P2883,Atorvastatin,5 mg daily,2026-06-12,Dr Clark,2026-06-11 13:14:43
+RX5884,P2884,Albuterol,500 mg twice daily,2026-06-13,Dr Davis,2026-06-11 13:14:44
+RX5885,P2885,Levothyroxine,10 mg daily,2026-06-14,Dr Evans,2026-06-11 13:14:45
+RX5886,P2886,Amlodipine,5 mg daily,2026-06-15,Dr Foster,2026-06-11 13:14:46
+RX5887,P2887,Omeprazole,500 mg twice daily,2026-06-16,Dr Grant,2026-06-11 13:14:47
+RX5888,P2888,Gabapentin,10 mg daily,2026-06-17,Dr Hill,2026-06-11 13:14:48
+RX5889,P2889,Hydrochlorothiazide,5 mg daily,2026-06-18,Dr Adams,2026-06-11 13:14:49
+RX5890,P2890,Sertraline,500 mg twice daily,2026-06-19,Dr Baker,2026-06-11 13:14:50
+RX5891,P2891,Lisinopril,10 mg daily,2026-06-20,Dr Clark,2026-06-11 13:14:51
+RX5892,P2892,Metformin,5 mg daily,2026-06-21,Dr Davis,2026-06-11 13:14:52
+RX5893,P2893,Atorvastatin,500 mg twice daily,2026-06-22,Dr Evans,2026-06-11 13:14:53
+RX5894,P2894,Albuterol,10 mg daily,2026-06-23,Dr Foster,2026-06-11 13:14:54
+RX5895,P2895,Levothyroxine,5 mg daily,2026-06-24,Dr Grant,2026-06-11 13:14:55
+RX5896,P2896,Amlodipine,500 mg twice daily,2026-06-25,Dr Hill,2026-06-11 13:14:56
+RX5897,P2897,Omeprazole,10 mg daily,2026-06-26,Dr Adams,2026-06-11 13:14:57
+RX5898,P2898,Gabapentin,5 mg daily,2026-06-27,Dr Baker,2026-06-11 13:14:58
+RX5899,P2899,Hydrochlorothiazide,500 mg twice daily,2026-06-28,Dr Clark,2026-06-11 13:14:59
+RX5900,P2900,Sertraline,10 mg daily,2026-06-29,Dr Davis,2026-06-11 13:15:00
+RX5901,P2901,Lisinopril,5 mg daily,2026-01-01,Dr Evans,2026-06-11 13:15:01
+RX5902,P2902,Metformin,500 mg twice daily,2026-01-02,Dr Foster,2026-06-11 13:15:02
+RX5903,P2903,Atorvastatin,10 mg daily,2026-01-03,Dr Grant,2026-06-11 13:15:03
+RX5904,P2904,Albuterol,5 mg daily,2026-01-04,Dr Hill,2026-06-11 13:15:04
+RX5905,P2905,Levothyroxine,500 mg twice daily,2026-01-05,Dr Adams,2026-06-11 13:15:05
+RX5906,P2906,Amlodipine,10 mg daily,2026-01-06,Dr Baker,2026-06-11 13:15:06
+RX5907,P2907,Omeprazole,5 mg daily,2026-01-07,Dr Clark,2026-06-11 13:15:07
+RX5908,P2908,Gabapentin,500 mg twice daily,2026-01-08,Dr Davis,2026-06-11 13:15:08
+RX5909,P2909,Hydrochlorothiazide,10 mg daily,2026-01-09,Dr Evans,2026-06-11 13:15:09
+RX5910,P2910,Sertraline,5 mg daily,2026-01-10,Dr Foster,2026-06-11 13:15:10
+RX5911,P2911,Lisinopril,500 mg twice daily,2026-01-11,Dr Grant,2026-06-11 13:15:11
+RX5912,P2912,Metformin,10 mg daily,2026-01-12,Dr Hill,2026-06-11 13:15:12
+RX5913,P2913,Atorvastatin,5 mg daily,2026-01-13,Dr Adams,2026-06-11 13:15:13
+RX5914,P2914,Albuterol,500 mg twice daily,2026-01-14,Dr Baker,2026-06-11 13:15:14
+RX5915,P2915,Levothyroxine,10 mg daily,2026-01-15,Dr Clark,2026-06-11 13:15:15
+RX5916,P2916,Amlodipine,5 mg daily,2026-01-16,Dr Davis,2026-06-11 13:15:16
+RX5917,P2917,Omeprazole,500 mg twice daily,2026-01-17,Dr Evans,2026-06-11 13:15:17
+RX5918,P2918,Gabapentin,10 mg daily,2026-01-18,Dr Foster,2026-06-11 13:15:18
+RX5919,P2919,Hydrochlorothiazide,5 mg daily,2026-01-19,Dr Grant,2026-06-11 13:15:19
+RX5920,P2920,Sertraline,500 mg twice daily,2026-01-20,Dr Hill,2026-06-11 13:15:20
+RX5921,P2921,Lisinopril,10 mg daily,2026-01-21,Dr Adams,2026-06-11 13:15:21
+RX5922,P2922,Metformin,5 mg daily,2026-01-22,Dr Baker,2026-06-11 13:15:22
+RX5923,P2923,Atorvastatin,500 mg twice daily,2026-01-23,Dr Clark,2026-06-11 13:15:23
+RX5924,P2924,Albuterol,10 mg daily,2026-01-24,Dr Davis,2026-06-11 13:15:24
+RX5925,P2925,Levothyroxine,5 mg daily,2026-01-25,Dr Evans,2026-06-11 13:15:25
+RX5926,P2926,Amlodipine,500 mg twice daily,2026-01-26,Dr Foster,2026-06-11 13:15:26
+RX5927,P2927,Omeprazole,10 mg daily,2026-01-27,Dr Grant,2026-06-11 13:15:27
+RX5928,P2928,Gabapentin,5 mg daily,2026-01-28,Dr Hill,2026-06-11 13:15:28
+RX5929,P2929,Hydrochlorothiazide,500 mg twice daily,2026-01-29,Dr Adams,2026-06-11 13:15:29
+RX5930,P2930,Sertraline,10 mg daily,2026-01-30,Dr Baker,2026-06-11 13:15:30
+RX5931,P2931,Lisinopril,5 mg daily,2026-01-31,Dr Clark,2026-06-11 13:15:31
+RX5932,P2932,Metformin,500 mg twice daily,2026-02-01,Dr Davis,2026-06-11 13:15:32
+RX5933,P2933,Atorvastatin,10 mg daily,2026-02-02,Dr Evans,2026-06-11 13:15:33
+RX5934,P2934,Albuterol,5 mg daily,2026-02-03,Dr Foster,2026-06-11 13:15:34
+RX5935,P2935,Levothyroxine,500 mg twice daily,2026-02-04,Dr Grant,2026-06-11 13:15:35
+RX5936,P2936,Amlodipine,10 mg daily,2026-02-05,Dr Hill,2026-06-11 13:15:36
+RX5937,P2937,Omeprazole,5 mg daily,2026-02-06,Dr Adams,2026-06-11 13:15:37
+RX5938,P2938,Gabapentin,500 mg twice daily,2026-02-07,Dr Baker,2026-06-11 13:15:38
+RX5939,P2939,Hydrochlorothiazide,10 mg daily,2026-02-08,Dr Clark,2026-06-11 13:15:39
+RX5940,P2940,Sertraline,5 mg daily,2026-02-09,Dr Davis,2026-06-11 13:15:40
+RX5941,P2941,Lisinopril,500 mg twice daily,2026-02-10,Dr Evans,2026-06-11 13:15:41
+RX5942,P2942,Metformin,10 mg daily,2026-02-11,Dr Foster,2026-06-11 13:15:42
+RX5943,P2943,Atorvastatin,5 mg daily,2026-02-12,Dr Grant,2026-06-11 13:15:43
+RX5944,P2944,Albuterol,500 mg twice daily,2026-02-13,Dr Hill,2026-06-11 13:15:44
+RX5945,P2945,Levothyroxine,10 mg daily,2026-02-14,Dr Adams,2026-06-11 13:15:45
+RX5946,P2946,Amlodipine,5 mg daily,2026-02-15,Dr Baker,2026-06-11 13:15:46
+RX5947,P2947,Omeprazole,500 mg twice daily,2026-02-16,Dr Clark,2026-06-11 13:15:47
+RX5948,P2948,Gabapentin,10 mg daily,2026-02-17,Dr Davis,2026-06-11 13:15:48
+RX5949,P2949,Hydrochlorothiazide,5 mg daily,2026-02-18,Dr Evans,2026-06-11 13:15:49
+RX5950,P2950,Sertraline,500 mg twice daily,2026-02-19,Dr Foster,2026-06-11 13:15:50
+RX5951,P2951,Lisinopril,10 mg daily,2026-02-20,Dr Grant,2026-06-11 13:15:51
+RX5952,P2952,Metformin,5 mg daily,2026-02-21,Dr Hill,2026-06-11 13:15:52
+RX5953,P2953,Atorvastatin,500 mg twice daily,2026-02-22,Dr Adams,2026-06-11 13:15:53
+RX5954,P2954,Albuterol,10 mg daily,2026-02-23,Dr Baker,2026-06-11 13:15:54
+RX5955,P2955,Levothyroxine,5 mg daily,2026-02-24,Dr Clark,2026-06-11 13:15:55
+RX5956,P2956,Amlodipine,500 mg twice daily,2026-02-25,Dr Davis,2026-06-11 13:15:56
+RX5957,P2957,Omeprazole,10 mg daily,2026-02-26,Dr Evans,2026-06-11 13:15:57
+RX5958,P2958,Gabapentin,5 mg daily,2026-02-27,Dr Foster,2026-06-11 13:15:58
+RX5959,P2959,Hydrochlorothiazide,500 mg twice daily,2026-02-28,Dr Grant,2026-06-11 13:15:59
+RX5960,P2960,Sertraline,10 mg daily,2026-03-01,Dr Hill,2026-06-11 13:16:00
+RX5961,P2961,Lisinopril,5 mg daily,2026-03-02,Dr Adams,2026-06-11 13:16:01
+RX5962,P2962,Metformin,500 mg twice daily,2026-03-03,Dr Baker,2026-06-11 13:16:02
+RX5963,P2963,Atorvastatin,10 mg daily,2026-03-04,Dr Clark,2026-06-11 13:16:03
+RX5964,P2964,Albuterol,5 mg daily,2026-03-05,Dr Davis,2026-06-11 13:16:04
+RX5965,P2965,Levothyroxine,500 mg twice daily,2026-03-06,Dr Evans,2026-06-11 13:16:05
+RX5966,P2966,Amlodipine,10 mg daily,2026-03-07,Dr Foster,2026-06-11 13:16:06
+RX5967,P2967,Omeprazole,5 mg daily,2026-03-08,Dr Grant,2026-06-11 13:16:07
+RX5968,P2968,Gabapentin,500 mg twice daily,2026-03-09,Dr Hill,2026-06-11 13:16:08
+RX5969,P2969,Hydrochlorothiazide,10 mg daily,2026-03-10,Dr Adams,2026-06-11 13:16:09
+RX5970,P2970,Sertraline,5 mg daily,2026-03-11,Dr Baker,2026-06-11 13:16:10
+RX5971,P2971,Lisinopril,500 mg twice daily,2026-03-12,Dr Clark,2026-06-11 13:16:11
+RX5972,P2972,Metformin,10 mg daily,2026-03-13,Dr Davis,2026-06-11 13:16:12
+RX5973,P2973,Atorvastatin,5 mg daily,2026-03-14,Dr Evans,2026-06-11 13:16:13
+RX5974,P2974,Albuterol,500 mg twice daily,2026-03-15,Dr Foster,2026-06-11 13:16:14
+RX5975,P2975,Levothyroxine,10 mg daily,2026-03-16,Dr Grant,2026-06-11 13:16:15
+RX5976,P2976,Amlodipine,5 mg daily,2026-03-17,Dr Hill,2026-06-11 13:16:16
+RX5977,P2977,Omeprazole,500 mg twice daily,2026-03-18,Dr Adams,2026-06-11 13:16:17
+RX5978,P2978,Gabapentin,10 mg daily,2026-03-19,Dr Baker,2026-06-11 13:16:18
+RX5979,P2979,Hydrochlorothiazide,5 mg daily,2026-03-20,Dr Clark,2026-06-11 13:16:19
+RX5980,P2980,Sertraline,500 mg twice daily,2026-03-21,Dr Davis,2026-06-11 13:16:20
+RX5981,P2981,Lisinopril,10 mg daily,2026-03-22,Dr Evans,2026-06-11 13:16:21
+RX5982,P2982,Metformin,5 mg daily,2026-03-23,Dr Foster,2026-06-11 13:16:22
+RX5983,P2983,Atorvastatin,500 mg twice daily,2026-03-24,Dr Grant,2026-06-11 13:16:23
+RX5984,P2984,Albuterol,10 mg daily,2026-03-25,Dr Hill,2026-06-11 13:16:24
+RX5985,P2985,Levothyroxine,5 mg daily,2026-03-26,Dr Adams,2026-06-11 13:16:25
+RX5986,P2986,Amlodipine,500 mg twice daily,2026-03-27,Dr Baker,2026-06-11 13:16:26
+RX5987,P2987,Omeprazole,10 mg daily,2026-03-28,Dr Clark,2026-06-11 13:16:27
+RX5988,P2988,Gabapentin,5 mg daily,2026-03-29,Dr Davis,2026-06-11 13:16:28
+RX5989,P2989,Hydrochlorothiazide,500 mg twice daily,2026-03-30,Dr Evans,2026-06-11 13:16:29
+RX5990,P2990,Sertraline,10 mg daily,2026-03-31,Dr Foster,2026-06-11 13:16:30
+RX5991,P2991,Lisinopril,5 mg daily,2026-04-01,Dr Grant,2026-06-11 13:16:31
+RX5992,P2992,Metformin,500 mg twice daily,2026-04-02,Dr Hill,2026-06-11 13:16:32
+RX5993,P2993,Atorvastatin,10 mg daily,2026-04-03,Dr Adams,2026-06-11 13:16:33
+RX5994,P2994,Albuterol,5 mg daily,2026-04-04,Dr Baker,2026-06-11 13:16:34
+RX5995,P2995,Levothyroxine,500 mg twice daily,2026-04-05,Dr Clark,2026-06-11 13:16:35
+RX5996,P2996,Amlodipine,10 mg daily,2026-04-06,Dr Davis,2026-06-11 13:16:36
+RX5997,P2997,Omeprazole,5 mg daily,2026-04-07,Dr Evans,2026-06-11 13:16:37
+RX5998,P2998,Gabapentin,500 mg twice daily,2026-04-08,Dr Foster,2026-06-11 13:16:38
+RX5999,P2999,Hydrochlorothiazide,10 mg daily,2026-04-09,Dr Grant,2026-06-11 13:16:39
+RX6000,P3000,Sertraline,5 mg daily,2026-04-10,Dr Hill,2026-06-11 13:16:40

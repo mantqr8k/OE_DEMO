@@ -1,0 +1,66 @@
+# PII/PCI Pattern Dictionary
+# Column name patterns mapped to actual Snowflake tags
+# Sensitivity hierarchy (low → high): SENSITIVE_COLUMN → QUASI_IDENTIFIER_COLUMN → IDENTIFIER_COLUMN
+# SECURE_OBJECT table-level tag = highest sensitivity found among tagged columns
+
+## IDENTIFIER Tags (value = "IDENTIFIER_COLUMN")
+
+| Tag Name | Column Name Patterns |
+|----------|---------------------|
+| PII_EMAIL | `EMAIL`, `E_MAIL`, `EMAIL_ADDRESS`, `*_EMAIL`, `CONTACT_EMAIL` |
+| PII_IP_ADDRESS | `IP_ADDRESS`, `IP_ADDR`, `CLIENT_IP`, `SOURCE_IP`, `*_IP`, `SERVER_IP`, `REMOTE_IP` |
+| PII_NAME | `FIRST_NAME`, `LAST_NAME`, `FULL_NAME`, `MIDDLE_NAME`, `SURNAME`, `GIVEN_NAME`, `CUSTOMER_NAME`, `EMPLOYEE_NAME`, `APPLICANT_NAME`, `BORROWER_NAME`, `OFFICER_NAME`, `*_FIRST_NAME`, `*_LAST_NAME` |
+| PII_PHONE_NUMBER | `PHONE`, `MOBILE`, `CELL`, `FAX`, `TELEPHONE`, `CONTACT_NUMBER`, `*_PHONE`, `PHONE_*`, `MOBILE_NUMBER`, `CELL_PHONE` |
+| PII_URL | `URL`, `WEBSITE`, `WEB_ADDRESS`, `HOMEPAGE`, `*_URL`, `*_LINK`, `PROFILE_URL` |
+| PII_US_BANK_ACCOUNT | `BANK_ACCOUNT`, `ACCOUNT_NUMBER` (financial context), `IBAN`, `ROUTING_NUMBER`, `SWIFT_CODE`, `ABA_NUMBER`, `BANK_ACCT` |
+| PII_US_DRIVER_LICENSE | `DRIVERS_LICENSE`, `DL_NUMBER`, `LICENSE_NUMBER`, `DRIVING_LICENSE`, `DRIVER_LIC*` |
+| PII_US_SSN | `SSN`, `SOCIAL_SECURITY`, `SOC_SEC`, `TAX_ID`, `TIN`, `*_SSN` |
+| PII_US_STREET_ADDRESS | `ADDRESS`, `STREET`, `ADDRESS_LINE*`, `MAILING_ADDRESS`, `RESIDENTIAL_ADDRESS`, `STREET_ADDRESS`, `MAILING_*`, `RESIDENTIAL_*` |
+
+## QUASI_IDENTIFIER Tags (value = "QUASI_IDENTIFIER_COLUMN")
+
+| Tag Name | Column Name Patterns |
+|----------|---------------------|
+| QUASI_PII_AGE | `AGE`, `CUSTOMER_AGE`, `*_AGE` |
+| QUASI_PII_COUNTY | `COUNTY`, `*_COUNTY` |
+| QUASI_PII_DATE_OF_BIRTH | `DOB`, `DATE_OF_BIRTH`, `BIRTH_DATE`, `BIRTHDAY`, `*_DOB` |
+| QUASI_PII_GENDER | `GENDER`, `SEX` |
+| QUASI_PII_LATITUDE | `LATITUDE`, `LAT`, `GPS_LAT` |
+| QUASI_PII_LAT_LONG | `LAT_LONG`, `LATLONG`, `COORDINATES`, `GEO_COORDINATES`, `GPS_*` |
+| QUASI_PII_LONGITUDE | `LONGITUDE`, `LNG`, `LONG`, `GPS_LONG` |
+| QUASI_PII_OCCUPATION | `OCCUPATION`, `JOB_TITLE`, `PROFESSION`, `EMPLOYMENT_TYPE` |
+| QUASI_PII_US_CITY | `CITY`, `*_CITY` |
+| QUASI_PII_US_COUNTY | `COUNTY`, `US_COUNTY`, `*_COUNTY` |
+| QUASI_PII_US_POSTAL_CODE | `ZIP`, `ZIPCODE`, `ZIP_CODE`, `POSTAL_CODE`, `POSTAL`, `*_ZIP` |
+| QUASI_PII_US_STATE_OR_TERRITORY | `STATE`, `US_STATE`, `STATE_CODE`, `*_STATE` (with address sibling context) |
+| QUASI_PII_YEAR_OF_BIRTH | `YEAR_OF_BIRTH`, `BIRTH_YEAR`, `YOB` |
+
+## SENSITIVE Tags (value = "SENSITIVE_COLUMN")
+
+| Tag Name | Column Name Patterns |
+|----------|---------------------|
+| SENSITIVE_CREDIT_CARD_NUMBER | `CARD_NUMBER`, `CREDIT_CARD`, `DEBIT_CARD`, `PAN`, `PRIMARY_ACCOUNT_NUMBER`, `CC_NUMBER`, `CARD_NO`, `*_CARD_NUM*`, `CARDHOLDER_NAME`, `NAME_ON_CARD`, `CVV`, `CVC`, `CVV2`, `SECURITY_CODE`, `CARD_VERIFICATION`, `EXPIRY`, `EXPIRATION`, `EXP_DATE`, `CARD_EXPIR*`, `VALID_THRU`, `EXP_MONTH`, `EXP_YEAR`, `CARD_PIN` |
+| SENSITIVE_INCOME | `SALARY`, `COMPENSATION`, `WAGE`, `PAY_RATE`, `ANNUAL_INCOME`, `INCOME`, `EARNINGS` |
+| SENSITIVE_USER_ID | `USER_ID`, `USERNAME`, `LOGIN_ID`, `USER_NAME` (system context) |
+
+## SECURE_OBJECT (Table-Level Tag)
+
+Applied to the TABLE itself. Value = highest sensitivity among all tagged columns:
+- If any column has an IDENTIFIER tag → `SECURE_OBJECT = 'IDENTIFIER_COLUMN'`
+- Else if any column has a QUASI_IDENTIFIER tag → `SECURE_OBJECT = 'QUASI_IDENTIFIER_COLUMN'`
+- Else if any column has a SENSITIVE tag → `SECURE_OBJECT = 'SENSITIVE_COLUMN'`
+
+## Disambiguation Rules
+
+- `ACCOUNT_NUMBER` → PII_US_BANK_ACCOUNT only in financial/banking context; skip if generic system ID
+- `*_NAME` → PII_NAME only for person names. Skip `TABLE_NAME`, `COLUMN_NAME`, `OBJECT_NAME`, `FILE_NAME`, `RULE_NAME`, `PROCEDURE_NAME`
+- `PAN` → SENSITIVE_CREDIT_CARD_NUMBER in card context. If India national ID context, use PII_US_SSN equivalent or flag for user
+- `STATE` → QUASI_PII_US_STATE_OR_TERRITORY only if sibling columns include ADDRESS/CITY/ZIP. Otherwise skip
+- `PIN` → SENSITIVE_CREDIT_CARD_NUMBER only for `CARD_PIN`. `PIN_CODE` for zip/postal maps to QUASI_PII_US_POSTAL_CODE
+
+## Exclusions (never tag)
+
+- Audit columns: CREATED, CREATED_BY, UPDATED, UPDATED_BY, ETL_LOAD_DATE, ETL_UPDATED_DATE
+- Surrogate keys: ROW_ID, *_SK, SURROGATE_KEY, IDENTITY columns
+- System names: TABLE_NAME, COLUMN_NAME, OBJECT_NAME, FILE_NAME, RULE_NAME, PROCEDURE_NAME
+- Card identifiers (not actual card numbers): CREDIT_CARD_UID, CREDITCARDID, *_CARD_UID, *CARDID

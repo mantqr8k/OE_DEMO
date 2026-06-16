@@ -1,0 +1,64 @@
+flowchart TD
+  subgraph Sources
+    EHR["EHR<br/>(EHR)"]
+    LIS["LIS<br/>(Lab)"]
+    PHARM["Pharmacy System"]
+    CLAIMS["Claims System"]
+    SCHED["Scheduling"]
+  end
+
+  Ingest["Ingestion / RAW_DATA_STAGE<br/>(staging CSV files & timestamps)"]
+  Sources --> Ingest
+
+  subgraph Bronze["Bronze (Raw)"]
+    BM1["BRZ_PATIENT_MASTER<br/>(patient_id, medical_record_number, patient_first_name, patient_last_name, dob, gender, ssn, phone_number, email_address, address_line1, city, state, zip_code, ingestion_timestamp)"]
+    BM2["BRZ_PATIENT_ENCOUNTER<br/>(encounter_id, patient_id, admission_date, discharge_date, encounter_type, attending_physician, hospital_id, diagnosis_code, ingestion_timestamp)"]
+    BM3["BRZ_LAB_RESULTS<br/>(lab_result_id, patient_id, encounter_id, test_code, test_name, result_value, result_unit, result_date, ingestion_timestamp)"]
+    BM4["BRZ_PHARMACY_ORDERS<br/>(prescription_id, patient_id, medication_name, dosage, prescription_date, prescribing_physician, ingestion_timestamp)"]
+    BM5["BRZ_CLAIMS<br/>(claim_id, patient_id, insurance_id, claim_amount, claim_status, claim_date, ingestion_timestamp)"]
+  end
+
+  Ingest --> Bronze
+
+  subgraph Silver["Silver (Standardized)"]
+    S1["SLV_PATIENT<br/>(patient_sk, patient_id, medical_record_number, patient_name, dob, age, gender, city, state, active_flag, source_ingestion_timestamp)"]
+    S2["SLV_ENCOUNTER<br/>(encounter_sk, encounter_id, patient_sk, patient_id, admission_date, discharge_date, length_of_stay, diagnosis_code, hospital_id, encounter_type, attending_physician, source_ingestion_timestamp)"]
+    S3["SLV_LAB_RESULT<br/>(lab_result_sk, encounter_sk, patient_sk, patient_id, encounter_id, test_code, test_name, normalized_result, result_unit, result_date, source_ingestion_timestamp)"]
+    S4["SLV_MEDICATION<br/>(medication_sk, patient_sk, patient_id, medication_name, dosage, prescription_date, prescribing_physician, source_ingestion_timestamp)"]
+    S5["SLV_CLAIM<br/>(claim_sk, patient_sk, patient_id, insurance_id, claim_amount, claim_status, claim_date, source_ingestion_timestamp)"]
+  end
+
+  Bronze -->|LOAD_SLV_* procedures| Silver
+
+  subgraph Gold["Gold (Business-ready)"]
+    G1["DIM_PATIENT<br/>(patient_sk, patient_id, patient_name, age, gender, city, state)"]
+    G2["FACT_ENCOUNTER<br/>(encounter_sk, patient_sk, hospital_sk, diagnosis_sk, admission_date, discharge_date, length_of_stay)"]
+    G3["FACT_READMISSION<br/>(patient_sk, encounter_sk, discharge_date, next_admission_date, days_between_visits, readmission_flag)"]
+    G4["FACT_CLAIMS<br/>(claim_sk, patient_sk, claim_amount, claim_status)"]
+  end
+
+  Silver -->|Build gold models| Gold
+  Gold --> Analytics["Analytics & Dashboards<br/>(Patient 360, Readmission KPI, Executive Dashboards)"]
+
+  subgraph Governance["Governance Services"]
+    GC["Classification & Tagging<br/>(GOVERNANCE.TAGS)"]
+    GM["Masking Policies<br/>(GOVERNANCE.POLICIES)"]
+    GDQ["Data Quality Framework<br/>(GOVERNANCE.DQ: rules, runs, failed_records)"]
+    GL["Lineage & Impact<br/>(column & asset lineage)"]
+  end
+
+  GC --- Bronze
+  GC --- Silver
+  GM --- Silver
+  GDQ --- Bronze
+  GDQ --- Silver
+  GL --- Gold
+  GL --- Silver
+  GL --- Bronze
+
+  %% Scripts & stage
+  Scripts["snowflake scripts<br/>(02_create_bronze_tables.sql, 03_load_sample_data.sql, 04_create_silver_models.sql, 05_create_gold_models.sql, 06_setup_dq_framework.sql)"]
+  Ingest --- Scripts
+  Scripts --- Bronze
+  Scripts --- Silver
+  Scripts --- Gold

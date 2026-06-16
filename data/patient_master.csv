@@ -1,0 +1,9 @@
+patient_id,medical_record_number,patient_first_name,patient_last_name,dob,gender,ssn,phone_number,email_address,address_line1,city,state,zip_code,ingestion_timestamp
+P1001,MRN100001,John,Smith,1985-01-15,M,123-45-6789,212-555-0101,john.smith@example.org,100 Maple St,New York,NY,10001,2026-06-11 10:00:00
+P1002,MRN100002,Maria,Garcia,1978-03-22,F,234-56-7890,312-555-0102,maria.garcia@example.org,240 Lake Ave,Chicago,IL,60601,2026-06-11 10:01:00
+P1003,MRN100003,Aisha,Patel,1992-07-09,F,345-67-8901,415-555-0103,aisha.patel@example.org,88 Pine Rd,San Francisco,CA,94105,2026-06-11 10:02:00
+P1004,MRN100004,Robert,Chen,1965-11-30,M,456-78-9012,617-555-0104,robert.chen@example.org,55 Cedar Ln,Boston,MA,02108,2026-06-11 10:03:00
+P1005,MRN100005,Emily,Johnson,2001-05-18,F,567-89-0123,404-555-0105,emily.johnson@example.org,700 Peachtree St,Atlanta,GA,30303,2026-06-11 10:04:00
+P1006,MRN100006,David,Brown,2035-01-01,M,678-90-1234,206-555-0106,david.brown@example.org,15 Rainier Ave,Seattle,WA,98101,2026-06-11 10:05:00
+,MRN100007,Linda,Williams,1988-09-12,F,789-01-2345,303-555-0107,linda.williams@example.org,900 Colfax Ave,Denver,CO,80202,2026-06-11 10:06:00
+P1001,MRN100001,John,Smith,1985-01-15,M,123-45-6789,212-555-0101,john.smith@example.org,100 Maple St,New York,NY,10001,2026-06-11 10:07:00

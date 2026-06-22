@@ -300,25 +300,23 @@ Build a small Streamlit dashboard for presenting the demo outcomes.
 
 - Streamlit app under `streamlit/`.
 - Dashboard pages or tabs:
-  - Governance overview
-  - Classification coverage
-  - Data quality scorecard
-  - Failed records and alerts
-  - Patient 360 sample view
-  - Readmission analytics
-  - Provider governance dashboard
-  - Appointment operations dashboard
-  - Lineage and impact analysis
+  - Executive Summary
+  - Provider Governance
+  - Appointment Operations
+  - Readmission Analytics
 - Provider governance dashboard displays:
   - Total providers, active providers, expired licenses
   - Credential compliance percentage
   - Provider data quality score
-  - Charts for providers by specialty, utilization trend, license expiry trend
+  - Charts for providers by specialty and utilization trend
 - Appointment operations dashboard displays:
   - Total appointments, completion rate, no-show rate, cancellation rate
   - Average wait time
-  - Charts for appointment status distribution, wait time trend, utilization trend
-- Snowflake connection configuration documentation.
+  - Charts for appointment status distribution and wait time trend
+- Available Streamlit files:
+  - `streamlit/streamlit_app.py`
+  - `streamlit/pyproject.toml`
+  - `streamlit/snowflake.yml`
 - Read-only dashboard queries against `ANALYTICS` and `GOVERNANCE` views.
 
 ### Acceptance Criteria

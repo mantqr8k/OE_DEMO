@@ -1,0 +1,23 @@
+definition_version: 2
+entities:
+  streamlit_app:
+    type: streamlit
+    identifier:
+      database: HC_GOV_DEMO
+      schema: ANALYTICS
+      name: HC_DASH
+    title: Healthcare Governance & Analytics Dashboard
+    query_warehouse: COMPUTE_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    run_mode: SpcsOnly
+    execute_as: OWNER
+    main_file: streamlit_app.py
+    artifacts:
+      - pyproject.toml
+      - streamlit_app.py
+      - .streamlit/config.toml
+    sharing:
+      - role: HC_ANALYST_ROLE
+        with_grant_option: false
+      - role: OVALEDGE_ROLE
+        with_grant_option: false

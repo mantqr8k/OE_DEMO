@@ -62,6 +62,21 @@ snow sql --connection emmwcta-zj29555 --filename snowflake\05_create_gold_models
 snow sql --connection emmwcta-zj29555 --filename snowflake\99_validate_phase_4.sql
 ```
 
+## Streamlit Dashboard
+
+The Streamlit dashboard connects to Snowflake and visualizes gold and analytics KPIs.
+
+- App entrypoint: `streamlit/app.py`
+- Dependencies: `streamlit/requirements.txt`
+- Sample environment file: `streamlit/.env.example`
+
+Run the dashboard with:
+
+```powershell
+pip install -r streamlit/requirements.txt
+streamlit run streamlit/app.py
+```
+
 ## Expected Row Counts
 
 - `DIM_PATIENT`: 7

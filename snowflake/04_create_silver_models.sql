@@ -7,7 +7,7 @@ USE WAREHOUSE HC_GOV_WH;
 USE DATABASE HC_GOV_DEMO;
 USE SCHEMA SILVER;
 
-DROP DYNAMIC TABLE IF EXISTS SLV_PATIENT;
+-- DROP DYNAMIC TABLE IF EXISTS SLV_PATIENT;
 DROP TABLE IF EXISTS SLV_PATIENT;
 CREATE OR REPLACE TABLE SLV_PATIENT (
   patient_sk VARCHAR(64) COMMENT 'Surrogate key hashed from patient_id or medical_record_number',
@@ -23,7 +23,7 @@ CREATE OR REPLACE TABLE SLV_PATIENT (
   source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
 ) COMMENT = 'Silver patient dimension table.';
 
-DROP DYNAMIC TABLE IF EXISTS SLV_ENCOUNTER;
+-- DROP DYNAMIC TABLE IF EXISTS SLV_ENCOUNTER;
 DROP TABLE IF EXISTS SLV_ENCOUNTER;
 CREATE OR REPLACE TABLE SLV_ENCOUNTER (
   encounter_sk VARCHAR(64) COMMENT 'Surrogate key hashed from encounter_id',
@@ -40,7 +40,7 @@ CREATE OR REPLACE TABLE SLV_ENCOUNTER (
   source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
 ) COMMENT = 'Silver encounter fact table.';
 
-DROP DYNAMIC TABLE IF EXISTS SLV_LAB_RESULT;
+-- DROP DYNAMIC TABLE IF EXISTS SLV_LAB_RESULT;
 DROP TABLE IF EXISTS SLV_LAB_RESULT;
 CREATE OR REPLACE TABLE SLV_LAB_RESULT (
   lab_result_sk VARCHAR(64) COMMENT 'Surrogate key hashed from lab_result_id',
@@ -56,7 +56,7 @@ CREATE OR REPLACE TABLE SLV_LAB_RESULT (
   source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
 ) COMMENT = 'Silver lab result fact table.';
 
-DROP DYNAMIC TABLE IF EXISTS SLV_MEDICATION;
+-- DROP DYNAMIC TABLE IF EXISTS SLV_MEDICATION;
 DROP TABLE IF EXISTS SLV_MEDICATION;
 CREATE OR REPLACE TABLE SLV_MEDICATION (
   medication_sk VARCHAR(64) COMMENT 'Surrogate key hashed from prescription_id',
@@ -69,7 +69,7 @@ CREATE OR REPLACE TABLE SLV_MEDICATION (
   source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
 ) COMMENT = 'Silver medication fact table.';
 
-DROP DYNAMIC TABLE IF EXISTS SLV_CLAIM;
+-- DROP DYNAMIC TABLE IF EXISTS SLV_CLAIM;
 DROP TABLE IF EXISTS SLV_CLAIM;
 CREATE OR REPLACE TABLE SLV_CLAIM (
   claim_sk VARCHAR(64) COMMENT 'Surrogate key hashed from claim_id',
@@ -81,6 +81,76 @@ CREATE OR REPLACE TABLE SLV_CLAIM (
   claim_date DATE COMMENT 'Date the claim was filed',
   source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
 ) COMMENT = 'Silver claim fact table.';
+
+-- DROP DYNAMIC TABLE IF EXISTS SLV_APPOINTMENT;
+DROP TABLE IF EXISTS SLV_APPOINTMENT;
+CREATE OR REPLACE TABLE SLV_APPOINTMENT (
+  appointment_sk VARCHAR(64) COMMENT 'Surrogate key hashed from appointment_id',
+  appointment_id VARCHAR(50) COMMENT 'Source appointment identifier from Bronze appointment table',
+  patient_sk VARCHAR(64) COMMENT 'Surrogate key for patient from SLV_PATIENT',
+  patient_id VARCHAR(50) COMMENT 'Source patient identifier from Bronze appointment',
+  provider_id VARCHAR(50) COMMENT 'Source provider identifier from Bronze appointment',
+  hospital_id VARCHAR(50) COMMENT 'Hospital identifier from source appointment',
+  appointment_date DATE COMMENT 'Appointment date',
+  appointment_status VARCHAR(50) COMMENT 'Normalized appointment status',
+  scheduled_time VARCHAR(20) COMMENT 'Scheduled appointment time',
+  actual_start_time VARCHAR(20) COMMENT 'Actual appointment start time',
+  appointment_duration_minutes NUMBER COMMENT 'Appointment duration in minutes',
+  wait_time_minutes NUMBER COMMENT 'Wait time in minutes',
+  cancellation_flag NUMBER(1,0) COMMENT 'Indicator for cancellation',
+  no_show_flag NUMBER(1,0) COMMENT 'Indicator for no-show',
+  source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
+) COMMENT = 'Silver appointment fact table.';
+
+-- DROP DYNAMIC TABLE IF EXISTS SLV_PROVIDER;
+DROP TABLE IF EXISTS SLV_PROVIDER;
+CREATE OR REPLACE TABLE SLV_PROVIDER (
+  provider_sk VARCHAR(64) COMMENT 'Surrogate key hashed from provider_id',
+  provider_id VARCHAR(50) COMMENT 'Source provider identifier',
+  provider_name VARCHAR(200) COMMENT 'Provider full name',
+  specialty VARCHAR(100) COMMENT 'Provider specialty',
+  hospital_id VARCHAR(50) COMMENT 'Hospital identifier',
+  license_number VARCHAR(100) COMMENT 'Provider license number',
+  license_expiry_date DATE COMMENT 'Provider license expiry date',
+  license_status VARCHAR(20) COMMENT 'Calculated license status',
+  active_flag BOOLEAN COMMENT 'Provider active indicator',
+  source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
+) COMMENT = 'Silver provider master table.';
+
+-- DROP DYNAMIC TABLE IF EXISTS SLV_APPOINTMENT;
+DROP TABLE IF EXISTS SLV_APPOINTMENT;
+CREATE OR REPLACE TABLE SLV_APPOINTMENT (
+  appointment_sk VARCHAR(64) COMMENT 'Surrogate key hashed from appointment_id',
+  appointment_id VARCHAR(50) COMMENT 'Source appointment identifier from Bronze appointment table',
+  patient_sk VARCHAR(64) COMMENT 'Surrogate key for patient from SLV_PATIENT',
+  patient_id VARCHAR(50) COMMENT 'Source patient identifier from Bronze appointment',
+  provider_id VARCHAR(50) COMMENT 'Source provider identifier from Bronze appointment',
+  hospital_id VARCHAR(50) COMMENT 'Hospital identifier from source appointment',
+  appointment_date DATE COMMENT 'Appointment date',
+  appointment_status VARCHAR(50) COMMENT 'Normalized appointment status',
+  scheduled_time VARCHAR(20) COMMENT 'Scheduled appointment time',
+  actual_start_time VARCHAR(20) COMMENT 'Actual appointment start time',
+  appointment_duration_minutes NUMBER COMMENT 'Appointment duration in minutes',
+  wait_time_minutes NUMBER COMMENT 'Wait time in minutes',
+  cancellation_flag NUMBER(1,0) COMMENT 'Indicator for cancellation',
+  no_show_flag NUMBER(1,0) COMMENT 'Indicator for no-show',
+  source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
+) COMMENT = 'Silver appointment fact table.';
+
+-- DROP DYNAMIC TABLE IF EXISTS SLV_PROVIDER;
+DROP TABLE IF EXISTS SLV_PROVIDER;
+CREATE OR REPLACE TABLE SLV_PROVIDER (
+  provider_sk VARCHAR(64) COMMENT 'Surrogate key hashed from provider_id',
+  provider_id VARCHAR(50) COMMENT 'Source provider identifier',
+  provider_name VARCHAR(200) COMMENT 'Provider full name',
+  specialty VARCHAR(100) COMMENT 'Provider specialty',
+  hospital_id VARCHAR(50) COMMENT 'Hospital identifier',
+  license_number VARCHAR(100) COMMENT 'Provider license number',
+  license_expiry_date DATE COMMENT 'Provider license expiry date',
+  license_status VARCHAR(20) COMMENT 'Calculated license status',
+  active_flag BOOLEAN COMMENT 'Provider active indicator',
+  source_ingestion_timestamp TIMESTAMP_NTZ COMMENT 'Ingestion timestamp from source record'
+) COMMENT = 'Silver provider master table.';
 
 CREATE OR REPLACE PROCEDURE LOAD_SLV_PATIENT()
 RETURNS STRING
@@ -265,37 +335,200 @@ BEGIN
 END;
 $$;
 
-CREATE OR REPLACE PROCEDURE LOAD_SLV_CLAIM()
+CREATE OR REPLACE PROCEDURE LOAD_SLV_APPOINTMENT()
 RETURNS STRING
 LANGUAGE SQL
 EXECUTE AS CALLER
 AS
 $$
 BEGIN
-  TRUNCATE TABLE SILVER.SLV_CLAIM;
-  INSERT INTO SILVER.SLV_CLAIM (
-    claim_sk,
+  TRUNCATE TABLE SILVER.SLV_APPOINTMENT;
+  INSERT INTO SILVER.SLV_APPOINTMENT (
+    appointment_sk,
+    appointment_id,
     patient_sk,
     patient_id,
-    insurance_id,
-    claim_amount,
-    claim_status,
-    claim_date,
+    provider_id,
+    hospital_id,
+    appointment_date,
+    appointment_status,
+    scheduled_time,
+    actual_start_time,
+    appointment_duration_minutes,
+    wait_time_minutes,
+    cancellation_flag,
+    no_show_flag,
     source_ingestion_timestamp
   )
   SELECT
-    SHA2(claim_id, 256) AS claim_sk,
+    SHA2(appointment_id, 256) AS appointment_sk,
+    appointment_id,
     p.patient_sk,
-    c.patient_id,
-    insurance_id,
-    claim_amount,
-    UPPER(TRIM(claim_status)) AS claim_status,
-    claim_date,
-    c.ingestion_timestamp AS source_ingestion_timestamp
-  FROM BRONZE.BRZ_CLAIMS c
+    a.patient_id,
+    a.provider_id,
+    UPPER(TRIM(a.hospital_id)) AS hospital_id,
+    appointment_date,
+    UPPER(TRIM(appointment_status)) AS appointment_status,
+    scheduled_time,
+    actual_start_time,
+    IFF(
+      actual_start_time IS NOT NULL AND scheduled_time IS NOT NULL,
+      DATEDIFF('minute',
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', scheduled_time), 'YYYY-MM-DD HH24:MI:SS'),
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', actual_start_time), 'YYYY-MM-DD HH24:MI:SS')
+      ),
+      NULL
+    ) AS appointment_duration_minutes,
+    IFF(
+      actual_start_time IS NOT NULL AND scheduled_time IS NOT NULL,
+      DATEDIFF('minute',
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', scheduled_time), 'YYYY-MM-DD HH24:MI:SS'),
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', actual_start_time), 'YYYY-MM-DD HH24:MI:SS')
+      ),
+      NULL
+    ) AS wait_time_minutes,
+    IFF(UPPER(TRIM(appointment_status)) = 'CANCELLED', 1, 0) AS cancellation_flag,
+    IFF(UPPER(TRIM(appointment_status)) = 'NO_SHOW', 1, 0) AS no_show_flag,
+    a.ingestion_timestamp AS source_ingestion_timestamp
+  FROM BRONZE.BRZ_APPOINTMENT a
   LEFT JOIN SILVER.SLV_PATIENT p
-    ON c.patient_id = p.patient_id;
-  RETURN 'SLV_CLAIM loaded';
+    ON a.patient_id = p.patient_id;
+  RETURN 'SLV_APPOINTMENT loaded';
+END;
+$$;
+
+CREATE OR REPLACE PROCEDURE LOAD_SLV_PROVIDER()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE SILVER.SLV_PROVIDER;
+  INSERT INTO SILVER.SLV_PROVIDER (
+    provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    license_number,
+    license_expiry_date,
+    license_status,
+    active_flag,
+    source_ingestion_timestamp
+  )
+  SELECT
+    SHA2(provider_id, 256) AS provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    license_number,
+    license_expiry_date,
+    IFF(license_expiry_date IS NOT NULL AND license_expiry_date < CURRENT_DATE, 'EXPIRED', 'ACTIVE') AS license_status,
+    IFF(license_expiry_date IS NOT NULL AND license_expiry_date >= CURRENT_DATE, TRUE, FALSE) AS active_flag,
+    ingestion_timestamp AS source_ingestion_timestamp
+  FROM BRONZE.BRZ_PROVIDER_MASTER;
+  RETURN 'SLV_PROVIDER loaded';
+END;
+$$;
+
+
+CREATE OR REPLACE PROCEDURE LOAD_SLV_APPOINTMENT()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE SILVER.SLV_APPOINTMENT;
+  INSERT INTO SILVER.SLV_APPOINTMENT (
+    appointment_sk,
+    appointment_id,
+    patient_sk,
+    patient_id,
+    provider_id,
+    hospital_id,
+    appointment_date,
+    appointment_status,
+    scheduled_time,
+    actual_start_time,
+    appointment_duration_minutes,
+    wait_time_minutes,
+    cancellation_flag,
+    no_show_flag,
+    source_ingestion_timestamp
+  )
+  SELECT
+    SHA2(appointment_id, 256) AS appointment_sk,
+    appointment_id,
+    p.patient_sk,
+    a.patient_id,
+    a.provider_id,
+    UPPER(TRIM(a.hospital_id)) AS hospital_id,
+    appointment_date,
+    UPPER(TRIM(appointment_status)) AS appointment_status,
+    scheduled_time,
+    actual_start_time,
+    IFF(
+      actual_start_time IS NOT NULL AND scheduled_time IS NOT NULL,
+      DATEDIFF('minute',
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', scheduled_time), 'YYYY-MM-DD HH24:MI:SS'),
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', actual_start_time), 'YYYY-MM-DD HH24:MI:SS')
+      ),
+      NULL
+    ) AS appointment_duration_minutes,
+    IFF(
+      actual_start_time IS NOT NULL AND scheduled_time IS NOT NULL,
+      DATEDIFF('minute',
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', scheduled_time), 'YYYY-MM-DD HH24:MI:SS'),
+        TO_TIMESTAMP_NTZ(CONCAT(TO_CHAR(appointment_date, 'YYYY-MM-DD'), ' ', actual_start_time), 'YYYY-MM-DD HH24:MI:SS')
+      ),
+      NULL
+    ) AS wait_time_minutes,
+    IFF(UPPER(TRIM(appointment_status)) = 'CANCELLED', 1, 0) AS cancellation_flag,
+    IFF(UPPER(TRIM(appointment_status)) = 'NO_SHOW', 1, 0) AS no_show_flag,
+    a.ingestion_timestamp AS source_ingestion_timestamp
+  FROM BRONZE.BRZ_APPOINTMENT a
+  LEFT JOIN SILVER.SLV_PATIENT p
+    ON a.patient_id = p.patient_id;
+  RETURN 'SLV_APPOINTMENT loaded';
+END;
+$$;
+
+CREATE OR REPLACE PROCEDURE LOAD_SLV_PROVIDER()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE SILVER.SLV_PROVIDER;
+  INSERT INTO SILVER.SLV_PROVIDER (
+    provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    license_number,
+    license_expiry_date,
+    license_status,
+    active_flag,
+    source_ingestion_timestamp
+  )
+  SELECT
+    SHA2(provider_id, 256) AS provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    license_number,
+    license_expiry_date,
+    IFF(license_expiry_date IS NOT NULL AND license_expiry_date < CURRENT_DATE, 'EXPIRED', 'ACTIVE') AS license_status,
+    IFF(license_expiry_date IS NOT NULL AND license_expiry_date >= CURRENT_DATE, TRUE, FALSE) AS active_flag,
+    ingestion_timestamp AS source_ingestion_timestamp
+  FROM BRONZE.BRZ_PROVIDER_MASTER;
+  RETURN 'SLV_PROVIDER loaded';
 END;
 $$;
 
@@ -311,6 +544,8 @@ BEGIN
   CALL LOAD_SLV_LAB_RESULT();
   CALL LOAD_SLV_MEDICATION();
   CALL LOAD_SLV_CLAIM();
+  CALL LOAD_SLV_APPOINTMENT();
+  CALL LOAD_SLV_PROVIDER();
   RETURN 'All SILVER tables loaded successfully';
 END;
 $$;
@@ -324,7 +559,11 @@ SELECT 'SLV_LAB_RESULT', COUNT(*) FROM SILVER.SLV_LAB_RESULT
 UNION ALL
 SELECT 'SLV_MEDICATION', COUNT(*) FROM SILVER.SLV_MEDICATION
 UNION ALL
-SELECT 'SLV_CLAIM', COUNT(*) FROM SILVER.SLV_CLAIM;
+SELECT 'SLV_CLAIM', COUNT(*) FROM SILVER.SLV_CLAIM
+UNION ALL
+SELECT 'SLV_APPOINTMENT', COUNT(*) FROM SILVER.SLV_APPOINTMENT
+UNION ALL
+SELECT 'SLV_PROVIDER', COUNT(*) FROM SILVER.SLV_PROVIDER;
 
 -- Grant USAGE privileges on procedures to OVALEDGE_ROLE
 GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_PATIENT() TO ROLE OVALEDGE_ROLE;
@@ -332,6 +571,8 @@ GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_ENCOUNTER() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_LAB_RESULT() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_MEDICATION() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_CLAIM() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_APPOINTMENT() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE SILVER.LOAD_SLV_PROVIDER() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE SILVER.LOAD_ALL_SILVER() TO ROLE OVALEDGE_ROLE;
 
 CALL LOAD_ALL_SILVER();

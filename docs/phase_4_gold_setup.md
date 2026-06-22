@@ -18,9 +18,13 @@ Dynamic tables:
 - `GOLD.DIM_PATIENT`
 - `GOLD.DIM_HOSPITAL`
 - `GOLD.DIM_DIAGNOSIS`
+- `GOLD.DIM_PROVIDER`
 - `GOLD.FACT_ENCOUNTER`
 - `GOLD.FACT_READMISSION`
 - `GOLD.FACT_CLAIMS`
+- `GOLD.FACT_APPOINTMENT`
+- `GOLD.FACT_PROVIDER_DAILY`
+- `GOLD.FACT_PROVIDER_MONTHLY`
 
 Views:
 
@@ -35,9 +39,13 @@ Views:
 - `DIM_PATIENT` projects patient attributes from `SILVER.SLV_PATIENT`.
 - `DIM_HOSPITAL` derives hospital records from distinct Silver encounter hospital IDs and enriches them with demo names and regions.
 - `DIM_DIAGNOSIS` derives diagnosis records from distinct Silver diagnosis codes and enriches them with demo descriptions.
+- `DIM_PROVIDER` projects licensed provider attributes from `SILVER.SLV_PROVIDER` and assigns provider/hospital metadata.
 - `FACT_ENCOUNTER` joins Silver encounters to hospital and diagnosis dimensions.
 - `FACT_READMISSION` sequences encounters by patient with `LEAD(admission_date)` and flags readmissions where the next admission is 0 to 30 days after discharge.
 - `FACT_CLAIMS` projects standardized claims from `SILVER.SLV_CLAIM`.
+- `FACT_APPOINTMENT` enriches appointment events with patient, provider, and hospital dimensions while preserving status flags.
+- `FACT_PROVIDER_DAILY` aggregates provider activity by appointment date, capturing completed appointments, no-shows, cancellations, and utilization.
+- `FACT_PROVIDER_MONTHLY` rolls daily provider activity up to month-level performance measures.
 
 ## KPI Rules
 
@@ -59,9 +67,13 @@ snow sql --connection emmwcta-zj29555 --filename snowflake\99_validate_phase_4.s
 - `DIM_PATIENT`: 7
 - `DIM_HOSPITAL`: 3
 - `DIM_DIAGNOSIS`: 6
+- `DIM_PROVIDER`: 5
 - `FACT_ENCOUNTER`: 8
 - `FACT_READMISSION`: 8
 - `FACT_CLAIMS`: 7
+- `FACT_APPOINTMENT`: 8
+- `FACT_PROVIDER_DAILY`: 5
+- `FACT_PROVIDER_MONTHLY`: 5
 
 ## Expected KPI Shape
 

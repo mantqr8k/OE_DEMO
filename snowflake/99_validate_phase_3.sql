@@ -36,6 +36,33 @@ SELECT
 FROM SILVER.SLV_ENCOUNTER
 ORDER BY encounter_id;
 
+SELECT
+  appointment_id,
+  patient_id,
+  provider_id,
+  hospital_id,
+  appointment_date,
+  scheduled_time,
+  actual_start_time,
+  appointment_status,
+  wait_time_minutes,
+  cancellation_flag,
+  no_show_flag
+FROM SILVER.SLV_APPOINTMENT
+ORDER BY appointment_id;
+
+SELECT
+  provider_id,
+  provider_name,
+  specialty,
+  hospital_id,
+  license_number,
+  license_expiry_date,
+  license_status,
+  active_flag
+FROM SILVER.SLV_PROVIDER
+ORDER BY provider_id;
+
 SELECT 'DEDUPED_PATIENT_P1001' AS check_name, COUNT(*) AS observed_count
 FROM SILVER.SLV_PATIENT
 WHERE patient_id = 'P1001'

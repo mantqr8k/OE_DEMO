@@ -83,3 +83,28 @@ CREATE OR REPLACE TABLE BRZ_CLAIMS (
   claim_date DATE,
   ingestion_timestamp TIMESTAMP_NTZ
 );
+
+CREATE OR REPLACE TABLE BRZ_APPOINTMENT (
+  appointment_id VARCHAR,
+  patient_id VARCHAR,
+  provider_id VARCHAR,
+  hospital_id VARCHAR,
+  appointment_date DATE,
+  appointment_status VARCHAR,
+  scheduled_time VARCHAR,
+  actual_start_time VARCHAR,
+  wait_time_minutes NUMBER(10, 0),
+  cancellation_flag NUMBER(1, 0),
+  no_show_flag NUMBER(1, 0),
+  ingestion_timestamp TIMESTAMP_NTZ
+);
+
+CREATE OR REPLACE TABLE BRZ_PROVIDER_MASTER (
+  provider_id VARCHAR,
+  provider_name VARCHAR,
+  specialty VARCHAR,
+  hospital_id VARCHAR,
+  license_number VARCHAR,
+  license_expiry_date DATE,
+  ingestion_timestamp TIMESTAMP_NTZ
+);

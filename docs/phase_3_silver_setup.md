@@ -18,6 +18,8 @@ Dynamic tables are used so Snowflake can track dependencies and refresh transfor
 - `SILVER.SLV_LAB_RESULT`
 - `SILVER.SLV_MEDICATION`
 - `SILVER.SLV_CLAIM`
+- `SILVER.SLV_APPOINTMENT`
+- `SILVER.SLV_PROVIDER`
 - `SILVER.VW_SILVER_ROW_COUNTS`
 
 ## Transformations
@@ -44,6 +46,8 @@ snow sql --connection emmwcta-zj29555 --filename snowflake\99_validate_phase_3.s
 - `SLV_LAB_RESULT`: 7
 - `SLV_MEDICATION`: 6
 - `SLV_CLAIM`: 7
+- `SLV_APPOINTMENT`: 8
+- `SLV_PROVIDER`: 5
 
 `SLV_PATIENT` has 7 rows because the duplicate `P1001` Bronze patient record is deduplicated.
 

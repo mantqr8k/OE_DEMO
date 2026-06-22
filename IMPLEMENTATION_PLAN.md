@@ -77,24 +77,33 @@ Create realistic source-system data and load it into raw Bronze tables exactly a
   - Lab results
   - Pharmacy orders
   - Claims
+  - Appointments
+  - Providers
 - Bronze tables:
   - `BRONZE.BRZ_PATIENT_MASTER`
   - `BRONZE.BRZ_PATIENT_ENCOUNTER`
   - `BRONZE.BRZ_LAB_RESULTS`
   - `BRONZE.BRZ_PHARMACY_ORDERS`
   - `BRONZE.BRZ_CLAIMS`
+  - `BRONZE.BRZ_APPOINTMENT` (new)
+  - `BRONZE.BRZ_PROVIDER_MASTER` (new)
 - Load script using Snowflake stages and `COPY INTO`.
 - Intentional data quality failures:
   - Null `patient_id`
   - Future `dob`
   - Discharge date before admission date
   - Blood glucose result outside valid range
+  - Null `provider_id`
+  - Expired `license_expiry_date`
+  - Invalid `appointment_status` values
+  - Appointment `actual_start_time` before `scheduled_time`
+  - `wait_time_minutes` exceeding 240 minutes
 
 ### Acceptance Criteria
 
 - Bronze row counts match loaded CSV files.
 - Raw PHI fields are visible before masking is applied.
-- Injected bad records are present and queryable.
+- Injected bad records are present and queryable for all data types including appointments and providers.
 
 ## Phase 3: Silver Standardization Layer
 
@@ -110,12 +119,16 @@ Create cleansed and standardized Silver models from the Bronze layer.
   - `SILVER.SLV_LAB_RESULT`
   - `SILVER.SLV_MEDICATION`
   - `SILVER.SLV_CLAIM`
+  - `SILVER.SLV_APPOINTMENT`
+  - `SILVER.SLV_PROVIDER`
 - Transformations:
   - Patient deduplication
   - Full patient name standardization
   - Age calculation
   - Encounter length-of-stay calculation
   - Lab result normalization
+  - Appointment status standardization
+  - Provider license status calculation
   - Surrogate key generation
 
 ### Acceptance Criteria
@@ -123,6 +136,7 @@ Create cleansed and standardized Silver models from the Bronze layer.
 - Silver models preserve traceability to Bronze source records.
 - Patient and encounter joins resolve through surrogate keys.
 - Invalid records are not silently discarded; they remain available for DQ audit reporting.
+- Appointment and provider models properly handle standardization and deduplication.
 
 ## Phase 4: Gold Analytics Layer
 
@@ -136,18 +150,27 @@ Create business-ready dimensional models and KPI views.
   - `GOLD.DIM_PATIENT`
   - `GOLD.DIM_HOSPITAL`
   - `GOLD.DIM_DIAGNOSIS`
+  - `GOLD.DIM_PROVIDER`
 - Facts:
   - `GOLD.FACT_ENCOUNTER`
   - `GOLD.FACT_READMISSION`
   - `GOLD.FACT_CLAIMS`
+  - `GOLD.FACT_APPOINTMENT`
+  - `GOLD.FACT_PROVIDER_DAILY`
+  - `GOLD.FACT_PROVIDER_MONTHLY`
 - KPI views:
   - `ANALYTICS.VW_READMISSION_RATE`
   - `ANALYTICS.VW_AVERAGE_LENGTH_OF_STAY`
   - `ANALYTICS.VW_CLAIM_APPROVAL_RATE`
+  - `ANALYTICS.VW_PROVIDER_UTILIZATION_RATE`
+  - `ANALYTICS.VW_APPOINTMENT_COMPLETION_RATE`
+  - `ANALYTICS.VW_PROVIDER_CREDENTIAL_COMPLIANCE`
 
 ### Acceptance Criteria
 
 - Readmission logic flags encounters where the next admission occurs within 30 days.
+- Appointment completion rate properly calculated from FACT_APPOINTMENT status flags.
+- Provider credential compliance properly calculates from DIM_PROVIDER license_status.
 - KPI views return non-empty outputs.
 - Gold objects are built from Silver objects to support Snowflake lineage inspection.
 
@@ -211,6 +234,13 @@ Implement deterministic SQL audit tables for data quality measurement, failed re
   - `DQ005`: Length of stay must be greater than or equal to 0
   - `DQ006`: Lab result value cannot be null
   - `DQ007`: Blood glucose normalized result must be between 40 and 600
+  - `DQ008`: Provider ID cannot be null
+  - `DQ009`: License expiry date required
+  - `DQ010`: License must not be expired (HIGH severity)
+  - `DQ011`: Appointment ID required
+  - `DQ012`: Appointment status validation (enumeration check)
+  - `DQ013`: Actual start time must be after scheduled time
+  - `DQ014`: Wait time less than 240 minutes
 - SQL procedure or repeatable script to:
   - Start a DQ run
   - Execute each rule
@@ -242,15 +272,17 @@ Demonstrate traceability from executive KPI back to source and simulate impact a
   - `SILVER.SLV_ENCOUNTER`
   - `BRONZE.BRZ_PATIENT_ENCOUNTER`
   - EHR source
-- Column-level lineage documentation for `readmission_flag`.
-- Impact analysis SQL for simulated rename:
-  - `admission_date` to `admit_dt`
-- Impacted assets report:
-  - `SILVER.SLV_ENCOUNTER`
-  - `GOLD.FACT_ENCOUNTER`
-  - `GOLD.FACT_READMISSION`
-  - Readmission dashboard
-  - Executive KPI dashboard
+- Additional lineage paths:
+  - Provider Utilization KPI → `FACT_PROVIDER_MONTHLY` → `FACT_PROVIDER_DAILY` → `FACT_APPOINTMENT` → `SLV_APPOINTMENT` → `BRZ_APPOINTMENT` → Scheduling System
+  - Appointment No-Show Rate → `FACT_APPOINTMENT` → `SLV_APPOINTMENT` → `BRZ_APPOINTMENT` → Scheduling System
+- Column-level lineage documentation for:
+  - `readmission_flag` (derived from admission_date, discharge_date, patient_id)
+  - `wait_time_minutes` (derived from scheduled_time, actual_start_time)
+  - `license_status` (derived from license_expiry_date, CURRENT_DATE)
+- Impact analysis scenarios:
+  - Scenario 1: Rename `admission_date` to `admit_dt` → impacts SLV_ENCOUNTER, FACT_ENCOUNTER, FACT_READMISSION, Readmission Dashboard, Executive KPI Dashboard
+  - Scenario 2: Rename `appointment_status` to `appointment_state` → impacts SLV_APPOINTMENT, FACT_APPOINTMENT, FACT_PROVIDER_DAILY, Appointment Dashboard, Executive Operations Dashboard
+  - Scenario 3: Change `license_expiry_date` datatype → impacts SLV_PROVIDER, DIM_PROVIDER, Credential Compliance KPI, Provider Governance Dashboard
 
 ### Acceptance Criteria
 
@@ -274,7 +306,18 @@ Build a small Streamlit dashboard for presenting the demo outcomes.
   - Failed records and alerts
   - Patient 360 sample view
   - Readmission analytics
+  - Provider governance dashboard
+  - Appointment operations dashboard
   - Lineage and impact analysis
+- Provider governance dashboard displays:
+  - Total providers, active providers, expired licenses
+  - Credential compliance percentage
+  - Provider data quality score
+  - Charts for providers by specialty, utilization trend, license expiry trend
+- Appointment operations dashboard displays:
+  - Total appointments, completion rate, no-show rate, cancellation rate
+  - Average wait time
+  - Charts for appointment status distribution, wait time trend, utilization trend
 - Snowflake connection configuration documentation.
 - Read-only dashboard queries against `ANALYTICS` and `GOVERNANCE` views.
 
@@ -295,14 +338,21 @@ Create a clear script for running the demo phase by phase.
 
 - `README.md` with setup instructions.
 - `docs/demo_script.md` with presenter flow:
-  - Ingest Bronze data
+  - Ingest Bronze data (patient, encounter, lab, pharmacy, claims, appointment, provider)
   - Run classification and masking
   - Promote to Silver
-  - Execute DQ audits
-  - Build Gold KPIs
+  - Execute DQ audits including new appointment and provider rules
+  - Build Gold KPIs including provider utilization and appointment analytics
   - Open Streamlit dashboard
-  - Show lineage
-  - Run impact analysis
+  - Demo Scenario 1: PHI Classification
+  - Demo Scenario 2: Data Quality Failure (including appointment and provider failures)
+  - Demo Scenario 3: Readmission KPI Lineage
+  - Demo Scenario 4: Impact Analysis (admission_date rename)
+  - Demo Scenario 5: Audit Investigation
+  - Demo Scenario 6: Provider Credential Compliance
+  - Demo Scenario 7: Appointment No-Show Analytics
+  - Demo Scenario 8: Provider Utilization Analysis
+  - Show lineage and run impact analysis
 - Validation checklist.
 - Troubleshooting notes.
 

@@ -373,6 +373,90 @@ normalized_result BETWEEN 40 AND 600
 
 ---
 
+## Provider Rules
+
+### DQ008
+
+Provider ID cannot be null
+
+```sql
+provider_id IS NOT NULL
+```
+
+---
+
+### DQ009
+
+License expiry date required
+
+```sql
+license_expiry_date IS NOT NULL
+```
+
+---
+
+### DQ010
+
+License must not be expired
+
+```sql
+license_expiry_date >= CURRENT_DATE
+```
+
+Severity:
+
+HIGH
+
+---
+
+## Appointment Rules
+
+### DQ011
+
+Appointment ID required
+
+```sql
+appointment_id IS NOT NULL
+```
+
+---
+
+### DQ012
+
+Appointment status validation
+
+```sql
+appointment_status IN (
+'SCHEDULED',
+'COMPLETED',
+'NO_SHOW',
+'CANCELLED',
+'RESCHEDULED'
+)
+```
+
+---
+
+### DQ013
+
+Actual start time must be after scheduled time
+
+```sql
+actual_start_time >= scheduled_time
+```
+
+---
+
+### DQ014
+
+Wait time less than 240 minutes
+
+```sql
+wait_time_minutes <= 240
+```
+
+---
+
 # GOLD LAYER
 
 ## Purpose
@@ -415,6 +499,37 @@ Patient Dimension
 | diagnosis_sk          |
 | diagnosis_code        |
 | diagnosis_description |
+
+---
+
+# DIM_PROVIDER
+
+Provider Dimension
+
+| Column              |
+| ------------------- |
+| provider_sk         |
+| provider_id         |
+| provider_name       |
+| specialty           |
+| hospital_id         |
+| hospital_name       |
+| license_number      |
+| license_expiry_date |
+| license_status      |
+| active_flag         |
+
+Derived Columns:
+
+### license_status
+
+```sql
+CASE
+    WHEN license_expiry_date < CURRENT_DATE
+    THEN 'EXPIRED'
+    ELSE 'ACTIVE'
+END
+```
 
 ---
 
@@ -471,6 +586,88 @@ END
 
 ---
 
+# FACT_APPOINTMENT
+
+Grain:
+
+One appointment per row.
+
+| Column                      |
+| --------------------------- |
+| appointment_sk              |
+| appointment_id              |
+| patient_sk                  |
+| provider_sk                 |
+| hospital_sk                 |
+| appointment_date            |
+| appointment_status          |
+| scheduled_time              |
+| actual_start_time           |
+| appointment_duration_minutes |
+| wait_time_minutes           |
+| cancellation_flag           |
+| no_show_flag                |
+
+Derived Columns:
+
+### wait_time_minutes
+
+```sql
+DATEDIFF(
+    minute,
+    scheduled_time,
+    actual_start_time
+)
+```
+
+---
+
+# FACT_PROVIDER_DAILY
+
+Grain:
+
+One provider per day.
+
+| Column                 |
+| ---------------------- |
+| provider_sk            |
+| activity_date          |
+| appointments_booked    |
+| appointments_completed |
+| patients_seen          |
+| no_show_count          |
+| cancellation_count     |
+| utilization_rate       |
+
+Purpose:
+
+Provider productivity reporting.
+
+---
+
+# FACT_PROVIDER_MONTHLY
+
+Grain:
+
+One provider per month.
+
+| Column                |
+| --------------------- |
+| provider_sk           |
+| reporting_month       |
+| patients_seen         |
+| encounters_completed  |
+| appointments_completed |
+| no_show_rate          |
+| utilization_rate      |
+| readmission_rate      |
+
+Purpose:
+
+Executive provider performance dashboard.
+
+---
+
 # BUSINESS KPIs
 
 ## KPI 1
@@ -509,6 +706,210 @@ Formula:
 Approved Claims /
 Total Claims
 ```
+
+---
+
+## KPI 4
+
+Provider Utilization Rate
+
+Definition:
+
+Percentage of available appointment slots utilized.
+
+Formula:
+
+```text
+Booked Appointment Hours /
+Available Appointment Hours
+```
+
+Target:
+
+> 75%
+
+---
+
+## KPI 5
+
+Patients Seen per Provider
+
+Definition:
+
+Unique patients treated by provider.
+
+Formula:
+
+```text
+Distinct Patients /
+Provider
+```
+
+Dimensions:
+
+* Hospital
+* Specialty
+* Month
+
+---
+
+## KPI 6
+
+Average Encounters per Provider
+
+Formula:
+
+```text
+Total Encounters /
+Total Providers
+```
+
+---
+
+## KPI 7
+
+Provider Readmission Rate
+
+Definition:
+
+Readmission rate attributed to attending provider.
+
+Formula:
+
+```text
+Readmitted Patients /
+Total Discharged Patients
+```
+
+Dimensions:
+
+* Provider
+* Specialty
+* Hospital
+
+Governance Value:
+
+Excellent lineage demonstration.
+
+---
+
+## KPI 8
+
+Provider Credential Compliance Rate
+
+Formula:
+
+```text
+Providers With Active Licenses /
+Total Providers
+```
+
+Governance Value:
+
+Master Data Governance, Data Quality, Regulatory Compliance
+
+---
+
+## KPI 9
+
+Average Patient Load
+
+Formula:
+
+```text
+Active Patients /
+Provider
+```
+
+---
+
+## KPI 10
+
+Appointment Completion Rate
+
+Formula:
+
+```text
+Completed Appointments /
+Total Appointments
+```
+
+---
+
+## KPI 11
+
+Appointment No-Show Rate
+
+Formula:
+
+```text
+No Show Appointments /
+Total Scheduled Appointments
+```
+
+Governance Value:
+
+Demonstrates quality validation on appointment status values.
+
+---
+
+## KPI 12
+
+Appointment Cancellation Rate
+
+Formula:
+
+```text
+Cancelled Appointments /
+Total Appointments
+```
+
+---
+
+## KPI 13
+
+Average Wait Time
+
+Formula:
+
+```text
+Actual Start Time -
+Scheduled Time
+```
+
+Unit:
+
+Minutes
+
+---
+
+## KPI 14
+
+Schedule Utilization Rate
+
+Formula:
+
+```text
+Booked Slots /
+Available Slots
+```
+
+---
+
+## KPI 15
+
+Days to Next Available Appointment
+
+Formula:
+
+```text
+Next Available Appointment Date -
+Current Date
+```
+
+Governance Value:
+
+Access-to-care metric. Executive stakeholders frequently monitor this KPI.
 
 ---
 
@@ -629,7 +1030,7 @@ blood_glucose = 9999
 
 # LINEAGE DEMO
 
-## Business KPI
+## Business KPI 1
 
 30-Day Readmission Rate
 
@@ -651,6 +1052,54 @@ EHR System
 
 ---
 
+## Business KPI 2
+
+Provider Utilization Rate
+
+Lineage Flow
+
+```text
+Provider Utilization Dashboard
+        |
+Provider Utilization KPI
+        |
+FACT_PROVIDER_MONTHLY
+        |
+FACT_PROVIDER_DAILY
+        |
+FACT_APPOINTMENT
+        |
+SLV_APPOINTMENT
+        |
+BRZ_APPOINTMENT
+        |
+Scheduling System
+```
+
+---
+
+## Business KPI 3
+
+No-Show Rate
+
+Lineage Flow
+
+```text
+Executive Operations Dashboard
+        |
+No Show Rate KPI
+        |
+FACT_APPOINTMENT
+        |
+SLV_APPOINTMENT
+        |
+BRZ_APPOINTMENT
+        |
+Scheduling System
+```
+
+---
+
 # Column-Level Lineage
 
 readmission_flag
@@ -665,7 +1114,31 @@ patient_id
 
 ---
 
+wait_time_minutes
+
+Derived From:
+
+```text
+scheduled_time
+actual_start_time
+```
+
+---
+
+license_status
+
+Derived From:
+
+```text
+license_expiry_date
+CURRENT_DATE
+```
+
+---
+
 # IMPACT ANALYSIS DEMO
+
+## Scenario 1
 
 Simulate Change
 
@@ -680,6 +1153,41 @@ Show Impacted Assets
 * FACT_READMISSION
 * Readmission Dashboard
 * Executive KPI Dashboard
+
+---
+
+## Scenario 2
+
+Simulate Change
+
+```text
+appointment_status renamed to appointment_state
+```
+
+Show Impacted Assets
+
+* SLV_APPOINTMENT
+* FACT_APPOINTMENT
+* FACT_PROVIDER_DAILY
+* Appointment Dashboard
+* Executive Operations Dashboard
+
+---
+
+## Scenario 3
+
+Simulate Change
+
+```text
+license_expiry_date datatype changed
+```
+
+Show Impacted Assets
+
+* SLV_PROVIDER
+* DIM_PROVIDER
+* Credential Compliance KPI
+* Provider Governance Dashboard
 
 ---
 
@@ -705,62 +1213,244 @@ Production Release
 
 ---
 
-# DEMO SCRIPT
+# DEMO SCENARIOS
 
-## Step 1
+## Scenario 1
 
-Ingest patient data into Bronze.
+PHI Classification
 
-## Step 2
+Demonstrate:
 
-Run classification scan.
-
-Show PHI tags.
-
-## Step 3
-
-Promote data to Silver.
-
-Execute quality checks.
-
-Inject failures.
-
-## Step 4
-
-Create Gold metrics.
-
-Generate Readmission KPI.
-
-## Step 5
-
-Open lineage visualization.
-
-Trace KPI back to source.
-
-## Step 6
-
-Rename source field.
-
-Execute impact analysis.
-
-## Step 7
-
-Show governance dashboard.
-
-Display:
-
-* Classification Coverage
-* Data Quality Score
-* Lineage Completeness
-* Policy Compliance
+* Automatic classification
+* Tag creation
+* Masking
 
 ---
 
-# Expected Governance Outcomes
+## Scenario 2
 
-1. PHI automatically identified.
-2. Sensitive data protected.
-3. Data quality issues detected early.
-4. KPI lineage fully traceable.
-5. Change impact known before deployment.
-6. Governance embedded into onboarding lifecycle.
+Data Quality Failure
+
+Inject:
+
+```text
+patient_id = NULL
+
+dob = 2035-01-01
+
+blood_glucose = 9999
+```
+
+Demonstrate:
+
+* Rule violations
+* Quality score reduction
+* Stewardship workflow
+
+---
+
+## Scenario 3
+
+Readmission KPI Lineage
+
+Trace:
+
+```text
+Readmission Dashboard
+ ->
+FACT_READMISSION
+ ->
+SLV_ENCOUNTER
+ ->
+BRZ_PATIENT_ENCOUNTER
+ ->
+EHR
+```
+
+---
+
+## Scenario 4
+
+Impact Analysis
+
+Rename:
+
+```text
+admission_date
+```
+
+Demonstrate affected assets.
+
+---
+
+## Scenario 5
+
+Audit Investigation
+
+Show:
+
+* Analyst accesses PHI
+* Audit log generated
+* Policy evaluation triggered
+
+---
+
+## Scenario 6
+
+Provider Credential Compliance
+
+Demonstrate:
+
+* Expired licenses
+* Quality rule violations
+* Governance alerts
+
+---
+
+## Scenario 7
+
+Appointment No-Show Analytics
+
+Demonstrate:
+
+* Appointment quality validation
+* KPI calculation
+* Operational dashboard
+
+---
+
+## Scenario 8
+
+Provider Utilization Analysis
+
+Demonstrate:
+
+* Lineage tracing
+* Impact analysis
+* Executive reporting
+
+---
+
+# SEED DATA REQUIREMENTS
+
+Generate:
+
+## Patients
+
+5000 records
+
+---
+
+## Encounters
+
+25000 records
+
+---
+
+## Lab Results
+
+100000 records
+
+---
+
+## Claims
+
+50000 records
+
+---
+
+## Appointments
+
+30000 records
+
+---
+
+## Providers
+
+500 records
+
+---
+
+Inject:
+
+* Duplicate patients
+* Missing IDs
+* Invalid dates
+* Outlier lab values
+* Expired provider licenses
+* Invalid appointment statuses
+* Wait times exceeding thresholds
+
+to support governance demonstrations.
+
+---
+
+# ADDITIONAL SOURCE DATA REQUIREMENTS
+
+## Appointment Data
+
+Required fields:
+
+| Column |
+|----------|
+| appointment_id |
+| patient_id |
+| provider_id |
+| hospital_id |
+| appointment_date |
+| scheduled_time |
+| actual_start_time |
+| appointment_status |
+
+Allowed Status Values:
+
+```text
+SCHEDULED
+COMPLETED
+NO_SHOW
+CANCELLED
+RESCHEDULED
+```
+
+---
+
+## Provider Data
+
+Required fields:
+
+| Column |
+|----------|
+| provider_id |
+| provider_name |
+| specialty |
+| hospital_id |
+| license_number |
+| license_expiry_date |
+
+Specialties:
+
+```text
+Cardiology
+Neurology
+Orthopedics
+Internal Medicine
+Pediatrics
+Emergency Medicine
+Oncology
+Pulmonology
+```
+
+---
+
+# Success Criteria
+
+The final platform should demonstrate:
+
+1. Automatic classification of sensitive healthcare data.
+2. End-to-end lineage from source systems to executive KPIs.
+3. Proactive data quality monitoring.
+4. Stewardship workflows.
+5. Operational governance visibility.
+6. Security and audit transparency.
+7. Impact analysis before deployment.
+8. A single Governance Command Center for healthcare analytics.

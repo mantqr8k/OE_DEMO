@@ -70,6 +70,65 @@ CREATE OR REPLACE TABLE FACT_CLAIMS (
   claim_status VARCHAR(50) COMMENT 'Claim status'
 ) COMMENT = 'Gold claims fact table.';
 
+DROP DYNAMIC TABLE IF EXISTS DIM_PROVIDER;
+DROP TABLE IF EXISTS DIM_PROVIDER;
+CREATE OR REPLACE TABLE DIM_PROVIDER (
+  provider_sk VARCHAR(64) COMMENT 'Surrogate key for provider',
+  provider_id VARCHAR(50) COMMENT 'Source provider identifier',
+  provider_name VARCHAR(200) COMMENT 'Provider name',
+  specialty VARCHAR(100) COMMENT 'Provider specialty',
+  hospital_id VARCHAR(50) COMMENT 'Hospital identifier',
+  hospital_name VARCHAR(200) COMMENT 'Hospital name',
+  license_number VARCHAR(100) COMMENT 'Provider license number',
+  license_expiry_date DATE COMMENT 'Provider license expiry date',
+  license_status VARCHAR(20) COMMENT 'Provider license status',
+  active_flag BOOLEAN COMMENT 'Provider active flag'
+) COMMENT = 'Gold provider dimension table.';
+
+DROP DYNAMIC TABLE IF EXISTS FACT_APPOINTMENT;
+DROP TABLE IF EXISTS FACT_APPOINTMENT;
+CREATE OR REPLACE TABLE FACT_APPOINTMENT (
+  appointment_sk VARCHAR(64) COMMENT 'Surrogate key for appointment',
+  appointment_id VARCHAR(50) COMMENT 'Source appointment identifier',
+  patient_sk VARCHAR(64) COMMENT 'Foreign key to DIM_PATIENT',
+  provider_sk VARCHAR(64) COMMENT 'Foreign key to DIM_PROVIDER',
+  hospital_sk VARCHAR(64) COMMENT 'Foreign key to DIM_HOSPITAL',
+  appointment_date DATE COMMENT 'Appointment date',
+  appointment_status VARCHAR(50) COMMENT 'Appointment status',
+  scheduled_time VARCHAR(20) COMMENT 'Scheduled time',
+  actual_start_time VARCHAR(20) COMMENT 'Actual start time',
+  appointment_duration_minutes NUMBER COMMENT 'Appointment duration in minutes',
+  wait_time_minutes NUMBER COMMENT 'Wait time in minutes',
+  cancellation_flag NUMBER(1,0) COMMENT 'Cancellation indicator',
+  no_show_flag NUMBER(1,0) COMMENT 'No-show indicator'
+) COMMENT = 'Gold appointment fact table.';
+
+DROP DYNAMIC TABLE IF EXISTS FACT_PROVIDER_DAILY;
+DROP TABLE IF EXISTS FACT_PROVIDER_DAILY;
+CREATE OR REPLACE TABLE FACT_PROVIDER_DAILY (
+  provider_sk VARCHAR(64) COMMENT 'Foreign key to DIM_PROVIDER',
+  activity_date DATE COMMENT 'Activity date',
+  appointments_booked NUMBER COMMENT 'Appointments booked',
+  appointments_completed NUMBER COMMENT 'Appointments completed',
+  patients_seen NUMBER COMMENT 'Patients seen',
+  no_show_count NUMBER COMMENT 'No-show count',
+  cancellation_count NUMBER COMMENT 'Cancellation count',
+  utilization_rate NUMBER COMMENT 'Provider utilization rate'
+) COMMENT = 'Gold provider daily activity fact table.';
+
+DROP DYNAMIC TABLE IF EXISTS FACT_PROVIDER_MONTHLY;
+DROP TABLE IF EXISTS FACT_PROVIDER_MONTHLY;
+CREATE OR REPLACE TABLE FACT_PROVIDER_MONTHLY (
+  provider_sk VARCHAR(64) COMMENT 'Foreign key to DIM_PROVIDER',
+  reporting_month DATE COMMENT 'Reporting month',
+  patients_seen NUMBER COMMENT 'Patients seen',
+  encounters_completed NUMBER COMMENT 'Encounters completed',
+  appointments_completed NUMBER COMMENT 'Appointments completed',
+  no_show_rate NUMBER COMMENT 'No-show rate',
+  utilization_rate NUMBER COMMENT 'Utilization rate',
+  readmission_rate NUMBER COMMENT 'Readmission rate'
+) COMMENT = 'Gold provider monthly activity fact table.';
+
 CREATE OR REPLACE PROCEDURE LOAD_DIM_PATIENT()
 RETURNS STRING
 LANGUAGE SQL
@@ -278,6 +337,158 @@ BEGIN
 END;
 $$;
 
+CREATE OR REPLACE PROCEDURE LOAD_DIM_PROVIDER()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE GOLD.DIM_PROVIDER;
+  INSERT INTO GOLD.DIM_PROVIDER (
+    provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    hospital_name,
+    license_number,
+    license_expiry_date,
+    license_status,
+    active_flag
+  )
+  SELECT
+    provider_sk,
+    provider_id,
+    provider_name,
+    specialty,
+    hospital_id,
+    CASE
+      WHEN hospital_id = 'H001' THEN 'Central Medical Center'
+      WHEN hospital_id = 'H002' THEN 'Lakeside Health'
+      WHEN hospital_id = 'H003' THEN 'Bayview Hospital'
+      ELSE 'Unknown Hospital'
+    END AS hospital_name,
+    license_number,
+    license_expiry_date,
+    license_status,
+    active_flag
+  FROM SILVER.SLV_PROVIDER;
+  RETURN 'DIM_PROVIDER loaded';
+END;
+$$;
+
+CREATE OR REPLACE PROCEDURE LOAD_FACT_APPOINTMENT()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE GOLD.FACT_APPOINTMENT;
+  INSERT INTO GOLD.FACT_APPOINTMENT (
+    appointment_sk,
+    appointment_id,
+    patient_sk,
+    provider_sk,
+    hospital_sk,
+    appointment_date,
+    appointment_status,
+    scheduled_time,
+    actual_start_time,
+    appointment_duration_minutes,
+    wait_time_minutes,
+    cancellation_flag,
+    no_show_flag
+  )
+  SELECT
+    a.appointment_sk,
+    a.appointment_id,
+    p.patient_sk,
+    d.provider_sk,
+    h.hospital_sk,
+    a.appointment_date,
+    a.appointment_status,
+    a.scheduled_time,
+    a.actual_start_time,
+    a.appointment_duration_minutes,
+    a.wait_time_minutes,
+    a.cancellation_flag,
+    a.no_show_flag
+  FROM SILVER.SLV_APPOINTMENT a
+  LEFT JOIN SILVER.SLV_PATIENT p ON a.patient_id = p.patient_id
+  LEFT JOIN SILVER.SLV_PROVIDER d ON a.provider_id = d.provider_id
+  LEFT JOIN GOLD.DIM_HOSPITAL h ON a.hospital_id = h.hospital_id;
+  RETURN 'FACT_APPOINTMENT loaded';
+END;
+$$;
+
+CREATE OR REPLACE PROCEDURE LOAD_FACT_PROVIDER_DAILY()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE GOLD.FACT_PROVIDER_DAILY;
+  INSERT INTO GOLD.FACT_PROVIDER_DAILY (
+    provider_sk,
+    activity_date,
+    appointments_booked,
+    appointments_completed,
+    patients_seen,
+    no_show_count,
+    cancellation_count,
+    utilization_rate
+  )
+  SELECT
+    a.provider_sk,
+    a.appointment_date AS activity_date,
+    COUNT(*) AS appointments_booked,
+    COUNT_IF(a.appointment_status = 'COMPLETED') AS appointments_completed,
+    COUNT(DISTINCT a.patient_sk) AS patients_seen,
+    SUM(a.no_show_flag) AS no_show_count,
+    SUM(a.cancellation_flag) AS cancellation_count,
+    IFF(COUNT(*) = 0, NULL, ROUND(SUM(IFF(a.appointment_status IN ('COMPLETED','NO_SHOW'), 1, 0)) / COUNT(*), 4)) AS utilization_rate
+  FROM GOLD.FACT_APPOINTMENT a
+  GROUP BY a.provider_sk, a.appointment_date;
+  RETURN 'FACT_PROVIDER_DAILY loaded';
+END;
+$$;
+
+CREATE OR REPLACE PROCEDURE LOAD_FACT_PROVIDER_MONTHLY()
+RETURNS STRING
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+BEGIN
+  TRUNCATE TABLE GOLD.FACT_PROVIDER_MONTHLY;
+  INSERT INTO GOLD.FACT_PROVIDER_MONTHLY (
+    provider_sk,
+    reporting_month,
+    patients_seen,
+    encounters_completed,
+    appointments_completed,
+    no_show_rate,
+    utilization_rate,
+    readmission_rate
+  )
+  SELECT
+    provider_sk,
+    DATE_TRUNC('month', activity_date) AS reporting_month,
+    SUM(patients_seen) AS patients_seen,
+    SUM(appointments_booked) AS encounters_completed,
+    SUM(appointments_completed) AS appointments_completed,
+    IFF(SUM(appointments_booked) = 0, NULL, ROUND(SUM(no_show_count) / SUM(appointments_booked), 4)) AS no_show_rate,
+    IFF(SUM(appointments_booked) = 0, NULL, ROUND(SUM(appointments_completed) / SUM(appointments_booked), 4)) AS utilization_rate,
+    NULL AS readmission_rate
+  FROM GOLD.FACT_PROVIDER_DAILY
+  GROUP BY provider_sk, DATE_TRUNC('month', activity_date);
+  RETURN 'FACT_PROVIDER_MONTHLY loaded';
+END;
+$$;
+
 CREATE OR REPLACE PROCEDURE LOAD_ALL_GOLD()
 RETURNS STRING
 LANGUAGE SQL
@@ -288,9 +499,13 @@ BEGIN
   CALL LOAD_DIM_PATIENT();
   CALL LOAD_DIM_HOSPITAL();
   CALL LOAD_DIM_DIAGNOSIS();
+  CALL LOAD_DIM_PROVIDER();
   CALL LOAD_FACT_ENCOUNTER();
   CALL LOAD_FACT_READMISSION();
   CALL LOAD_FACT_CLAIMS();
+  CALL LOAD_FACT_APPOINTMENT();
+  CALL LOAD_FACT_PROVIDER_DAILY();
+  CALL LOAD_FACT_PROVIDER_MONTHLY();
   RETURN 'All GOLD tables loaded successfully';
 END;
 $$;
@@ -299,9 +514,13 @@ $$;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_DIM_PATIENT() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_DIM_HOSPITAL() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_DIM_DIAGNOSIS() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE GOLD.LOAD_DIM_PROVIDER() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_ENCOUNTER() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_READMISSION() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_CLAIMS() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_APPOINTMENT() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_PROVIDER_DAILY() TO ROLE OVALEDGE_ROLE;
+GRANT USAGE ON PROCEDURE GOLD.LOAD_FACT_PROVIDER_MONTHLY() TO ROLE OVALEDGE_ROLE;
 GRANT USAGE ON PROCEDURE GOLD.LOAD_ALL_GOLD() TO ROLE OVALEDGE_ROLE;
 
 CREATE OR REPLACE VIEW VW_GOLD_ROW_COUNTS AS

@@ -34,6 +34,36 @@ SELECT
 FROM GOLD.FACT_READMISSION
 ORDER BY patient_sk, discharge_date;
 
+SELECT
+  appointment_sk,
+  appointment_id,
+  patient_sk,
+  provider_sk,
+  hospital_sk,
+  appointment_date,
+  appointment_status,
+  wait_time_minutes,
+  cancellation_flag,
+  no_show_flag
+FROM GOLD.FACT_APPOINTMENT
+ORDER BY appointment_date, appointment_id;
+
+SELECT
+  provider_sk,
+  activity_date,
+  appointments_booked,
+  appointments_completed,
+  patients_seen,
+  no_show_count,
+  cancellation_count,
+  utilization_rate
+FROM GOLD.FACT_PROVIDER_DAILY
+ORDER BY provider_sk, activity_date;
+
+SELECT *
+FROM GOLD.FACT_PROVIDER_MONTHLY
+ORDER BY provider_sk, reporting_month;
+
 SELECT *
 FROM ANALYTICS.VW_READMISSION_RATE;
 

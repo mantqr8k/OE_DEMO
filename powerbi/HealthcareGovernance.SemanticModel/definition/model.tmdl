@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+
+annotation PBI_QueryOrder = ["SnowflakeHost","SnowflakeWarehouse","SnowflakeRole","Snowflake_HC_GOV","dim_provider_src","fact_provider_monthly_src","fact_appointment_src","fact_readmission_src","fact_encounter_src","vw_executive_kpi_src","vw_readmission_rate_src","vw_average_los_src","vw_claim_approval_src","dim_hospital_src"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.137.0
+
+ref table DIM_PROVIDER
+ref table FACT_PROVIDER_MONTHLY
+ref table FACT_APPOINTMENT
+ref table FACT_READMISSION
+ref table FACT_ENCOUNTER
+ref table DIM_HOSPITAL
+ref table VW_EXECUTIVE_KPI_SUMMARY
+ref table VW_READMISSION_RATE
+ref table VW_AVERAGE_LENGTH_OF_STAY
+ref table VW_CLAIM_APPROVAL_RATE
+ref table _Metrics

@@ -1,0 +1,37 @@
+table DIM_HOSPITAL
+	lineageTag: b6000001-0001-0001-0001-000000000001
+
+	column HOSPITAL_SK
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HOSPITAL_SK
+		lineageTag: b6000001-0001-0001-0001-000000000002
+
+	column HOSPITAL_ID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HOSPITAL_ID
+		lineageTag: b6000001-0001-0001-0001-000000000003
+
+	column HOSPITAL_NAME
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HOSPITAL_NAME
+		lineageTag: b6000001-0001-0001-0001-000000000004
+
+	column HOSPITAL_REGION
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HOSPITAL_REGION
+		lineageTag: b6000001-0001-0001-0001-000000000005
+
+	partition DIM_HOSPITAL = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = dim_hospital_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

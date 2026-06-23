@@ -1,0 +1,78 @@
+table _Metrics
+	lineageTag: d1000001-0001-0001-0001-000000000001
+
+	measure 'Readmission Rate (Calculated)' =
+			DIVIDE (
+			    SUM ( FACT_READMISSION[READMISSION_FLAG] ),
+			    COUNTROWS ( FACT_READMISSION )
+			)
+		formatString: 0.00%
+		displayFolder: Executive
+		lineageTag: d1000001-0001-0001-0001-000000000002
+
+	measure 'Average LOS (Calculated)' =
+			AVERAGEX (
+			    FILTER ( FACT_ENCOUNTER, FACT_ENCOUNTER[LENGTH_OF_STAY] >= 0 ),
+			    FACT_ENCOUNTER[LENGTH_OF_STAY]
+			)
+		formatString: 0.00
+		displayFolder: Executive
+		lineageTag: d1000001-0001-0001-0001-000000000003
+
+	measure 'Total Providers' = COUNTROWS ( DIM_PROVIDER )
+		formatString: #,0
+		displayFolder: Provider
+		lineageTag: d1000001-0001-0001-0001-000000000004
+
+	measure 'Active Providers' =
+			CALCULATE (
+			    COUNTROWS ( DIM_PROVIDER ),
+			    DIM_PROVIDER[ACTIVE_FLAG] = TRUE ()
+			)
+		formatString: #,0
+		displayFolder: Provider
+		lineageTag: d1000001-0001-0001-0001-000000000005
+
+	measure 'Expired Licenses' =
+			CALCULATE (
+			    COUNTROWS ( DIM_PROVIDER ),
+			    DIM_PROVIDER[LICENSE_STATUS] = "EXPIRED"
+			)
+		formatString: #,0
+		displayFolder: Provider
+		lineageTag: d1000001-0001-0001-0001-000000000006
+
+	measure 'Appointment Volume' = COUNTROWS ( FACT_APPOINTMENT )
+		formatString: #,0
+		displayFolder: Appointments
+		lineageTag: d1000001-0001-0001-0001-000000000007
+
+	measure 'Average Wait Time' = AVERAGE ( FACT_APPOINTMENT[WAIT_TIME_MINUTES] )
+		formatString: 0.00
+		displayFolder: Appointments
+		lineageTag: d1000001-0001-0001-0001-000000000008
+
+	measure 'Total Readmissions' = SUM ( FACT_READMISSION[READMISSION_FLAG] )
+		formatString: #,0
+		displayFolder: Readmission
+		lineageTag: d1000001-0001-0001-0001-000000000009
+
+	measure 'Encounter Count' = COUNTROWS ( FACT_ENCOUNTER )
+		formatString: #,0
+		displayFolder: Readmission
+		lineageTag: d1000001-0001-0001-0001-00000000000a
+
+	measure 'Avg Monthly Utilization' = AVERAGE ( FACT_PROVIDER_MONTHLY[UTILIZATION_RATE] )
+		formatString: 0.00%
+		displayFolder: Provider
+		lineageTag: d1000001-0001-0001-0001-00000000000b
+
+	partition _Metrics = m
+		mode: import
+		source =
+				let
+				    Source = #table ( type table [Placeholder = Int64.Type], { { 1 } } )
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

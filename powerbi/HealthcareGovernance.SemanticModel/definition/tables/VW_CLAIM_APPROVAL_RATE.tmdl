@@ -1,0 +1,32 @@
+table VW_CLAIM_APPROVAL_RATE
+	lineageTag: c4000001-0001-0001-0001-000000000001
+
+	column APPROVED_CLAIMS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: APPROVED_CLAIMS
+		lineageTag: c4000001-0001-0001-0001-000000000002
+
+	column TOTAL_CLAIMS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: TOTAL_CLAIMS
+		lineageTag: c4000001-0001-0001-0001-000000000003
+
+	column CLAIM_APPROVAL_RATE
+		dataType: double
+		formatString: 0.00%
+		summarizeBy: sum
+		sourceColumn: CLAIM_APPROVAL_RATE
+		lineageTag: c4000001-0001-0001-0001-000000000004
+
+	partition VW_CLAIM_APPROVAL_RATE = m
+		mode: import
+		queryGroup: Analytics
+		source =
+				let
+				    Source = vw_claim_approval_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

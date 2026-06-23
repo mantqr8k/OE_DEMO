@@ -1,0 +1,64 @@
+table FACT_READMISSION
+	lineageTag: b4000001-0001-0001-0001-000000000001
+
+	column PATIENT_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PATIENT_SK
+		lineageTag: b4000001-0001-0001-0001-000000000002
+
+	column ENCOUNTER_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: ENCOUNTER_SK
+		lineageTag: b4000001-0001-0001-0001-000000000003
+
+	column HOSPITAL_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: HOSPITAL_SK
+		lineageTag: b4000001-0001-0001-0001-000000000004
+
+	column DISCHARGE_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: DISCHARGE_DATE
+		lineageTag: b4000001-0001-0001-0001-000000000005
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NEXT_ADMISSION_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: NEXT_ADMISSION_DATE
+		lineageTag: b4000001-0001-0001-0001-000000000006
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DAYS_BETWEEN_VISITS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: DAYS_BETWEEN_VISITS
+		lineageTag: b4000001-0001-0001-0001-000000000007
+
+	column READMISSION_FLAG
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: READMISSION_FLAG
+		lineageTag: b4000001-0001-0001-0001-000000000008
+
+	partition FACT_READMISSION = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = fact_readmission_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

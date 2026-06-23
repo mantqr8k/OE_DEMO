@@ -1,0 +1,98 @@
+table FACT_APPOINTMENT
+	lineageTag: b3000001-0001-0001-0001-000000000001
+
+	column APPOINTMENT_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: APPOINTMENT_SK
+		lineageTag: b3000001-0001-0001-0001-000000000002
+
+	column APPOINTMENT_ID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: APPOINTMENT_ID
+		lineageTag: b3000001-0001-0001-0001-000000000003
+
+	column PATIENT_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PATIENT_SK
+		lineageTag: b3000001-0001-0001-0001-000000000004
+
+	column PROVIDER_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PROVIDER_SK
+		lineageTag: b3000001-0001-0001-0001-000000000005
+
+	column HOSPITAL_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: HOSPITAL_SK
+		lineageTag: b3000001-0001-0001-0001-000000000006
+
+	column APPOINTMENT_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: APPOINTMENT_DATE
+		lineageTag: b3000001-0001-0001-0001-000000000007
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column APPOINTMENT_STATUS
+		dataType: string
+		summarizeBy: none
+		sourceColumn: APPOINTMENT_STATUS
+		lineageTag: b3000001-0001-0001-0001-000000000008
+
+	column SCHEDULED_TIME
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SCHEDULED_TIME
+		lineageTag: b3000001-0001-0001-0001-000000000009
+
+	column ACTUAL_START_TIME
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ACTUAL_START_TIME
+		lineageTag: b3000001-0001-0001-0001-00000000000a
+
+	column APPOINTMENT_DURATION_MINUTES
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: APPOINTMENT_DURATION_MINUTES
+		lineageTag: b3000001-0001-0001-0001-00000000000b
+
+	column WAIT_TIME_MINUTES
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: WAIT_TIME_MINUTES
+		lineageTag: b3000001-0001-0001-0001-00000000000c
+
+	column CANCELLATION_FLAG
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: CANCELLATION_FLAG
+		lineageTag: b3000001-0001-0001-0001-00000000000d
+
+	column NO_SHOW_FLAG
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: NO_SHOW_FLAG
+		lineageTag: b3000001-0001-0001-0001-00000000000e
+
+	partition FACT_APPOINTMENT = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = fact_appointment_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,149 @@
+expression SnowflakeHost = "YOUR_ACCOUNT.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a1000001-0001-0001-0001-000000000001
+	queryGroup: Connection
+
+expression SnowflakeWarehouse = "COMPUTE_WH" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a1000001-0001-0001-0001-000000000002
+	queryGroup: Connection
+
+expression SnowflakeRole = null meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=false]
+	lineageTag: a1000001-0001-0001-0001-000000000003
+	queryGroup: Connection
+
+expression Snowflake_HC_GOV =
+		let
+		    Source = Snowflake.Databases(SnowflakeHost, "HC_GOV_DEMO", [Role=SnowflakeRole, Warehouse=SnowflakeWarehouse])
+		in
+		    Source
+	lineageTag: a1000001-0001-0001-0001-000000000004
+	queryGroup: Connection
+
+expression dim_provider_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT PROVIDER_ID, PROVIDER_NAME, SPECIALTY, HOSPITAL_ID, LICENSE_NUMBER, LICENSE_EXPIRY_DATE, LICENSE_STATUS, ACTIVE_FLAG, PROVIDER_SK FROM HC_GOV_DEMO.GOLD.DIM_PROVIDER ORDER BY PROVIDER_ID",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000001
+	queryGroup: Gold
+
+expression fact_provider_monthly_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT REPORTING_MONTH, PROVIDER_SK, PATIENTS_SEEN, ENCOUNTERS_COMPLETED, APPOINTMENTS_COMPLETED, NO_SHOW_RATE, UTILIZATION_RATE, READMISSION_RATE FROM HC_GOV_DEMO.GOLD.FACT_PROVIDER_MONTHLY ORDER BY REPORTING_MONTH",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000002
+	queryGroup: Gold
+
+expression fact_appointment_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.GOLD.FACT_APPOINTMENT",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000003
+	queryGroup: Gold
+
+expression fact_readmission_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.GOLD.FACT_READMISSION",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000004
+	queryGroup: Gold
+
+expression fact_encounter_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.GOLD.FACT_ENCOUNTER",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000005
+	queryGroup: Gold
+
+expression dim_hospital_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.GOLD.DIM_HOSPITAL",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a2000001-0001-0001-0001-000000000006
+	queryGroup: Gold
+
+expression vw_executive_kpi_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.ANALYTICS.VW_EXECUTIVE_KPI_SUMMARY",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a3000001-0001-0001-0001-000000000001
+	queryGroup: Analytics
+
+expression vw_readmission_rate_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.ANALYTICS.VW_READMISSION_RATE",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a3000001-0001-0001-0001-000000000002
+	queryGroup: Analytics
+
+expression vw_average_los_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.ANALYTICS.VW_AVERAGE_LENGTH_OF_STAY",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a3000001-0001-0001-0001-000000000003
+	queryGroup: Analytics
+
+expression vw_claim_approval_src =
+		let
+		    Source = Value.NativeQuery(
+		        Snowflake_HC_GOV,
+		        "SELECT * FROM HC_GOV_DEMO.ANALYTICS.VW_CLAIM_APPROVAL_RATE",
+		        null,
+		        [EnableFolding=true]
+		    )
+		in
+		    Source
+	lineageTag: a3000001-0001-0001-0001-000000000004
+	queryGroup: Analytics

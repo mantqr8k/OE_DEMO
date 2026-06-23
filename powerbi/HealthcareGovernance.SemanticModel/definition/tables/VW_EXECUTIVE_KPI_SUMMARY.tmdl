@@ -1,0 +1,37 @@
+table VW_EXECUTIVE_KPI_SUMMARY
+	lineageTag: c1000001-0001-0001-0001-000000000001
+
+	column KPI_NAME
+		dataType: string
+		summarizeBy: none
+		sourceColumn: KPI_NAME
+		lineageTag: c1000001-0001-0001-0001-000000000002
+
+	column KPI_VALUE
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: KPI_VALUE
+		lineageTag: c1000001-0001-0001-0001-000000000003
+
+	column NUMERATOR
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: NUMERATOR
+		lineageTag: c1000001-0001-0001-0001-000000000004
+
+	column DENOMINATOR
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: DENOMINATOR
+		lineageTag: c1000001-0001-0001-0001-000000000005
+
+	partition VW_EXECUTIVE_KPI_SUMMARY = m
+		mode: import
+		queryGroup: Analytics
+		source =
+				let
+				    Source = vw_executive_kpi_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

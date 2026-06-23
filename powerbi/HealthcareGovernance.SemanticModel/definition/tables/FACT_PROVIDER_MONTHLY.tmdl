@@ -1,0 +1,68 @@
+table FACT_PROVIDER_MONTHLY
+	lineageTag: b2000001-0001-0001-0001-000000000001
+
+	column PROVIDER_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PROVIDER_SK
+		lineageTag: b2000001-0001-0001-0001-000000000002
+
+	column REPORTING_MONTH
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: REPORTING_MONTH
+		lineageTag: b2000001-0001-0001-0001-000000000003
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PATIENTS_SEEN
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: PATIENTS_SEEN
+		lineageTag: b2000001-0001-0001-0001-000000000004
+
+	column ENCOUNTERS_COMPLETED
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: ENCOUNTERS_COMPLETED
+		lineageTag: b2000001-0001-0001-0001-000000000005
+
+	column APPOINTMENTS_COMPLETED
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: APPOINTMENTS_COMPLETED
+		lineageTag: b2000001-0001-0001-0001-000000000006
+
+	column NO_SHOW_RATE
+		dataType: double
+		formatString: 0.00%
+		summarizeBy: sum
+		sourceColumn: NO_SHOW_RATE
+		lineageTag: b2000001-0001-0001-0001-000000000007
+
+	column UTILIZATION_RATE
+		dataType: double
+		formatString: 0.00%
+		summarizeBy: sum
+		sourceColumn: UTILIZATION_RATE
+		lineageTag: b2000001-0001-0001-0001-000000000008
+
+	column READMISSION_RATE
+		dataType: double
+		formatString: 0.00%
+		summarizeBy: sum
+		sourceColumn: READMISSION_RATE
+		lineageTag: b2000001-0001-0001-0001-000000000009
+
+	partition FACT_PROVIDER_MONTHLY = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = fact_provider_monthly_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

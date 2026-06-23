@@ -1,0 +1,32 @@
+table VW_AVERAGE_LENGTH_OF_STAY
+	lineageTag: c3000001-0001-0001-0001-000000000001
+
+	column TOTAL_LENGTH_OF_STAY
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: TOTAL_LENGTH_OF_STAY
+		lineageTag: c3000001-0001-0001-0001-000000000002
+
+	column TOTAL_ENCOUNTERS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: TOTAL_ENCOUNTERS
+		lineageTag: c3000001-0001-0001-0001-000000000003
+
+	column AVERAGE_LENGTH_OF_STAY
+		dataType: double
+		formatString: 0.00
+		summarizeBy: sum
+		sourceColumn: AVERAGE_LENGTH_OF_STAY
+		lineageTag: c3000001-0001-0001-0001-000000000004
+
+	partition VW_AVERAGE_LENGTH_OF_STAY = m
+		mode: import
+		queryGroup: Analytics
+		source =
+				let
+				    Source = vw_average_los_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

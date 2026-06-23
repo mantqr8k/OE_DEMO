@@ -1,0 +1,32 @@
+table VW_READMISSION_RATE
+	lineageTag: c2000001-0001-0001-0001-000000000001
+
+	column READMITTED_ENCOUNTERS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: READMITTED_ENCOUNTERS
+		lineageTag: c2000001-0001-0001-0001-000000000002
+
+	column TOTAL_DISCHARGED_ENCOUNTERS
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: TOTAL_DISCHARGED_ENCOUNTERS
+		lineageTag: c2000001-0001-0001-0001-000000000003
+
+	column READMISSION_RATE
+		dataType: double
+		formatString: 0.00%
+		summarizeBy: sum
+		sourceColumn: READMISSION_RATE
+		lineageTag: c2000001-0001-0001-0001-000000000004
+
+	partition VW_READMISSION_RATE = m
+		mode: import
+		queryGroup: Analytics
+		source =
+				let
+				    Source = vw_readmission_rate_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

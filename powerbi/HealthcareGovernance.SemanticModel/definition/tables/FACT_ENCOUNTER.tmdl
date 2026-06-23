@@ -1,0 +1,65 @@
+table FACT_ENCOUNTER
+	lineageTag: b5000001-0001-0001-0001-000000000001
+
+	column ENCOUNTER_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: ENCOUNTER_SK
+		lineageTag: b5000001-0001-0001-0001-000000000002
+
+	column PATIENT_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PATIENT_SK
+		lineageTag: b5000001-0001-0001-0001-000000000003
+
+	column HOSPITAL_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: HOSPITAL_SK
+		lineageTag: b5000001-0001-0001-0001-000000000004
+
+	column DIAGNOSIS_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: DIAGNOSIS_SK
+		lineageTag: b5000001-0001-0001-0001-000000000005
+
+	column ADMISSION_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: ADMISSION_DATE
+		lineageTag: b5000001-0001-0001-0001-000000000006
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DISCHARGE_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: DISCHARGE_DATE
+		lineageTag: b5000001-0001-0001-0001-000000000007
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LENGTH_OF_STAY
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: LENGTH_OF_STAY
+		lineageTag: b5000001-0001-0001-0001-000000000008
+
+	partition FACT_ENCOUNTER = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = fact_encounter_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

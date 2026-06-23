@@ -1,0 +1,5 @@
+**/.pbi/
+**/localSettings.json
+
+# Cloned reference repo (optional)
+_tmp_pbip/

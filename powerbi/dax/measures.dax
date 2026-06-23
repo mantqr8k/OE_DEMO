@@ -1,0 +1,27 @@
+// Healthcare Governance Dashboard — DAX measures
+// Equivalent to metrics in streamlit/streamlit_app.py
+// Import via Tabular Editor or copy into Power BI Desktop measure table.
+
+// --- Executive (from ANALYTICS views) ---
+// Use VW_READMISSION_RATE[READMISSION_RATE] in a card visual (single row view).
+// Use VW_AVERAGE_LENGTH_OF_STAY[AVERAGE_LENGTH_OF_STAY] in a card.
+// Use VW_CLAIM_APPROVAL_RATE[CLAIM_APPROVAL_RATE] in a card.
+// Use VW_EXECUTIVE_KPI_SUMMARY in a matrix: KPI_NAME rows, KPI_VALUE values.
+
+// --- Executive (calculated from facts) ---
+Readmission Rate (Calculated) = DIVIDE(SUM(FACT_READMISSION[READMISSION_FLAG]), COUNTROWS(FACT_READMISSION))
+Average LOS (Calculated) = AVERAGEX(FILTER(FACT_ENCOUNTER, FACT_ENCOUNTER[LENGTH_OF_STAY] >= 0), FACT_ENCOUNTER[LENGTH_OF_STAY])
+
+// --- Provider Governance ---
+Total Providers = COUNTROWS(DIM_PROVIDER)
+Active Providers = CALCULATE(COUNTROWS(DIM_PROVIDER), DIM_PROVIDER[ACTIVE_FLAG] = TRUE())
+Expired Licenses = CALCULATE(COUNTROWS(DIM_PROVIDER), DIM_PROVIDER[LICENSE_STATUS] = "EXPIRED")
+Avg Monthly Utilization = AVERAGE(FACT_PROVIDER_MONTHLY[UTILIZATION_RATE])
+
+// --- Appointment Operations ---
+Appointment Volume = COUNTROWS(FACT_APPOINTMENT)
+Average Wait Time = AVERAGE(FACT_APPOINTMENT[WAIT_TIME_MINUTES])
+
+// --- Readmission Analytics ---
+Total Readmissions = SUM(FACT_READMISSION[READMISSION_FLAG])
+Encounter Count = COUNTROWS(FACT_ENCOUNTER)

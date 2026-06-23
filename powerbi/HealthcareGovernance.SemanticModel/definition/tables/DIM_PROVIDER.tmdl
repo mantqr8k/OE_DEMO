@@ -1,0 +1,71 @@
+table DIM_PROVIDER
+	lineageTag: b1000001-0001-0001-0001-000000000001
+
+	column PROVIDER_SK
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: PROVIDER_SK
+		lineageTag: b1000001-0001-0001-0001-000000000002
+
+	column PROVIDER_ID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PROVIDER_ID
+		lineageTag: b1000001-0001-0001-0001-000000000003
+
+	column PROVIDER_NAME
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PROVIDER_NAME
+		lineageTag: b1000001-0001-0001-0001-000000000004
+
+	column SPECIALTY
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SPECIALTY
+		lineageTag: b1000001-0001-0001-0001-000000000005
+
+	column HOSPITAL_ID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HOSPITAL_ID
+		lineageTag: b1000001-0001-0001-0001-000000000006
+
+	column LICENSE_NUMBER
+		dataType: string
+		summarizeBy: none
+		sourceColumn: LICENSE_NUMBER
+		lineageTag: b1000001-0001-0001-0001-000000000007
+
+	column LICENSE_EXPIRY_DATE
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: LICENSE_EXPIRY_DATE
+		lineageTag: b1000001-0001-0001-0001-000000000008
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LICENSE_STATUS
+		dataType: string
+		summarizeBy: none
+		sourceColumn: LICENSE_STATUS
+		lineageTag: b1000001-0001-0001-0001-000000000009
+
+	column ACTIVE_FLAG
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: ACTIVE_FLAG
+		lineageTag: b1000001-0001-0001-0001-00000000000a
+
+	partition DIM_PROVIDER = m
+		mode: import
+		queryGroup: Gold
+		source =
+				let
+				    Source = dim_provider_src
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
